@@ -1,0 +1,1784 @@
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0800013542175293 s
+time to predict: 12.86678957939148 s
+total: 12.946790933609009 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.2768692970275879 s
+time to predict: 3.984567403793335 s
+total: 4.261436700820923 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.2768692970275879 s
+time to predict: 3.984567403793335 s
+total: 4.261436700820923 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.2768692970275879 s
+time to predict: 3.984567403793335 s
+total: 4.261436700820923 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.2768692970275879 s
+time to predict: 3.984567403793335 s
+total: 4.261436700820923 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.2768692970275879 s
+time to predict: 3.984567403793335 s
+total: 4.261436700820923 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.2768692970275879 s
+time to predict: 3.984567403793335 s
+total: 4.261436700820923 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.2768692970275879 s
+time to predict: 3.984567403793335 s
+total: 4.261436700820923 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.2768692970275879 s
+time to predict: 3.984567403793335 s
+total: 4.261436700820923 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.2768692970275879 s
+time to predict: 3.984567403793335 s
+total: 4.261436700820923 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score: scores.0.9597510058452896 with a std 0.0015674855103130381
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.2768692970275879 s
+time to predict: 3.984567403793335 s
+total: 4.261436700820923 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.nan with a std nan
+Cross Validation Mean Score for r2: scores.nan with a std nan
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.2768692970275879 s
+time to predict: 3.984567403793335 s
+total: 4.261436700820923 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.nan with a std nan
+Cross Validation Mean Score for r2: scores.nan with a std nan
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+      Benign       0.95      0.96      0.96      7400
+      Malign       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.2768692970275879 s
+time to predict: 3.984567403793335 s
+total: 4.261436700820923 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.08928571428571429
+Recall: 0.08928571428571429
+Precision: 1.0
+F1-Score: 0.1639344262295082
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[ 5 51]
+ [ 0  0]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.09      0.16        56
+           1       0.00      0.00      0.00         0
+
+    accuracy                           0.09        56
+   macro avg       0.50      0.04      0.08        56
+weighted avg       1.00      0.09      0.16        56
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.0070035457611083984 s
+time to predict: 2.7907636165618896 s
+total: 2.797767162322998 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5360419906251395 with a std 0.027336688256038272
+Cross Validation Mean Score for accuracy: scores.0.9597510058452896 with a std 0.0015674855103130381
+Cross Validation Mean Score for roc_auc: scores.0.9830226407328666 with a std 0.0008295709996641854
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.040248994154710394 with a std 0.001567485510313033
+Cross Validation Mean Score for r2: scores.0.8372605164595475 with a std 0.006475314681492298
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.008513689041137695 s
+time to predict: 2.4412474632263184 s
+total: 2.449761152267456 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5352813050707832 with a std 0.026408741222916286
+Cross Validation Mean Score for accuracy: scores.0.959758597130494 with a std 0.0015522090035484494
+Cross Validation Mean Score for roc_auc: scores.0.9830468670596293 with a std 0.0007993131398339385
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.04024140286950581 with a std 0.0015522090035484514
+Cross Validation Mean Score for r2: scores.0.8372912210169074 with a std 0.006414560450019851
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.00699925422668457 s
+time to predict: 2.366838216781616 s
+total: 2.373837471008301 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.6267672706326529
+Recall: 0.6267672706326529
+Precision: 0.5002104926994247
+F1-Score: 0.5402634808761159
+Cross Validation Mean Score for neg_log_loss: scores.-0.5352813050707832 with a std 0.026408741222916286
+Cross Validation Mean Score for accuracy: scores.0.959758597130494 with a std 0.0015522090035484494
+Cross Validation Mean Score for roc_auc: scores.0.9830468670596293 with a std 0.0007993131398339385
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.04024140286950581 with a std 0.0015522090035484514
+Cross Validation Mean Score for r2: scores.0.8372912210169074 with a std 0.006414560450019851
+Confusion matrix: [[  1950  54050]
+ [ 11393 107948]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.15      0.03      0.06     56000
+           1       0.67      0.90      0.77    119341
+
+    accuracy                           0.63    175341
+   macro avg       0.41      0.47      0.41    175341
+weighted avg       0.50      0.63      0.54    175341
+
+time to train: 0.00699925422668457 s
+time to predict: 2.366838216781616 s
+total: 2.373837471008301 s
+
+============================== UNSW Model Evaluation LogisticRegressionModel ==============================
+Accuracy: 0.9346146168981151
+Recall: 0.9346146168981151
+Precision: 0.9348238565595374
+F1-Score: 0.9336941903772801
+Cross Validation Mean Score for neg_log_loss: scores.-0.17567313945448151 with a std 0.0026229608823346846
+Cross Validation Mean Score for accuracy: scores.0.9310604170379613 with a std 0.0014054377986486152
+Cross Validation Mean Score for roc_auc: scores.0.973546712902964 with a std 0.0009438402167467402
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.06893958296203885 with a std 0.0014054377986486288
+Cross Validation Mean Score for r2: scores.0.6832496228534507 with a std 0.005756274613989595
+Confusion matrix: [[ 9520  1680]
+ [  613 23256]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.94      0.85      0.89     11200
+           1       0.93      0.97      0.95     23869
+
+    accuracy                           0.93     35069
+   macro avg       0.94      0.91      0.92     35069
+weighted avg       0.93      0.93      0.93     35069
+
+time to train: 3.9939777851104736 s
+time to predict: 0.0030012130737304688 s
+total: 3.996978998184204 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9481593430094956
+Recall: 0.9481593430094956
+Precision: 0.9481216944495474
+F1-Score: 0.9481396244131924
+Cross Validation Mean Score for neg_log_loss: scores.-0.6579431475037275 with a std 0.02347874696185
+Cross Validation Mean Score for accuracy: scores.0.9439101764391374 with a std 0.0010064316066697655
+Cross Validation Mean Score for roc_auc: scores.0.9721691078249701 with a std 0.0008387039787693942
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.056089823560862596 with a std 0.001006431606669752
+Cross Validation Mean Score for r2: scores.0.7422855819186708 with a std 0.004191615488607621
+Confusion matrix: [[10275   925]
+ [  893 22976]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.92      0.92      0.92     11200
+           1       0.96      0.96      0.96     23869
+
+    accuracy                           0.95     35069
+   macro avg       0.94      0.94      0.94     35069
+weighted avg       0.95      0.95      0.95     35069
+
+time to train: 0.14451050758361816 s
+time to predict: 9.170300722122192 s
+total: 9.31481122970581 s
+
+============================== UNSW Model Evaluation DecisionTree ==============================
+Accuracy: 0.9429410590550058
+Recall: 0.9429410590550058
+Precision: 0.9430051191260601
+F1-Score: 0.9429713392700463
+Cross Validation Mean Score for neg_log_loss: scores.-1.9623682682037351 with a std 0.059244782080555426
+Cross Validation Mean Score for accuracy: scores.0.9417679558011048 with a std 0.0014905997393506699
+Cross Validation Mean Score for roc_auc: scores.0.934805825261439 with a std 0.0020874646646966244
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.05859918018178577 with a std 0.0013564506516413988
+Cross Validation Mean Score for r2: scores.0.7320358184390465 with a std 0.006392125459488159
+Confusion matrix: [[10222   978]
+ [ 1023 22846]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.91      0.91      0.91     11200
+           1       0.96      0.96      0.96     23869
+
+    accuracy                           0.94     35069
+   macro avg       0.93      0.93      0.93     35069
+weighted avg       0.94      0.94      0.94     35069
+
+time to train: 4.7532196044921875 s
+time to predict: 0.009515762329101562 s
+total: 4.762735366821289 s
+
+============================== UNSW Model Evaluation random_forest, n_estimations: 100, n_jobs: -1 ==============================
+Accuracy: 0.9557158744190025
+Recall: 0.9557158744190025
+Precision: 0.9555621903576395
+F1-Score: 0.9555046621199017
+Cross Validation Mean Score for neg_log_loss: scores.-0.11139494375471433 with a std 0.004106480921003767
+Cross Validation Mean Score for accuracy: scores.0.9545499910889322 with a std 0.0012408558368023194
+Cross Validation Mean Score for roc_auc: scores.0.9918028229912806 with a std 0.0003606834835880452
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.04545000891106755 with a std 0.0012408558368023261
+Cross Validation Mean Score for r2: scores.0.7911767765248218 with a std 0.005312939001316248
+Confusion matrix: [[10230   970]
+ [  583 23286]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.91      0.93     11200
+           1       0.96      0.98      0.97     23869
+
+    accuracy                           0.96     35069
+   macro avg       0.95      0.94      0.95     35069
+weighted avg       0.96      0.96      0.96     35069
+
+time to train: 11.450344324111938 s
+time to predict: 0.1379239559173584 s
+total: 11.588268280029297 s
+
+============================== CIC_2017 Model Evaluation LogisticRegressionModel ==============================
+Accuracy: 0.963033511262708
+Recall: 0.963033511262708
+Precision: 0.965029635150576
+F1-Score: 0.9628086400171081
+Cross Validation Mean Score for neg_log_loss: scores.-0.12143479060537901 with a std 0.002272616189722886
+Cross Validation Mean Score for accuracy: scores.0.9482059800664453 with a std 0.0010698069918333624
+Cross Validation Mean Score for roc_auc: scores.0.9930963955849117 with a std 0.000643747619162742
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.051794019933554813 with a std 0.0010698069918333732
+Cross Validation Mean Score for r2: scores.0.789133782989954 with a std 0.004252003624954043
+Confusion matrix: [[17921  1623]
+ [   46 25559]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.92      0.96     19544
+           1       0.94      1.00      0.97     25605
+
+    accuracy                           0.96     45149
+   macro avg       0.97      0.96      0.96     45149
+weighted avg       0.97      0.96      0.96     45149
+
+time to train: 6.379514694213867 s
+time to predict: 0.005999565124511719 s
+total: 6.385514259338379 s
+
+============================== CIC_2017 Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9996456178431415
+Recall: 0.9996456178431415
+Precision: 0.9996456175447321
+F1-Score: 0.9996456156963175
+Cross Validation Mean Score for neg_log_loss: scores.-0.008484765578845655 with a std 0.0024947325321293214
+Cross Validation Mean Score for accuracy: scores.0.99952934662237 with a std 0.00012504529114768943
+Cross Validation Mean Score for roc_auc: scores.0.9997658927858952 with a std 7.401184806872189e-05
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.00047065337763012175 with a std 0.00012504529114768786
+Cross Validation Mean Score for r2: scores.0.9980837823006761 with a std 0.0005090224497393388
+Confusion matrix: [[19535     9]
+ [    7 25598]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     19544
+           1       1.00      1.00      1.00     25605
+
+    accuracy                           1.00     45149
+   macro avg       1.00      1.00      1.00     45149
+weighted avg       1.00      1.00      1.00     45149
+
+time to train: 0.20000147819519043 s
+time to predict: 25.656814336776733 s
+total: 25.856815814971924 s
+
+============================== CIC_2017 Model Evaluation DecisionTree ==============================
+Accuracy: 0.9998449578063745
+Recall: 0.9998449578063745
+Precision: 0.9998449597441078
+F1-Score: 0.9998449582757513
+Cross Validation Mean Score for neg_log_loss: scores.-0.009179840852148794 with a std 0.003177239371794058
+Cross Validation Mean Score for accuracy: scores.0.9997397563676633 with a std 7.947231502992714e-05
+Cross Validation Mean Score for roc_auc: scores.0.9997309044559662 with a std 9.653547821292112e-05
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.0002879291251384274 with a std 9.920527611942922e-05
+Cross Validation Mean Score for r2: scores.0.9989517258274585 with a std 0.000345751761641949
+Confusion matrix: [[19541     3]
+ [    4 25601]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     19544
+           1       1.00      1.00      1.00     25605
+
+    accuracy                           1.00     45149
+   macro avg       1.00      1.00      1.00     45149
+weighted avg       1.00      1.00      1.00     45149
+
+time to train: 5.181014537811279 s
+time to predict: 0.011021137237548828 s
+total: 5.192035675048828 s
+
+============================== CIC_2017 Model Evaluation random_forest, n_estimations: 100, n_jobs: -1 ==============================
+Accuracy: 0.9999114044607854
+Recall: 0.9999114044607854
+Precision: 0.9999114044607854
+F1-Score: 0.9999114044607854
+Cross Validation Mean Score for neg_log_loss: scores.-0.0012756880854976364 with a std 0.0005424859356481135
+Cross Validation Mean Score for accuracy: scores.0.9998145071982283 with a std 5.4039926068506116e-05
+Cross Validation Mean Score for roc_auc: scores.0.9999893811872094 with a std 1.2735920694928972e-05
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.00018549280177187154 with a std 5.403992606850258e-05
+Cross Validation Mean Score for r2: scores.0.9992447641080544 with a std 0.00022018317881090504
+Confusion matrix: [[19542     2]
+ [    2 25603]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00     19544
+           1       1.00      1.00      1.00     25605
+
+    accuracy                           1.00     45149
+   macro avg       1.00      1.00      1.00     45149
+weighted avg       1.00      1.00      1.00     45149
+
+time to train: 11.235889196395874 s
+time to predict: 0.08564138412475586 s
+total: 11.32153058052063 s
+
+============================== CIC_2018 Model Evaluation LogisticRegressionModel ==============================
+Accuracy: 0.962768519180793
+Recall: 0.962768519180793
+Precision: 0.9620258024695726
+F1-Score: 0.952862480980973
+Cross Validation Mean Score for neg_log_loss: scores.-0.10422626016672457 with a std 0.0007758968941307135
+Cross Validation Mean Score for accuracy: scores.0.9578106001001359 with a std 0.0005016988316837821
+Cross Validation Mean Score for roc_auc: scores.0.9517724696217126 with a std 0.0006700894801063204
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.0421893998998641 with a std 0.0005016988316837944
+Cross Validation Mean Score for r2: scores.0.11687030204836021 with a std 0.007168698460982692
+Confusion matrix: [[199039    176]
+ [  7632   2868]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.96      1.00      0.98    199215
+           1       0.94      0.27      0.42     10500
+
+    accuracy                           0.96    209715
+   macro avg       0.95      0.64      0.70    209715
+weighted avg       0.96      0.96      0.95    209715
+
+time to train: 26.99861478805542 s
+time to predict: 0.03511214256286621 s
+total: 27.033726930618286 s
+
+============================== UNSW Model Evaluation LogisticRegressionModel ==============================
+Accuracy: 0.9346146168981151
+Recall: 0.9346146168981151
+Precision: 0.9348238565595374
+F1-Score: 0.9336941903772801
+Cross Validation Mean Score for neg_log_loss: scores.-0.17567313945448151 with a std 0.00262296088233469
+Cross Validation Mean Score for accuracy: scores.0.9310604170379613 with a std 0.0014054377986486152
+Cross Validation Mean Score for roc_auc: scores.0.973546712902964 with a std 0.0009438402167467402
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.06893958296203885 with a std 0.0014054377986486288
+Cross Validation Mean Score for r2: scores.0.6832496228534507 with a std 0.005756274613989595
+Confusion matrix: [[ 9520  1680]
+ [  613 23256]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.94      0.85      0.89     11200
+           1       0.93      0.97      0.95     23869
+
+    accuracy                           0.93     35069
+   macro avg       0.94      0.91      0.92     35069
+weighted avg       0.93      0.93      0.93     35069
+
+time to train: 9.828587532043457 s
+time to predict: 0.0070285797119140625 s
+total: 9.835616111755371 s
+
+============================== UNSW Model Evaluation LogisticRegressionModel ==============================
+Accuracy: 0.9067832634966904
+Recall: 0.9067832634966904
+Precision: 0.9067306076794133
+F1-Score: 0.9067106573912178
+Cross Validation Mean Score for neg_log_loss: scores.-0.26619840625028734 with a std 0.001972656725749661
+Cross Validation Mean Score for accuracy: scores.0.8931526607454643 with a std 0.0017278305445923093
+Cross Validation Mean Score for roc_auc: scores.0.9598673639124493 with a std 0.000866599891610106
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.1068473392545358 with a std 0.0017278305445923175
+Cross Validation Mean Score for r2: scores.0.5679947122764094 with a std 0.00711510497265144
+Confusion matrix: [[6574  826]
+ [ 709 8358]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.90      0.89      0.90      7400
+           1       0.91      0.92      0.92      9067
+
+    accuracy                           0.91     16467
+   macro avg       0.91      0.91      0.91     16467
+weighted avg       0.91      0.91      0.91     16467
+
+time to train: 1.8190197944641113 s
+time to predict: 0.0009987354278564453 s
+total: 1.8200185298919678 s
+
+============================== UNSW Model Evaluation k_neig(3) ==============================
+Accuracy: 0.9604056598044574
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1-Score: 0.9604270130448667
+Cross Validation Mean Score for neg_log_loss: scores.-0.5352813050707832 with a std 0.026408741222916286
+Cross Validation Mean Score for accuracy: scores.0.959758597130494 with a std 0.0015522090035484494
+Cross Validation Mean Score for roc_auc: scores.0.9830468670596293 with a std 0.0007993131398339385
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.04024140286950581 with a std 0.0015522090035484514
+Cross Validation Mean Score for r2: scores.0.8372912210169074 with a std 0.006414560450019851
+Confusion matrix: [[7120  280]
+ [ 372 8695]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      7400
+           1       0.97      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 0.006999492645263672 s
+time to predict: 2.2479989528656006 s
+total: 2.2549984455108643 s
+
+============================== UNSW Model Evaluation DecisionTree ==============================
+Accuracy: 0.9587660168822494
+Recall: 0.9587660168822494
+Precision: 0.9587665359374837
+F1-Score: 0.9587662728407549
+Cross Validation Mean Score for neg_log_loss: scores.-1.4315944340749371 with a std 0.08383727745217971
+Cross Validation Mean Score for accuracy: scores.0.9583390267972369 with a std 0.001948107788032565
+Cross Validation Mean Score for roc_auc: scores.0.9581399245375319 with a std 0.0021913949780439316
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.041053670386396415 with a std 0.002176409685346535
+Cross Validation Mean Score for r2: scores.0.8317327105620906 with a std 0.007720597308715459
+Confusion matrix: [[7061  339]
+ [ 340 8727]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.95      0.95      0.95      7400
+           1       0.96      0.96      0.96      9067
+
+    accuracy                           0.96     16467
+   macro avg       0.96      0.96      0.96     16467
+weighted avg       0.96      0.96      0.96     16467
+
+time to train: 1.8999958038330078 s
+time to predict: 0.005002260208129883 s
+total: 1.9049980640411377 s
+
+============================== UNSW Model Evaluation random_forest, n_estimations: 100, n_jobs: -1 ==============================
+Accuracy: 0.971397340134815
+Recall: 0.971397340134815
+Precision: 0.9714500377249303
+F1-Score: 0.9714084289018284
+Cross Validation Mean Score for neg_log_loss: scores.-0.08762015447118808 with a std 0.0028398477234012677
+Cross Validation Mean Score for accuracy: scores.0.9723677218553102 with a std 0.0014075643033807739
+Cross Validation Mean Score for roc_auc: scores.0.9962347158320142 with a std 0.00025774495918905833
+Cross Validation Mean Score for neg_mean_squared_error: scores.-0.02763227814468989 with a std 0.001407564303380774
+Cross Validation Mean Score for r2: scores.0.8882745314464906 with a std 0.005747894177657966
+Confusion matrix: [[7197  203]
+ [ 268 8799]]
+Classification report:               precision    recall  f1-score   support
+
+           0       0.96      0.97      0.97      7400
+           1       0.98      0.97      0.97      9067
+
+    accuracy                           0.97     16467
+   macro avg       0.97      0.97      0.97     16467
+weighted avg       0.97      0.97      0.97     16467
+
+time to train: 4.385280132293701 s
+time to predict: 0.053998470306396484 s
+total: 4.439278602600098 s
