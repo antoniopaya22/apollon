@@ -33,7 +33,7 @@ class ShowMetricsTest(s_m.ShowMetrics):
         scoring = ('accuracy', 'roc_auc', 'f1_macro')
 
         scores = cross_validate(self._component.model_trained,
-                                self._component.x_train, self._component.y_train, cv=cv, scoring=scoring)
+                                self._component.x_train, self._component.y_train, cv=cv, scoring=scoring, return_train_score=True)
         self.cv_accuracy_te = np.mean(scores['test_accuracy'])
         self.std_accuracy_te = np.std(scores['test_accuracy'])
 
