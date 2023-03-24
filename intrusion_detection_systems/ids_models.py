@@ -35,12 +35,12 @@ def train_ids_model(x_train: list, y_train: list, x_test: list, y_test: list, da
     """
     models = []
     for model in models_type:
-        model = models_types_default[model](
+        model_t = models_types_default[model](
             x_train=x_train, y_train=y_train, x_test=x_test, y_test=y_test, dataset=dataset, seed=seed)
         if save:
-            save_model(model, dataset + "_" + model)
+            save_model(model_t, dataset + "_" + model)
             print(f"Modelo {model} guardado")
-        models.append(model)
+        models.append(model_t)
     return models
 
 
