@@ -1,0 +1,725 @@
+-------------------------------------------------------------------------
+UNSW para 2 iteraciones con el modelo log_reg
+Accuracy Test: 0.9062367158559543
+Accuracy Train: 3.8519272804260254
+Time: 0.9062367158559543
+Recall: 0.9061820470183479
+Precision: 0.0
+F1: 0.9097244363470736
+Cross Validation: 0.8932361648827145
+STD: 0.0017536361756261259
+Precision Benign: 0.0
+Precision Malicious: 0.0
+-------------------------------------------------------------------------
+UNSW para 2 iteraciones con el modelo k_neig
+Accuracy Test: 0.9604056598044574
+Accuracy Train: 16.588223695755005
+Time: 0.9604056598044574
+Recall: 0.9605087676944624
+Precision: 0.0
+F1: 0.9800501024823502
+Cross Validation: 0.9597510058452896
+STD: 0.0015674855103130381
+Precision Benign: 0.0
+Precision Malicious: 0.0
+-------------------------------------------------------------------------
+UNSW para 2 iteraciones con el modelo dec_tree
+Accuracy Test: 0.958614198093156
+Accuracy Train: 3.408218741416931
+Time: 0.958614198093156
+Recall: 0.958619256437816
+Precision: 0.0
+F1: 0.9999544522887724
+Cross Validation: 0.9584642830031125
+STD: 0.0023513952198091813
+Precision Benign: 0.0
+Precision Malicious: 0.0
+-------------------------------------------------------------------------
+UNSW para 2 iteraciones con el modelo r_forest
+Accuracy Test: 0.9719438877755511
+Accuracy Train: 6.786844849586487
+Time: 0.9719438877755511
+Recall: 0.9719877034377313
+Precision: 0.0
+F1: 0.9999544522887724
+Cross Validation: 0.97236772185531
+STD: 0.0015576014976606076
+Precision Benign: 0.0
+Precision Malicious: 0.0
+-------------------------------------------------------------------------
+CIC_2017 para 2 iteraciones con el modelo log_reg
+Accuracy Test: 0.962900617953886
+Time: 0.962900617953886
+Recall: 0.9649115820988239
+Precision: 0.0
+F1: 0.9641354182816895
+Accuracy Train: 12.611270427703857
+Cross Validation: 0.9481478405315615
+STD: 0.001081964502383995
+-------------------------------------------------------------------------
+CIC_2017 para 2 iteraciones con el modelo k_neig
+Accuracy Test: 0.9996677667279452
+Time: 0.9996677667279452
+Recall: 0.9996677657144624
+Precision: 0.0
+F1: 0.9997840483731644
+Accuracy Train: 763.1199772357941
+Cross Validation: 0.99952934662237
+STD: 0.00012504529114768943
+-------------------------------------------------------------------------
+CIC_2017 para 2 iteraciones con el modelo dec_tree
+Accuracy Test: 0.9997785111519635
+Time: 0.9997785111519635
+Recall: 0.9997785217666115
+Precision: 0.0
+F1: 1.0
+Accuracy Train: 5.3989996910095215
+Cross Validation: 0.9997425249169435
+STD: 0.000100624484193718
+-------------------------------------------------------------------------
+CIC_2017 para 2 iteraciones con el modelo r_forest
+Accuracy Test: 0.9999114044607854
+Time: 0.9999114044607854
+Recall: 0.9999114044607854
+Precision: 0.0
+F1: 1.0
+Accuracy Train: 14.462557792663574
+Cross Validation: 0.9997951273532669
+STD: 6.574940247527863e-05
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo log_reg
+Accuracy Test: 0.9064796259185037
+Time: 0.9064796259185037
+Recall: 0.9064238124630839
+Precision: 0.0
+F1: 0.9091019509602976
+Accuracy Train: 2.4755465984344482
+Cross Validation: 0.8932513474531236
+STD: 0.0017505444426194447
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo k_neig
+Accuracy Test: 0.9604056598044574
+Time: 0.9604056598044574
+Recall: 0.9605087676944624
+Precision: 0.0
+F1: 0.9800501024823502
+Accuracy Train: 29.465394496917725
+Cross Validation: 0.9597510058452896
+STD: 0.0015674855103130383
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo dec_tree
+Accuracy Test: 0.9580980142102387
+Time: 0.9580980142102387
+Recall: 0.9580990825251685
+Precision: 0.0
+F1: 0.9999544522887724
+Accuracy Train: 2.9239115715026855
+Cross Validation: 0.9586274956350109
+STD: 0.0022776385901593223
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo r_forest
+Accuracy Test: 0.9719438877755511
+Time: 0.9719438877755511
+Recall: 0.9719877034377313
+Precision: 0.0
+F1: 0.9999544522887724
+Accuracy Train: 13.603877782821655
+Cross Validation: 0.97236772185531
+STD: 0.0015576014976606076
+-------------------------------------------------------------------------
+CIC_2017 para 10 iteraciones con el modelo log_reg
+Accuracy Test: 0.9628784690690824
+Time: 0.9628784690690824
+Recall: 0.9648919116158614
+Precision: 0.0
+F1: 0.9641021949544839
+Accuracy Train: 9.00986361503601
+Cross Validation: 0.9481533776301221
+STD: 0.0010816527521754946
+-------------------------------------------------------------------------
+CIC_2017 para 10 iteraciones con el modelo k_neig
+Accuracy Test: 0.9996677667279454
+Time: 0.9996677667279454
+Recall: 0.9996677657144624
+Precision: 0.0
+F1: 0.9997840483731644
+Accuracy Train: 261.230361700058
+Cross Validation: 0.99952934662237
+STD: 0.0001250452911476894
+-------------------------------------------------------------------------
+CIC_2017 para 10 iteraciones con el modelo dec_tree
+Accuracy Test: 0.9998228089215708
+Time: 0.9998228089215708
+Recall: 0.9998228089215708
+Precision: 0.0
+F1: 1.0
+Accuracy Train: 8.617997407913208
+Cross Validation: 0.9997314507198227
+STD: 0.00011146634628570398
+-------------------------------------------------------------------------
+CIC_2017 para 10 iteraciones con el modelo r_forest
+Accuracy Test: 0.9999114044607855
+Time: 0.9999114044607855
+Recall: 0.9999114044607855
+Precision: 0.0
+F1: 1.0
+Accuracy Train: 42.15800476074219
+Cross Validation: 0.9997951273532669
+STD: 6.574940247527863e-05
+-------------------------------------------------------------------------
+TAN MAL LOS DE ARRIBA TAN CAMBIADOS LOS NOMBRES
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo log_reg
+Accuracy Test: 0.9064796259185037
+Time: 2.496002435684204
+Recall: 0.9064796259185037
+Precision: 0.9064238124630839
+F1: 0.9064192774448692
+Accuracy Train: 0.9091019509602976
+Cross Validation: 0.8932513474531236
+STD: 0.0017505444426194447
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo k_neig
+Accuracy Test: 0.9604056598044574
+Time: 33.58600831031799
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1: 0.9604270130448669
+Accuracy Train: 0.9800501024823502
+Cross Validation: 0.9597510058452896
+STD: 0.0015674855103130383
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo dec_tree
+Accuracy Test: 0.9590089269447988
+Time: 2.9539966583251953
+Recall: 0.9590089269447988
+Precision: 0.9590210659647382
+F1: 0.9590137082102859
+Accuracy Train: 0.9999544522887724
+Cross Validation: 0.9585060350717376
+STD: 0.002077905467258106
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo r_forest
+Accuracy Test: 0.9719438877755511
+Time: 15.164005041122437
+Recall: 0.9719438877755511
+Precision: 0.9719877034377313
+F1: 0.9719536365234791
+Accuracy Train: 0.9999544522887724
+Cross Validation: 0.97236772185531
+STD: 0.0015576014976606076
+-------------------------------------------------------------------------
+CIC_2017 para 10 iteraciones con el modelo log_reg
+Accuracy Test: 0.9628784690690824
+Time: 8.869004011154175
+Recall: 0.9628784690690824
+Precision: 0.9648919116158614
+F1: 0.9626514322007788
+Accuracy Train: 0.9641021949544839
+Cross Validation: 0.9481533776301221
+STD: 0.0010816527521754946
+-------------------------------------------------------------------------
+CIC_2017 para 10 iteraciones con el modelo k_neig
+Accuracy Test: 0.9996677667279454
+Time: 243.54401969909668
+Recall: 0.9996677667279454
+Precision: 0.9996677657144624
+F1: 0.9996677657217935
+Accuracy Train: 0.9997840483731644
+Cross Validation: 0.99952934662237
+STD: 0.0001250452911476894
+-------------------------------------------------------------------------
+CIC_2017 para 10 iteraciones con el modelo dec_tree
+Accuracy Test: 0.9998671066911781
+Time: 8.362993955612183
+Recall: 0.9998671066911781
+Precision: 0.9998671066911781
+F1: 0.9998671066911781
+Accuracy Train: 1.0
+Cross Validation: 0.9997563676633445
+STD: 0.00010194879645360398
+-------------------------------------------------------------------------
+CIC_2017 para 10 iteraciones con el modelo r_forest
+Accuracy Test: 0.9999114044607855
+Time: 43.5780086517334
+Recall: 0.9999114044607855
+Precision: 0.9999114044607855
+F1: 0.9999114044607855
+Accuracy Train: 1.0
+Cross Validation: 0.9997951273532669
+STD: 6.574940247527863e-05
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo log_reg
+Accuracy Test: 0.9067832634966904
+Time: 2.3330025672912598
+Recall: 0.9067832634966904
+Precision: 0.906727841458862
+F1: 0.9067237592774611
+Accuracy Train: 0.9092537766643893
+Cross Validation: 0.8932513474531236
+STD: 0.0017531760503027131
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo k_neig
+Accuracy Test: 0.9604056598044574
+Time: 15.753997325897217
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1: 0.9604270130448669
+Accuracy Train: 0.9800501024823502
+Cross Validation: 0.9597510058452896
+STD: 0.0015674855103130383
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo dec_tree
+Accuracy Test: 0.9584016517884251
+Time: 2.814998149871826
+Recall: 0.9584016517884251
+Precision: 0.9584205723025427
+F1: 0.95840851273297
+Accuracy Train: 0.9999544522887724
+Cross Validation: 0.9589842860396265
+STD: 0.00252643856610911
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo r_forest
+Accuracy Test: 0.9719438877755511
+Time: 7.249992847442627
+Recall: 0.9719438877755511
+Precision: 0.9719877034377313
+F1: 0.9719536365234791
+Accuracy Train: 0.9999544522887724
+Cross Validation: 0.97236772185531
+STD: 0.0015576014976606076
+-------------------------------------------------------------------------
+CIC_2017 para 10 iteraciones con el modelo log_reg
+Accuracy Test: 0.9632107023411371
+Time: 8.111994743347168
+Recall: 0.9632107023411371
+Precision: 0.9651871196751018
+F1: 0.962988291185632
+Accuracy Train: 0.9643790560145297
+Cross Validation: 0.9481506090808416
+STD: 0.0010859491182397486
+-------------------------------------------------------------------------
+CIC_2017 para 10 iteraciones con el modelo k_neig
+Accuracy Test: 0.9996677667279454
+Time: 124.21802139282227
+Recall: 0.9996677667279454
+Precision: 0.9996677657144624
+F1: 0.9996677657217935
+Accuracy Train: 0.9997840483731644
+Cross Validation: 0.99952934662237
+STD: 0.0001250452911476894
+-------------------------------------------------------------------------
+CIC_2017 para 10 iteraciones con el modelo dec_tree
+Accuracy Test: 0.9998449578063744
+Time: 8.301005363464355
+Recall: 0.9998449578063744
+Precision: 0.9998449578663033
+F1: 0.9998449573368371
+Accuracy Train: 1.0
+Cross Validation: 0.9997397563676633
+STD: 0.00010299598691991467
+-------------------------------------------------------------------------
+CIC_2017 para 10 iteraciones con el modelo r_forest
+Accuracy Test: 0.9999114044607855
+Time: 22.914002656936646
+Recall: 0.9999114044607855
+Precision: 0.9999114044607855
+F1: 0.9999114044607855
+Accuracy Train: 1.0
+Cross Validation: 0.9997951273532669
+STD: 6.574940247527863e-05
+-------------------------------------------------------------------------
+CIC_2018 para 10 iteraciones con el modelo log_reg
+Accuracy Test: 0.9625730157594832
+Time: 28.43099093437195
+Recall: 0.9625730157594832
+Precision: 0.9615592672944395
+F1: 0.9526296322475327
+Accuracy Train: 0.9625813604177098
+Cross Validation: 0.9578022554419092
+STD: 0.00041767715560481374
+-------------------------------------------------------------------------
+CIC_2018 para 10 iteraciones con el modelo k_neig
+Accuracy Test: 0.9990177145173214
+Time: 2597.2663588523865
+Recall: 0.9990177145173214
+Precision: 0.999026775825534
+F1: 0.9990204446727147
+Accuracy Train: 0.9994540209331715
+Cross Validation: 0.9989563216746535
+STD: 7.059824025019068e-05
+-------------------------------------------------------------------------
+CIC_2018 para 10 iteraciones con el modelo dec_tree
+Accuracy Test: 0.9994611734973657
+Time: 148.01000714302063
+Recall: 0.9994611734973657
+Precision: 0.9994606135181685
+F1: 0.9994607473901322
+Accuracy Train: 0.9997484681591684
+Cross Validation: 0.9994325632405887
+STD: 5.609179293811457e-05
+-------------------------------------------------------------------------
+CIC_2018 para 10 iteraciones con el modelo r_forest
+Accuracy Test: 0.9992227546908901
+Time: 199.45804023742676
+Recall: 0.9992227546908901
+Precision: 0.9992230892990263
+F1: 0.9992229123934437
+Accuracy Train: 0.9993026249910593
+Cross Validation: 0.9991869918699188
+STD: 9.234690130351075e-05
+-------------------------------------------------------------------------
+CIC_2019 para 10 iteraciones con el modelo log_reg
+Accuracy Test: 0.9998497071499612
+Time: 151.84900975227356
+Recall: 0.9998497071499612
+Precision: 0.9998424814149385
+F1: 0.999839973688238
+Accuracy Train: 0.99983009162896
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+CIC_2019 para 10 iteraciones con el modelo k_neig
+Accuracy Test: 0.9999580064095481
+Time: 47121.048854112625
+Recall: 0.9999580064095481
+Precision: 0.9999575017512952
+F1: 0.9999575791795774
+Accuracy Train: 0.9999709912537249
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+CIC_2019 para 10 iteraciones con el modelo dec_tree
+Accuracy Test: 0.9999712675433747
+Time: 115.93301486968994
+Recall: 0.9999712675433747
+Precision: 0.9999711451376954
+F1: 0.9999711955639718
+Accuracy Train: 0.9999895015965861
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+CIC_2019 para 10 iteraciones con el modelo r_forest
+Accuracy Test: 0.9999778981102885
+Time: 355.8810636997223
+Recall: 0.9999778981102885
+Precision: 0.9999777807018688
+F1: 0.9999778148483622
+Accuracy Train: 0.9999900541441342
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo log_reg
+Accuracy Test: 0.9062367158559541
+Time: 1.9984395503997803
+Recall: 0.9062367158559541
+Precision: 0.9061820470183479
+F1: 0.9061670056369928
+Accuracy Train: 0.9097244363470736
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo k_neig
+Accuracy Test: 0.9604056598044574
+Time: 11.595278263092041
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1: 0.9604270130448669
+Accuracy Train: 0.9800501024823502
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo dec_tree
+Accuracy Test: 0.9588267443978868
+Time: 1.8200654983520508
+Recall: 0.9588267443978868
+Precision: 0.9588338647324515
+F1: 0.9588297907115828
+Accuracy Train: 0.9999544522887724
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo r_forest
+Accuracy Test: 0.9719438877755511
+Time: 4.809235572814941
+Recall: 0.9719438877755511
+Precision: 0.9719877034377313
+F1: 0.9719536365234791
+Accuracy Train: 0.9999544522887724
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo log_reg
+Accuracy Test: 0.9062367158559541
+Time: 1.8012850284576416
+Recall: 0.9062367158559541
+Precision: 0.9061820470183479
+F1: 0.9061670056369928
+Accuracy Train: 0.9097244363470736
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo k_neig
+Accuracy Test: 0.9604056598044574
+Time: 10.282142877578735
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1: 0.9604270130448669
+Accuracy Train: 0.9800501024823502
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo dec_tree
+Accuracy Test: 0.9588267443978868
+Time: 1.8260552883148193
+Recall: 0.9588267443978868
+Precision: 0.9588277946518031
+F1: 0.9588272552478088
+Accuracy Train: 0.9999544522887724
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 10 iteraciones con el modelo r_forest
+Accuracy Test: 0.9719438877755511
+Time: 5.8429906368255615
+Recall: 0.9719438877755511
+Precision: 0.9719877034377313
+F1: 0.9719536365234791
+Accuracy Train: 0.9999544522887724
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+./models/saved_models/UNSW_k_neig para 10 iteraciones con el modelo ./models/saved_models/UNSW_k_neig
+Accuracy Test_x: 0.9604056598044574
+Time: 12.946790933609009
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1: 0.9604270130448669
+Cross Validation: 0.9597510058452896
+STD: 0.0015674855103130383
+-------------------------------------------------------------------------
+UNSW para 2 iteraciones con el modelo log_reg
+Accuracy Test_x: 0.9062367158559543
+Time: 4.709224462509155
+Recall: 0.9062367158559543
+Precision: 0.9061820470183479
+F1: 0.9061670056369929
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 2 iteraciones con el modelo k_neig
+Accuracy Test_x: 0.9604056598044574
+Time: 3.7991905212402344
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1: 0.9604270130448667
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 2 iteraciones con el modelo dec_tree
+Accuracy Test_x: 0.9591303819760734
+Time: 4.9740601778030396
+Recall: 0.9591303819760734
+Precision: 0.9591398528884387
+F1: 0.9591341394096942
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 2 iteraciones con el modelo r_forest
+Accuracy Test_x: 0.9719438877755511
+Time: 6.95441198348999
+Recall: 0.9719438877755511
+Precision: 0.9719877034377313
+F1: 0.9719536365234792
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+./models/saved_models/UNSW_k_neig para 10 iteraciones con el modelo ./models/saved_models/UNSW_k_neig
+Accuracy Test_x: 0.9604056598044574
+Time: 4.261436700820923
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1: 0.9604270130448669
+Cross Validation: 0.9597510058452896
+STD: 0.0015674855103130383
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo log_reg
+Accuracy Test_x: 0.9062367158559543
+Time: 2.12691068649292
+Recall: 0.9062367158559543
+Precision: 0.9061820470183479
+F1: 0.9061670056369929
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo k_neig
+Accuracy Test_x: 0.9604056598044574
+Time: 2.797767162322998
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1: 0.9604270130448667
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo dec_tree
+Accuracy Test_x: 0.9579158316633266
+Time: 2.278956890106201
+Recall: 0.9579158316633266
+Precision: 0.9579143245977452
+F1: 0.9579150460346124
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo r_forest
+Accuracy Test_x: 0.9719438877755511
+Time: 5.2408952713012695
+Recall: 0.9719438877755511
+Precision: 0.9719877034377313
+F1: 0.9719536365234792
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo log_reg
+Accuracy Test_x: 0.9062367158559543
+Time: 2.085230827331543
+Recall: 0.9062367158559543
+Precision: 0.9061820470183479
+F1: 0.9061670056369929
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo k_neig
+Accuracy Test_x: 0.9604056598044574
+Time: 2.548004627227783
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1: 0.9604270130448667
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo dec_tree
+Accuracy Test_x: 0.9582801967571507
+Time: 2.1262547969818115
+Recall: 0.9582801967571507
+Precision: 0.9582807218401128
+F1: 0.9582804557313676
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo r_forest
+Accuracy Test_x: 0.9719438877755511
+Time: 4.286798000335693
+Recall: 0.9719438877755511
+Precision: 0.9719877034377313
+F1: 0.9719536365234792
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo log_reg
+Accuracy Test_x: 0.9062367158559543
+Time: 2.0663020610809326
+Recall: 0.9062367158559543
+Precision: 0.9061820470183479
+F1: 0.9061670056369929
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo k_neig
+Accuracy Test_x: 0.9604056598044574
+Time: 2.449761152267456
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1: 0.9604270130448667
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo dec_tree
+Accuracy Test_x: 0.958158741725876
+Time: 1.9538419246673584
+Recall: 0.958158741725876
+Precision: 0.9581603623847647
+F1: 0.958159519955603
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo r_forest
+Accuracy Test_x: 0.9719438877755511
+Time: 4.751346111297607
+Recall: 0.9719438877755511
+Precision: 0.9719877034377313
+F1: 0.9719536365234792
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo log_reg
+Accuracy Test_x: 0.9067832634966904
+Time: 1.729170322418213
+Recall: 0.9067832634966904
+Precision: 0.9067306076794133
+F1: 0.9067106573912178
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo k_neig
+Accuracy Test_x: 0.9604056598044574
+Time: 2.373837471008301
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1: 0.9604270130448667
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo dec_tree
+Accuracy Test_x: 0.9578551041476894
+Time: 1.869457483291626
+Recall: 0.9578551041476894
+Precision: 0.9578505499345991
+F1: 0.9578524703838154
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo r_forest
+Accuracy Test_x: 0.971397340134815
+Time: 4.9143266677856445
+Recall: 0.971397340134815
+Precision: 0.9714500377249303
+F1: 0.9714084289018284
+Cross Validation: 0.0
+STD: 0.0
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo log_reg
+Accuracy Test_x: 0.9067832634966904
+Time: 1.8200185298919678
+Recall: 0.9067832634966904
+Precision: 0.9067306076794133
+F1: 0.9067106573912178
+Cross Validation: -0.26619840625028734
+STD: 0.001972656725749661
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo k_neig
+Accuracy Test_x: 0.9604056598044574
+Time: 2.2549984455108643
+Recall: 0.9604056598044574
+Precision: 0.9605087676944624
+F1: 0.9604270130448667
+Cross Validation: -0.5352813050707832
+STD: 0.026408741222916286
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo dec_tree
+Accuracy Test_x: 0.9587660168822494
+Time: 1.9049980640411377
+Recall: 0.9587660168822494
+Precision: 0.9587665359374837
+F1: 0.9587662728407549
+Cross Validation: -1.4315944340749371
+STD: 0.08383727745217971
+-------------------------------------------------------------------------
+UNSW para 1 iteraciones con el modelo r_forest
+Accuracy Test_x: 0.971397340134815
+Time: 4.439278602600098
+Recall: 0.971397340134815
+Precision: 0.9714500377249303
+F1: 0.9714084289018284
+Cross Validation: -0.08762015447118808
+STD: 0.0028398477234012677
+-------------------------------------------------------------------------
