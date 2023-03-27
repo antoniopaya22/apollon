@@ -57,7 +57,7 @@ gan.add(discriminator)
 gan.compile(loss='binary_crossentropy', optimizer=Adam(lr=0.0002, beta_1=0.5))
 
 # Define the training loop
-epochs = 10000
+epochs = 100
 batch_size = 32
 d_loss = []
 g_loss = []

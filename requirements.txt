@@ -7,4 +7,3 @@ plotly==5.11.0
 scikit_learn==1.2.2
 seaborn==0.12.2
 torch==1.13.0
-tensorflow==2.7.0
