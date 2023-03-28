@@ -17,7 +17,7 @@ datasets_types = {
 
 
 # ==================> Functions
-def preprocess_dataset(df: pd.DataFrame, save: bool, dataset_type: str, seed: int) -> transform:
+def preprocess_dataset(df: pd.DataFrame, save: bool, dataset_type: str, seed: int, load: bool = True) -> transform:
     """preprocess_dataset
 
     This function preprocesses a dataset
@@ -29,9 +29,14 @@ def preprocess_dataset(df: pd.DataFrame, save: bool, dataset_type: str, seed: in
     Output:
         Transform object
     """
-    data: ClearData = datasets_types[dataset_type](
-        df=df, do_save=save, seed=seed)
-    data.clear_data()
-    trans = transform(x=data.x, y=data.y, size=0.3, seed=seed)
+    data: ClearData = datasets_types[dataset_type](df=df, do_save=save, seed=seed)
+    if load:
+        print("Loading existing data")
+        x, y = data.load_data()
+        trans = transform(x=x, y=y, size=0.3, seed=seed)
+    else:
+        print("Loading new data")
+        data.clear_data()
+        trans = transform(x=data.x, y=data.y, size=0.3, seed=seed)
     trans.transform()
     return trans

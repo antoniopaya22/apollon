@@ -11,8 +11,16 @@ from shared.utils import save_model
 from typing import Any
 
 # ==================> Enumerations
-models_types_default = {"KNN": k_neig_model, "DT": dec_tree_model,
-                        "RF": r_forest_model, "LR": log_reg_model, "MLP": mlp_model, "SVC": svc_model, "NB": nb_model}
+models_types_default = {
+    "KNN": k_neig_model,
+    "DT": dec_tree_model,
+    "RF": r_forest_model,
+    "LR": log_reg_model,
+    "MLP": mlp_model,
+    "SVC": svc_model,
+    "NB": nb_model
+}
+
 metrics_types = {"CM": CM, "SMT": SMT, "SMLM": SMLM}
 
 # ==================> Functions

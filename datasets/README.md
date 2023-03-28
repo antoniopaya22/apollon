@@ -7,7 +7,6 @@ Este directorio contiene todos los datasets que se han utilizado en el Trabajo d
 * [CICIDS2018](https://www.unb.ca/cic/datasets/ids-2018.html)
 * [CICDDoS2019](https://www.unb.ca/cic/datasets/ddos-2019.html)
 
-
 ## Ejecución
 
 Para ejecutar el preprocesamiento de los datasets, se pueden importar del paquete `datasets` las siguientes funciones
@@ -26,4 +25,3 @@ from shared.utils import load_data
 df = load_data(["./data_prep/UNSW/UNSW_test.csv"])
 df_preprocessed = preprocess_dataset(df, save=True, dataset_type="UNSW")
 ```
-
