@@ -39,14 +39,18 @@ class ClearDataCIC2018(cd.ClearData):
         self.df.drop(['Timestamp'], axis=1, inplace=True)
         self.reduce_tam()
         self.best_features_func()
-        best_features = SelectKBest(score_func=chi2, k='all')
 
         self.x = self.df.drop(["Label"], axis=1)
         self.y = self.df["Label"]
-        self.replace(list_B_columns=["Benign"], list_M_columns=["DoS attacks-GoldenEye", "DoS attacks-Slowloris"])
+        
+        labels = set(self.y)
+        
+        labels.remove("BENIGN")
+        
+        print(f"labels: {labels}")
+        
+        self.replace(list_B_columns=["Benign"], list_M_columns=labels)
         self.drop_bad_elements_x()
-        if self.show_features:
-            self.show_img_features(best_features.fit(self.x, self.y))
 
         if self.do_save:
             self.save_data()
