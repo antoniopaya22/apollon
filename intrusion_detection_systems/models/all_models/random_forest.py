@@ -36,7 +36,7 @@ class RandomForest(m.Model):
         self.exe()
 
     # Override
-    def expecific_model(self) -> object:
+    def expecific_model(self) -> RandomForestClassifier:
         """expecific_model
 
         This method is an override of the parent method for the case of the RandomForest model.

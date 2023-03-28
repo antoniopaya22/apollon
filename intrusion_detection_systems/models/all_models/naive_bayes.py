@@ -1,21 +1,21 @@
-# ========================== Logistic Regression Classifier =========================
+# ========================== Random Forest Classifier =========================
 #
 #                   Author:  Sergio Arroni Del Riego
 #
-# ==================================================================================
+# =============================================================================
 
 # ==================> Imports
 import shared.models.model as m
 
-from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import GaussianNB
 
 
 # ==================> Classes
-class LogisticRegressionModel(m.Model):
+class naiveBayes(m.Model):
     def __init__(self, x_train: list, y_train: list, x_test: list, y_test: list, dataset: str, seed: int) -> None:
         """__init__
 
-        This method is used to initialize the LogisticRegressionModel class.
+        This method is used to initialize the GaussianNB class.
 
         Parameters:
             x_train: Training data
@@ -31,15 +31,16 @@ class LogisticRegressionModel(m.Model):
         self.exe()
 
     # Override
-    def expecific_model(self) -> LogisticRegression:
+    def expecific_model(self) -> GaussianNB:
         """expecific_model
 
-        This method is an override of the parent method for the case of the LogisticRegression model.
+        This method is an override of the parent method for the case of the GaussianNB model.
 
         Output:
-            None
+            object: GaussianNB model
         """
-        return LogisticRegression().fit(X=self.x_train, y=self.y_train)
+
+        return GaussianNB().fit(X=self.x_train, y=self.y_train)
 
     # Override
     def __str__(self) -> str:
@@ -50,4 +51,4 @@ class LogisticRegressionModel(m.Model):
         Output:
             str: Name of the class
         """
-        return self.__class__.__name__
+        return f"naive_bayes"

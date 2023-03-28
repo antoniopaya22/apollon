@@ -26,7 +26,7 @@ def load_data(path: list) -> pd.DataFrame:
         i += 1
         if i == len(path):
             break
-        pd.concat([df, pd.read_csv(path[i])])
+        df = pd.concat([df, pd.read_csv(path[i])])
 
     return df
 

@@ -68,21 +68,21 @@ class ShowMetricsTest(s_m.ShowMetrics):
             v.write(
                 f'\n============================== {self._component.dataset} Model Evaluation {self._component} ==============================\n')
             v.write(
-                f"[TEST]\tCross Validation Mean and std Score for F1:\t{self.cv_f1_te}\t{self.std_f1_te}\n")
-            v.write(
                 f"[TEST]\tCross Validation Mean and std Score for accuracy:\t{self.cv_accuracy_te}\t{self.std_accuracy_te}\n")
+            v.write(
+                f"[TEST]\tCross Validation Mean and std Score for detection rate:\t{self.cv_dr_te}\t{self.std_dr_te}\n\n")
+            v.write(
+                f"[TEST]\tCross Validation Mean and std Score for F1:\t{self.cv_f1_te}\t{self.std_f1_te}\n")
             v.write(
                 f"[TEST]\tCross Validation Mean and std Score for roc_auc:\t{self.cv_roc_te}\t{self.std_roc_te}\n")
             v.write(
-                f"[TEST]\tCross Validation Mean and std Score for detection rate:\t{self.cv_dr_te}\t{self.std_dr_te}\n")
+                f"[TRAIN]\tCross Validation Mean and std Score for accuracy:\t{self.cv_accuracy_tr}\t{self.std_accuracy_tr}\n")
+            v.write(
+                f"[TRAIN]\tCross Validation Mean and std Score for detection rate:\t{self.cv_dr_tr}\t{self.std_dr_tr}\n")
             v.write(
                 f"[TRAIN]\tCross Validation Mean and std Score for F1:\t{self.cv_f1_tr}\t{self.std_f1_tr}\n")
             v.write(
-                f"[TRAIN]\tCross Validation Mean and std Score for accuracy:\t{self.cv_accuracy_tr}\t{self.std_accuracy_tr}\n")
-            v.write(
                 f"[TRAIN]\tCross Validation Mean and std Score for roc_auc:\t{self.cv_roc_tr}\t{self.std_roc_tr}\n")
-            v.write(
-                f"[TRAIN]\tCross Validation Mean and std Score for detection rate:\t{self.cv_dr_tr}\t{self.std_dr_tr}\n")
             v.write(f"Confusion matrix: {self.confusion_matrix}\n")
             v.write(f"Classification report: {self.classification}\n")
             v.write(f"time to train: {self._component.time_total[0]} s\n")

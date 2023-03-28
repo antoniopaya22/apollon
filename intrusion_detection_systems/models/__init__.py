@@ -4,3 +4,4 @@ from intrusion_detection_systems.models.all_models.random_forest import RandomFo
 from intrusion_detection_systems.models.all_models.logistic_regression import LogisticRegressionModel as log_reg_model
 from intrusion_detection_systems.models.all_models.mlp import mlp as mlp_model
 from intrusion_detection_systems.models.all_models.svc import svc as svc_model
+from intrusion_detection_systems.models.all_models.naive_bayes import naiveBayes as nb_model
