@@ -68,6 +68,13 @@ class ClearData:
         """
         pass
 
+    def load_data(self):
+        """load_data
+
+        This method is used to load the data.
+        """
+        pass
+
     def best_features_func(self) -> None:
         """best_features_func
 

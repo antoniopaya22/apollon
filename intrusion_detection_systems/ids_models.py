@@ -11,9 +11,19 @@ from shared.utils import save_model
 from typing import Any
 
 # ==================> Enumerations
-models_types_default = {"KNN": k_neig_model, "DT": dec_tree_model,
-                        "RF": r_forest_model, "LR": log_reg_model, "MLP": mlp_model, "SVC": svc_model}
-metrics_types = {"CM": CM, "SMT": SMT, "SMLM": SMLM}
+models_types_default = {
+    "KNN": k_neig_model,
+    "DT": dec_tree_model,
+    "RF": r_forest_model,
+    "LR": log_reg_model,
+    "MLP": mlp_model,
+    "SVC": svc_model
+}
+metrics_types = {
+    "CM": CM,
+    "SMT": SMT,
+    "SMLM": SMLM
+}
 
 # ==================> Functions
 def train_ids_model(x_train: list, y_train: list, x_test: list, y_test: list, dataset: str, models_type: list,
