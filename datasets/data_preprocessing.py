@@ -32,6 +32,6 @@ def preprocess_dataset(df: pd.DataFrame, save: bool, dataset_type: str, seed: in
     data: ClearData = datasets_types[dataset_type](
         df=df, do_save=save, seed=seed)
     data.clear_data()
-    trans = transform(x=data.x, y=data.y, size=0.2, seed=seed)
+    trans = transform(x=data.x, y=data.y, size=0.3, seed=seed)
     trans.transform()
     return trans
