@@ -22,7 +22,7 @@ print("Dataset Preprocesado")
 
 # Entrenar el modelo de IDS
 models = train_ids_model(x_train=df_preprocessed.x_train, y_train=df_preprocessed.y_train, x_test=df_preprocessed.x_test,
-                        y_test=df_preprocessed.y_test, dataset="CIC_2017", models_type=["LR", "KNN", "DT", "RF", "SVC", "MLP"], save=True, seed=seed)
+                        y_test=df_preprocessed.y_test, dataset="CIC_2017", models_type=["SVC", "MLP"], save=True, seed=seed)
 
 # Mostrar las métricas del modelo de IDS
 # Comenta esta linea si no quieres ver las métricas, si solo quieres guardar los modelos, esta parte es la que mas tarda

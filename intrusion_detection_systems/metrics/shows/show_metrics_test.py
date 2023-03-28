@@ -30,46 +30,59 @@ class ShowMetricsTest(s_m.ShowMetrics):
         self.classification = metrics.classification_report(
             self._component.y_test, self._component.predictions)
 
-        scoring = ('accuracy', 'roc_auc', 'f1_macro')
+        scoring = ('accuracy', 'roc_auc', 'f1_macro', 'recall_macro')
 
         scores = cross_validate(self._component.model_trained,
                                 self._component.x_train, self._component.y_train, cv=cv, scoring=scoring, return_train_score=True)
         self.cv_accuracy_te = np.mean(scores['test_accuracy'])
         self.std_accuracy_te = np.std(scores['test_accuracy'])
 
-        self.cv_roc_auc_te = np.mean(scores['test_roc_auc'])
-        self.std_roc_auc_te = np.std(scores['test_roc_auc'])
+        self.cv_roc_te = np.mean(scores['test_roc_auc'])
+        self.std_roc_te = np.std(scores['test_roc_auc'])
 
         self.cv_f1_te = np.mean(scores['test_f1_macro'])
         self.std_f1_te = np.std(scores['test_f1_macro'])
 
+        self.cv_dr_te = np.mean(scores['test_recall_macro'])
+        self.std_dr_te = np.std(scores['test_recall_macro'])
+
         self.cv_accuracy_tr = np.mean(scores['train_accuracy'])
         self.std_accuracy_tr = np.std(scores['train_accuracy'])
 
-        self.cv_roc_auc_tr = np.mean(scores['train_roc_auc'])
-        self.std_roc_auc_tr = np.std(scores['train_roc_auc'])
+        self.cv_roc_tr = np.mean(scores['train_roc_auc'])
+        self.std_roc_tr = np.std(scores['train_roc_auc'])
 
         self.cv_f1_tr = np.mean(scores['train_f1_macro'])
         self.std_f1_tr = np.std(scores['train_f1_macro'])
+        
+        self.cv_dr_tr = np.mean(scores['train_recall_macro'])
+        self.std_dr_tr = np.std(scores['train_recall_macro'])
+        
+        self.save_to_file()
+        self.print_to_console()
 
         return self.get_list()
 
-    def save_to_file(self, file="./results/show_metrics_load_model.txt"):
-        with open("./results/show_metrics_load_model.txt", "a") as v:
+    def save_to_file(self, file="./results/apollon_results.txt"):
+        with open(file, "a") as v:
             v.write(
                 f'\n============================== {self._component.dataset} Model Evaluation {self._component} ==============================\n')
             v.write(
-                f"[TEST]\tCross Validation Mean Score for F1: scores.{self.cv_f1_te} with a std {self.std_f1_te}\n")
+                f"[TEST]\tCross Validation Mean and std Score for F1:\t{self.cv_f1_te}\t{self.std_f1_te}\n")
             v.write(
-                f"[TEST]\tCross Validation Mean Score for accuracy: scores.{self.cv_accuracy_te} with a std {self.std_accuracy_te}\n")
+                f"[TEST]\tCross Validation Mean and std Score for accuracy:\t{self.cv_accuracy_te}\t{self.std_accuracy_te}\n")
             v.write(
-                f"[TEST]\tCross Validation Mean Score for roc_auc: scores.{self.cv_roc_auc_te} with a std {self.std_roc_auc_te}\n")
+                f"[TEST]\tCross Validation Mean and std Score for roc_auc:\t{self.cv_roc_te}\t{self.std_roc_te}\n")
             v.write(
-                f"[TRAIN]\tCross Validation Mean Score for F1: scores.{self.cv_f1_tr} with a std {self.std_f1_tr}\n")
+                f"[TEST]\tCross Validation Mean and std Score for detection rate:\t{self.cv_dr_te}\t{self.std_dr_te}\n")
             v.write(
-                f"[TRAIN]\tCross Validation Mean Score for accuracy: scores.{self.cv_accuracy_tr} with a std {self.std_accuracy_tr}\n")
+                f"[TRAIN]\tCross Validation Mean and std Score for F1:\t{self.cv_f1_tr}\t{self.std_f1_tr}\n")
             v.write(
-                f"[TRAIN]\tCross Validation Mean Score for roc_auc: scores.{self.cv_roc_auc_tr} with a std {self.std_roc_auc_tr}\n")
+                f"[TRAIN]\tCross Validation Mean and std Score for accuracy:\t{self.cv_accuracy_tr}\t{self.std_accuracy_tr}\n")
+            v.write(
+                f"[TRAIN]\tCross Validation Mean and std Score for roc_auc:\t{self.cv_roc_tr}\t{self.std_roc_tr}\n")
+            v.write(
+                f"[TRAIN]\tCross Validation Mean and std Score for detection rate:\t{self.cv_dr_tr}\t{self.std_dr_tr}\n")
             v.write(f"Confusion matrix: {self.confusion_matrix}\n")
             v.write(f"Classification report: {self.classification}\n")
             v.write(f"time to train: {self._component.time_total[0]} s\n")
@@ -80,17 +93,21 @@ class ShowMetricsTest(s_m.ShowMetrics):
         print(
             f'\n============================== {self._component.dataset} Model Evaluation {self._component} ==============================\n')
         print(
-            f"[TEST]\tCross Validation Mean Score for F1: scores.{self.cv_f1_te} with a std {self.std_f1_te}")
+            f"[TEST]\tCross Validation Mean and std Score for F1:\t{self.cv_f1_te}\t{self.std_f1_te}")
         print(
-            f"[TEST]\tCross Validation Mean Score for accuracy: scores.{self.cv_accuracy_te} with a std {self.std_accuracy_te}")
+            f"[TEST]\tCross Validation Mean and std Score for accuracy:\t{self.cv_accuracy_te}\t{self.std_accuracy_te}")
         print(
-            f"[TEST]\tCross Validation Mean Score for roc_auc: scores.{self.cv_roc_auc_te} with a std {self.std_roc_auc_te}")
+            f"[TEST]\tCross Validation Mean and std Score for roc_auc:\t{self.cv_roc_te}\t{self.std_roc_te}")
         print(
-            f"[TRAIN]\tCross Validation Mean Score for F1: scores.{self.cv_f1_tr} with a std {self.std_f1_tr}")
+            f"[TEST]\tCross Validation Mean and std Score for detection rate:\t{self.cv_dr_te}\t{self.std_dr_te}")
         print(
-            f"[TRAIN]\tCross Validation Mean Score for accuracy: scores.{self.cv_accuracy_tr} with a std {self.std_accuracy_tr}")
+            f"[TRAIN]\tCross Validation Mean and std Score for F1:\t{self.cv_f1_tr}\t{self.std_f1_tr}")
         print(
-            f"[TRAIN]\tCross Validation Mean Score for roc_auc: scores.{self.cv_roc_auc_tr} with a std {self.std_roc_auc_tr}")
+            f"[TRAIN]\tCross Validation Mean and std Score for accuracy:\t{self.cv_accuracy_tr}\t{self.std_accuracy_tr}")
+        print(
+            f"[TRAIN]\tCross Validation Mean and std Score for roc_auc:\t{self.cv_roc_tr}\t{self.std_roc_tr}")
+        print(
+            f"[TRAIN]\tCross Validation Mean and std Score for detection rate:\t{self.cv_dr_tr}\t{self.std_dr_tr}")
         print(f"Confusion matrix: {self.confusion_matrix}")
         print(f"Classification report: {self.classification}")
         print(f"time to train: {self._component.time_total[0]} s")
@@ -107,4 +124,4 @@ class ShowMetricsTest(s_m.ShowMetrics):
         Output:
             list: list
         '''
-        return [self._component.time_total[2], self.cv_f1_te, self.std_f1_te, self.cv_accuracy_te, self.std_accuracy_te, self.cv_roc_auc_te, self.std_roc_auc_te, self.cv_f1_tr, self.std_f1_tr, self.cv_accuracy_tr, self.std_accuracy_tr, self.cv_roc_auc_tr, self.std_roc_auc_tr]
+        return [self._component.time_total[2], self.cv_f1_te, self.std_f1_te, self.cv_accuracy_te, self.std_accuracy_te, self.cv_roc_te, self.std_roc_te, self.cv_dr_te, self.std_dr_te, self.cv_f1_tr, self.std_f1_tr, self.cv_accuracy_tr, self.std_accuracy_tr, self.cv_roc_tr, self.std_roc_tr, self.cv_dr_tr, self.std_dr_tr]
