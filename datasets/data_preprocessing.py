@@ -7,12 +7,14 @@
 # ==================> Imports
 import pandas as pd
 
-from shared.preprocessing import CIC_2017, transform
+from shared.preprocessing import CIC_2017, CIC_2018, CIC_2019, transform
 from shared.preprocessing.clear_data import ClearData
 
 # ===================> Enumerations
 datasets_types = {
-    "CIC_2017": CIC_2017
+    "CIC_2017": CIC_2017,
+    "CIC_2018": CIC_2018,
+    "CIC_2019": CIC_2019
 }
 
 

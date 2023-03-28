@@ -70,12 +70,12 @@ class ClearDataCIC2017(cd.ClearData):
         aux_y = pd.DataFrame(self.y, columns=[' Label'])
         aux_df = pd.concat([aux_df, aux_y], axis=1)
 
-        aux_df.to_csv('./shared/data_prep/CIC-IDS-2017.csv', index=False)
+        aux_df.to_csv('./shared/data_prep/CIC17/CIC-IDS-2017.csv', index=False)
 
-        aux_y.to_csv('./shared/data_prep/CIC-IDS-2017_y.csv', index=False)
+        aux_y.to_csv('./shared/data_prep/CIC17/CIC-IDS-2017_y.csv', index=False)
 
     # Override
     def load_data(self):
-        df = pd.read_csv('./shared/data_prep/CIC-IDS-2017.csv')
-        y = pd.read_csv('./shared/data_prep/CIC-IDS-2017_y.csv')
+        df = pd.read_csv('./shared/data_prep/CIC17/CIC-IDS-2017.csv')
+        y = pd.read_csv('./shared/data_prep/CIC17/CIC-IDS-2017_y.csv')
         return df, y
