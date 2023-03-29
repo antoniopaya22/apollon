@@ -246,3 +246,134 @@ weighted avg       0.97      0.97      0.97     45149
 time to train: 2.754890203475952 s
 time to predict: 0.0045125484466552734 s
 total: 2.7594027519226074 s
+============================== CIC_2017 Model Evaluation DecisionTree ==============================
+[TEST]	Cross Validation Mean and std Score for accuracy:	0.9978217729164858	7.476317182313088e-05
+[TEST]	Cross Validation Mean and std Score for detection rate:	0.9959129122415872	0.00023351728446310838
+
+[TEST]	Cross Validation Mean and std Score for F1:	0.9955555841082486	0.00015951602223476422
+[TEST]	Cross Validation Mean and std Score for roc_auc:	0.9968784992653601	0.00020809416690874684
+[TRAIN]	Cross Validation Mean and std Score for accuracy:	0.9994470902078172	1.4301390822365392e-05
+[TRAIN]	Cross Validation Mean and std Score for detection rate:	0.999167266822304	4.4215075225820754e-05
+[TRAIN]	Cross Validation Mean and std Score for F1:	0.9988700490431761	2.926684625906952e-05
+[TRAIN]	Cross Validation Mean and std Score for roc_auc:	0.999997485252529	7.683931749697361e-08
+Confusion matrix: [[549192    728]
+ [   597  90895]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00    549920
+           1       0.99      0.99      0.99     91492
+
+    accuracy                           1.00    641412
+   macro avg       1.00      1.00      1.00    641412
+weighted avg       1.00      1.00      1.00    641412
+
+time to train: 345.48403668403625 s
+time to predict: 0.24054479598999023 s
+total: 345.72458148002625 s
+
+============================== CIC_2017 Model Evaluation naive_bayes ==============================
+[TEST]	Cross Validation Mean and std Score for accuracy:	0.6694273133640245	0.004492378007415987
+[TEST]	Cross Validation Mean and std Score for detection rate:	0.804908433757982	0.002499787220183834
+[TEST]	Cross Validation Mean and std Score for F1:	0.6118112500427828	0.0037518359017047263
+[TEST]	Cross Validation Mean and std Score for roc_auc:	0.8288869942896522	0.0021578302708370575
+
+[TRAIN]	Cross Validation Mean and std Score for accuracy:	0.6687864882878338	0.005165516034389198
+[TRAIN]	Cross Validation Mean and std Score for detection rate:	0.8046524094953046	0.0030440462444999753
+[TRAIN]	Cross Validation Mean and std Score for F1:	0.6111174149682388	0.004258078566827475
+[TRAIN]	Cross Validation Mean and std Score for roc_auc:	0.8287377654722456	0.002710342544125348
+Confusion matrix: [[336483 213437]
+ [   500  90992]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      0.61      0.76    549920
+           1       0.30      0.99      0.46     91492
+
+    accuracy                           0.67    641412
+   macro avg       0.65      0.80      0.61    641412
+weighted avg       0.90      0.67      0.72    641412
+
+time to train: 1.6459777355194092 s
+time to predict: 0.7043039798736572 s
+total: 2.3502817153930664 s
+
+============================== CIC_2017 Model Evaluation random_forest, n_estimations: 100, n_jobs: -1 ==============================
+[TEST]	Cross Validation Mean and std Score for accuracy:	0.9995536638982246	5.4919980457521785e-05
+[TEST]	Cross Validation Mean and std Score for detection rate:	0.9995837119976343	5.231595848199368e-05
+[TEST]	Cross Validation Mean and std Score for F1:	0.9990895053916343	0.00011285425483413229
+[TEST]	Cross Validation Mean and std Score for roc_auc:	0.9999802973766627	1.218845287687112e-05
+
+[TRAIN]	Cross Validation Mean and std Score for accuracy:	0.9996321730023	5.1377368447745364e-06
+[TRAIN]	Cross Validation Mean and std Score for detection rate:	0.9997254366655237	2.646123900395106e-06
+[TRAIN]	Cross Validation Mean and std Score for F1:	0.999248561686555	1.0581593240705028e-05
+[TRAIN]	Cross Validation Mean and std Score for roc_auc:	0.9999983658002757	5.472775670867785e-08
+Confusion matrix: [[549688    232]
+ [    29  91463]]
+Classification report:               precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00    549920
+           1       1.00      1.00      1.00     91492
+
+    accuracy                           1.00    641412
+   macro avg       1.00      1.00      1.00    641412
+weighted avg       1.00      1.00      1.00    641412
+
+time to train: 160.68360304832458 s
+time to predict: 1.4967997074127197 s
+total: 162.1804027557373 s
+
+============================== CIC_2017 Model Evaluation DecisionTree ==============================
+[TEST]	Cross Validation Mean and std Score for accuracy:	0.997966097164964	3.869608984334736e-05
+[TEST]	Cross Validation Mean and std Score for detection rate:	0.9962334683495546	0.00016670826478070323
+[TEST]	Cross Validation Mean and std Score for F1:	0.9958504983391251	7.902901425617958e-05
+[TEST]	Cross Validation Mean and std Score for roc_auc:	0.9971555334490085	0.00012806076703479125
+
+[TRAIN]	Cross Validation Mean and std Score for accuracy:	0.9994440834476179	1.462549909036548e-05
+[TRAIN]	Cross Validation Mean and std Score for detection rate:	0.9991776938240985	4.6162604605491956e-05
+[TRAIN]	Cross Validation Mean and std Score for F1:	0.9988639317418956	3.029857978734595e-05
+[TRAIN]	Cross Validation Mean and std Score for roc_auc:	0.9999975088299113	7.827693876134013e-08
+
+Confusion matrix: 
+[[549193    727]
+ [   604  90888]]
+Classification report: 
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00    549920
+           1       0.99      0.99      0.99     91492
+
+    accuracy                           1.00    641412
+   macro avg       1.00      1.00      1.00    641412
+weighted avg       1.00      1.00      1.00    641412
+
+time to train: 346.58701968193054 s
+time to predict: 0.22557830810546875 s
+total: 346.812597990036 s
+
+============================== CIC_2017 Model Evaluation LogisticRegressionModel ==============================
+[TEST]	Cross Validation Mean and std Score for accuracy:	0.9515665194470243	0.0004398280317245888
+[TEST]	Cross Validation Mean and std Score for detection rate:	0.836016385356778	0.0010172418813201738
+[TEST]	Cross Validation Mean and std Score for F1:	0.8857760523869154	0.0009961299106331888
+[TEST]	Cross Validation Mean and std Score for roc_auc:	0.9902162945976773	0.0004616518131564826
+
+[TRAIN]	Cross Validation Mean and std Score for accuracy:	0.9513521233573485	0.00022241433429873647
+[TRAIN]	Cross Validation Mean and std Score for detection rate:	0.8349880910451212	0.000782484459667106
+[TRAIN]	Cross Validation Mean and std Score for F1:	0.8849726742658248	0.0004646790915923041
+[TRAIN]	Cross Validation Mean and std Score for roc_auc:	0.9903126894757541	0.000352445085799169
+
+Confusion matrix: 
+[[548739   1181]
+ [ 29718  61774]]
+Classification report: 
+              precision    recall  f1-score   support
+
+           0       0.95      1.00      0.97    549920
+           1       0.98      0.68      0.80     91492
+
+    accuracy                           0.95    641412
+   macro avg       0.96      0.84      0.89    641412
+weighted avg       0.95      0.95      0.95    641412
+
+time to train: 71.26023626327515 s
+time to predict: 0.1599118709564209 s
+total: 71.42014813423157 s
+=======

@@ -39,7 +39,7 @@ class mlp(m.Model):
             object: MLP model
         """
         mlp = MLPClassifier(
-            hidden_layer_sizes=(32, 32, 32),
+            hidden_layer_sizes=(32),
             max_iter=200,
             verbose=False,
             random_state=self.seed,
