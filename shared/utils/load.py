@@ -10,7 +10,7 @@ import pickle
 
 
 # ==================> Functions
-def load_data(path: list) -> pd.DataFrame:
+def load_data(path: list, seed: int) -> pd.DataFrame:
     """load_data
 
         This function loads the data from the path and returns a dataframe of the datasets
@@ -27,8 +27,7 @@ def load_data(path: list) -> pd.DataFrame:
         if i == len(path):
             break
         df = pd.concat([df, pd.read_csv(path[i])])
-    df.sample(frac=1)
-    return df
+    return df.sample(frac=1, random_state=seed)
 
 
 def load_model(name: str) -> object:

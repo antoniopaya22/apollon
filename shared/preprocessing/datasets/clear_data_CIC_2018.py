@@ -13,7 +13,7 @@ from sklearn.feature_selection import SelectKBest, chi2
 
 # ==================> Classes
 class ClearDataCIC2018(cd.ClearData):
-    def __init__(self, df: pd.DataFrame, do_save: bool, seed:int) -> None:
+    def __init__(self, df: pd.DataFrame, do_save: bool, seed: int, name_save: str, name_load: str) -> None:
         """__init__
 
         This method is used to initialize the ClearDataCIC2018 class.
@@ -26,6 +26,8 @@ class ClearDataCIC2018(cd.ClearData):
         """
         super().__init__(df=df, seed=seed)
         self.do_save = do_save
+        self.name_save = name_save
+        self.name_load = name_load
 
     # Override
     def clear_data(self) -> None:
@@ -38,17 +40,18 @@ class ClearDataCIC2018(cd.ClearData):
         """
         self.df.drop(['Timestamp'], axis=1, inplace=True)
         self.reduce_tam()
-        self.best_features_func()
+        # self.best_features_func()
+        self.drop_one_features()
+        self.drop_duplicate_columns()
 
         self.x = self.df.drop(["Label"], axis=1)
         self.y = self.df["Label"]
-        
+
         labels = set(self.y)
-        
         labels.remove("Benign")
         
         print(f"labels: {labels}")
-        
+
         self.replace(list_B_columns=["Benign"], list_M_columns=labels)
         self.drop_bad_elements_x()
 
