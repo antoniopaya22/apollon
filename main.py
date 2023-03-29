@@ -37,7 +37,7 @@ def main(seed: int, load_dataset: bool, name_data: str) -> None:
 
     # Entrenar el modelo de IDS
     models = train_ids_model(x_train=df_preprocessed.x_train, y_train=df_preprocessed.y_train, x_test=df_preprocessed.x_test,
-                             y_test=df_preprocessed.y_test, dataset="CIC_2017", models_type=["LR", "MLP"], save=True, seed=seed)
+                             y_test=df_preprocessed.y_test, dataset="CIC_2017", models_type=["MLP"], save=True, seed=seed)
 
     # Mostrar las métricas del modelo de IDS
     # Comenta esta linea si no quieres ver las métricas, si solo quieres guardar los modelos, esta parte es la que mas tarda
@@ -48,6 +48,6 @@ def main(seed: int, load_dataset: bool, name_data: str) -> None:
 
 if __name__ == "__main__":
     seed = 42
-    load_dataset = False
+    load_dataset = True
     name_data = "CIC-IDS_2017_2"
     main(seed, load_dataset, name_data)
