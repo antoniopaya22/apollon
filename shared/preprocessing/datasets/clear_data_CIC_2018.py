@@ -48,9 +48,8 @@ class ClearDataCIC2018(cd.ClearData):
         self.y = self.df["Label"]
 
         labels = set(self.y)
-
-        labels.remove("BENIGN")
-
+        labels.remove("Benign")
+        
         print(f"labels: {labels}")
 
         self.replace(list_B_columns=["Benign"], list_M_columns=labels)
@@ -67,14 +66,11 @@ class ClearDataCIC2018(cd.ClearData):
         aux_y = pd.DataFrame(self.y, columns=['Label'])
         aux_df = pd.concat([aux_df, aux_y], axis=1)
 
-        aux_df.to_csv(
-            f'./shared/data_prep/CIC18/{self.name_save}.csv', index=False)
+        aux_df.to_csv('./shared/data_prep/CIC18/CIC18.csv', index=False)
+        aux_y.to_csv('./shared/data_prep/CIC18/CIC18_y.csv', index=False)
 
-        aux_y.to_csv(
-            f'./shared/data_prep/CIC18/{self.name_save}_y.csv', index=False)
-
-    # Override
     def load_data(self):
-        df = pd.read_csv(f'./shared/data_prep/CIC17/{self.name_load}.csv')
-        y = pd.read_csv(f'./shared/data_prep/CIC17/{self.name_load}_y.csv')
+        df = pd.read_csv('./shared/data_prep/CIC18/CIC18.csv')
+        y = pd.read_csv('./shared/data_prep/CIC18/CIC18_y.csv')
+
         return df, y

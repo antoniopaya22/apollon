@@ -246,7 +246,6 @@ weighted avg       0.97      0.97      0.97     45149
 time to train: 2.754890203475952 s
 time to predict: 0.0045125484466552734 s
 total: 2.7594027519226074 s
-
 ============================== CIC_2017 Model Evaluation DecisionTree ==============================
 [TEST]	Cross Validation Mean and std Score for accuracy:	0.9978217729164858	7.476317182313088e-05
 [TEST]	Cross Validation Mean and std Score for detection rate:	0.9959129122415872	0.00023351728446310838
@@ -377,3 +376,4 @@ weighted avg       0.95      0.95      0.95    641412
 time to train: 71.26023626327515 s
 time to predict: 0.1599118709564209 s
 total: 71.42014813423157 s
+=======
