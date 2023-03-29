@@ -82,9 +82,9 @@ class ShowMetricsTest(s_m.ShowMetrics):
             v.write(
                 f"[TRAIN]\tCross Validation Mean and std Score for F1:\t{self.cv_f1_tr}\t{self.std_f1_tr}\n")
             v.write(
-                f"[TRAIN]\tCross Validation Mean and std Score for roc_auc:\t{self.cv_roc_tr}\t{self.std_roc_tr}\n")
-            v.write(f"Confusion matrix: {self.confusion_matrix}\n")
-            v.write(f"Classification report: {self.classification}\n")
+                f"[TRAIN]\tCross Validation Mean and std Score for roc_auc:\t{self.cv_roc_tr}\t{self.std_roc_tr}\n\n")
+            v.write(f"Confusion matrix: \n{self.confusion_matrix}\n")
+            v.write(f"Classification report: \n{self.classification}\n")
             v.write(f"time to train: {self._component.time_total[0]} s\n")
             v.write(f"time to predict: {self._component.time_total[1]} s\n")
             v.write(f"total: {self._component.time_total[2]} s\n")
@@ -99,7 +99,7 @@ class ShowMetricsTest(s_m.ShowMetrics):
         print(
             f"[TEST]\tCross Validation Mean and std Score for roc_auc:\t{self.cv_roc_te}\t{self.std_roc_te}")
         print(
-            f"[TEST]\tCross Validation Mean and std Score for detection rate:\t{self.cv_dr_te}\t{self.std_dr_te}")
+            f"[TEST]\tCross Validation Mean and std Score for detection rate:\t{self.cv_dr_te}\t{self.std_dr_te}\n")
         print(
             f"[TRAIN]\tCross Validation Mean and std Score for F1:\t{self.cv_f1_tr}\t{self.std_f1_tr}")
         print(
@@ -107,9 +107,9 @@ class ShowMetricsTest(s_m.ShowMetrics):
         print(
             f"[TRAIN]\tCross Validation Mean and std Score for roc_auc:\t{self.cv_roc_tr}\t{self.std_roc_tr}")
         print(
-            f"[TRAIN]\tCross Validation Mean and std Score for detection rate:\t{self.cv_dr_tr}\t{self.std_dr_tr}")
-        print(f"Confusion matrix: {self.confusion_matrix}")
-        print(f"Classification report: {self.classification}")
+            f"[TRAIN]\tCross Validation Mean and std Score for detection rate:\t{self.cv_dr_tr}\t{self.std_dr_tr}\n")
+        print(f"Confusion matrix: \n{self.confusion_matrix}")
+        print(f"Classification report: \n{self.classification}")
         print(f"time to train: {self._component.time_total[0]} s")
         print(f"time to predict: {self._component.time_total[1]} s")
         print(f"total: {self._component.time_total[2]} s")

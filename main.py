@@ -3,9 +3,10 @@ from datasets import preprocess_dataset, datasets_types
 from intrusion_detection_systems import train_ids_model, show_model_metrics
 import random
 import pandas as pd
+# from tqdm import tqdm 
 
 
-def main(seed: int, load_dataset: bool) -> None:
+def main(seed: int, load_dataset: bool, name_data: str) -> None:
     random.seed(seed)
 
     if not load_dataset:
@@ -25,18 +26,18 @@ def main(seed: int, load_dataset: bool) -> None:
         )
         print("Dataset cargado")
         df_preprocessed = preprocess_dataset(
-            df, save=True, dataset_type="CIC_2017", seed=seed, load=load_dataset)
+            df, save=True, dataset_type="CIC_2017", seed=seed, load=load_dataset, name_save=name_data, name_load=name_data)
         print("Dataset Preprocesado")
     else:
         df_preprocessed = preprocess_dataset(
-            pd.DataFrame(), save=True, dataset_type="CIC_2017", seed=seed, load=load_dataset)
+            pd.DataFrame(), save=True, dataset_type="CIC_2017", seed=seed, load=load_dataset, name_save=name_data, name_load=name_data)
         print("Dataset Preprocesado")
 
     # ================> Entrenar el modelo de IDS <===============
 
     # Entrenar el modelo de IDS
     models = train_ids_model(x_train=df_preprocessed.x_train, y_train=df_preprocessed.y_train, x_test=df_preprocessed.x_test,
-                             y_test=df_preprocessed.y_test, dataset="CIC_2017", models_type=["NB", "RF", "KNN", "MLP", "LR"], save=True, seed=seed)
+                             y_test=df_preprocessed.y_test, dataset="CIC_2017", models_type=["LR", "MLP"], save=True, seed=seed)
 
     # Mostrar las métricas del modelo de IDS
     # Comenta esta linea si no quieres ver las métricas, si solo quieres guardar los modelos, esta parte es la que mas tarda
@@ -47,5 +48,6 @@ def main(seed: int, load_dataset: bool) -> None:
 
 if __name__ == "__main__":
     seed = 42
-    load_dataset = True
-    main(seed, load_dataset)
+    load_dataset = False
+    name_data = "CIC-IDS_2017_2"
+    main(seed, load_dataset, name_data)
