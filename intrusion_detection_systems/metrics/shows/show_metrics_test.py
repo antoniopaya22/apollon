@@ -70,11 +70,11 @@ class ShowMetricsTest(s_m.ShowMetrics):
             v.write(
                 f"[TEST]\tCross Validation Mean and std Score for accuracy:\t{self.cv_accuracy_te}\t{self.std_accuracy_te}\n")
             v.write(
-                f"[TEST]\tCross Validation Mean and std Score for detection rate:\t{self.cv_dr_te}\t{self.std_dr_te}\n\n")
+                f"[TEST]\tCross Validation Mean and std Score for detection rate:\t{self.cv_dr_te}\t{self.std_dr_te}\n")
             v.write(
                 f"[TEST]\tCross Validation Mean and std Score for F1:\t{self.cv_f1_te}\t{self.std_f1_te}\n")
             v.write(
-                f"[TEST]\tCross Validation Mean and std Score for roc_auc:\t{self.cv_roc_te}\t{self.std_roc_te}\n")
+                f"[TEST]\tCross Validation Mean and std Score for roc_auc:\t{self.cv_roc_te}\t{self.std_roc_te}\n\n")
             v.write(
                 f"[TRAIN]\tCross Validation Mean and std Score for accuracy:\t{self.cv_accuracy_tr}\t{self.std_accuracy_tr}\n")
             v.write(

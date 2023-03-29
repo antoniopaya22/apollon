@@ -10,16 +10,18 @@ def main(seed: int, load_dataset: bool) -> None:
 
     if not load_dataset:
         # Preprocesar el dataset
-        """     "./shared/data/CIC_2017/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
-            "./shared/data/CIC_2017/Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
-            "./shared/data/CIC_2017/Friday-WorkingHours-Morning.pcap_ISCX.csv",
-            "./shared/data/CIC_2017/Monday-WorkingHours.pcap_ISCX.csv", """
+        """      """
         df = load_data(
             [
+                "./shared/data/CIC_2017/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+                "./shared/data/CIC_2017/Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+                "./shared/data/CIC_2017/Friday-WorkingHours-Morning.pcap_ISCX.csv",
+                "./shared/data/CIC_2017/Monday-WorkingHours.pcap_ISCX.csv",
                 "./shared/data/CIC_2017/Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv",
                 "./shared/data/CIC_2017/Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
                 "./shared/data/CIC_2017/Tuesday-WorkingHours.pcap_ISCX.csv"
-            ]
+            ],
+            seed
         )
         print("Dataset cargado")
         df_preprocessed = preprocess_dataset(
@@ -34,7 +36,7 @@ def main(seed: int, load_dataset: bool) -> None:
 
     # Entrenar el modelo de IDS
     models = train_ids_model(x_train=df_preprocessed.x_train, y_train=df_preprocessed.y_train, x_test=df_preprocessed.x_test,
-                             y_test=df_preprocessed.y_test, dataset="CIC_2017", models_type=["DT"], save=True, seed=seed)
+                             y_test=df_preprocessed.y_test, dataset="CIC_2017", models_type=["NB", "RF", "KNN", "MLP", "LR"], save=True, seed=seed)
 
     # Mostrar las métricas del modelo de IDS
     # Comenta esta linea si no quieres ver las métricas, si solo quieres guardar los modelos, esta parte es la que mas tarda

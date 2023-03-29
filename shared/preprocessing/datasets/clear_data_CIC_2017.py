@@ -40,7 +40,7 @@ class ClearDataCIC2017(cd.ClearData):
         Output:
             None
         """
-        self.best_features_func()
+        # self.best_features_func()
         self.drop_one_features()
         self.drop_duplicate_columns()
 
