@@ -45,7 +45,7 @@ class ClearDataCIC2018(cd.ClearData):
         
         labels = set(self.y)
         
-        labels.remove("BENIGN")
+        labels.remove("Benign")
         
         print(f"labels: {labels}")
         
@@ -65,3 +65,9 @@ class ClearDataCIC2018(cd.ClearData):
 
         aux_df.to_csv('./shared/data_prep/CIC18/CIC18.csv', index=False)
         aux_y.to_csv('./shared/data_prep/CIC18/CIC18_y.csv', index=False)
+
+    def load_data(self):
+        df = pd.read_csv('./shared/data_prep/CIC18/CIC18.csv')
+        y = pd.read_csv('./shared/data_prep/CIC18/CIC18_y.csv')
+
+        return df, y

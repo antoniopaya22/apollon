@@ -68,3 +68,9 @@ class ClearDataCIC2019(cd.ClearData):
 
         aux_df.to_csv('./shared/data_prep/CIC19/CIC19.csv', index=False)
         aux_y.to_csv('./shared/data_prep/CIC19/CIC19_y.csv', index=False)
+
+
+    def load_data(self):
+        df = pd.read_csv('./shared/data_prep/CIC19/CIC19.csv')
+        y = pd.read_csv('./shared/data_prep/CIC19/CIC19_y.csv')
+        return df, y
