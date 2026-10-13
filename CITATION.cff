@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article below."
+title: "Apollon: A robust defense system against Adversarial Machine Learning attacks in Intrusion Detection Systems"
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/antoniopaya22/apollon"
+authors:
+  - family-names: "Payá"
+    given-names: "Antonio"
+    orcid: "https://orcid.org/0000-0003-3733-3805"
+  - family-names: "Arroni"
+    given-names: "Sergio"
+    orcid: "https://orcid.org/0000-0002-4907-8576"
+  - family-names: "García-Díaz"
+    given-names: "Vicente"
+    orcid: "https://orcid.org/0000-0003-2037-8548"
+  - family-names: "Gómez"
+    given-names: "Alberto"
+    orcid: "https://orcid.org/0000-0003-3570-4043"
+keywords:
+  - adversarial machine learning
+  - intrusion detection systems
+  - cybersecurity
+preferred-citation:
+  type: article
+  title: "Apollon: A robust defense system against Adversarial Machine Learning attacks in Intrusion Detection Systems"
+  authors:
+    - family-names: "Payá"
+      given-names: "Antonio"
+      orcid: "https://orcid.org/0000-0003-3733-3805"
+    - family-names: "Arroni"
+      given-names: "Sergio"
+      orcid: "https://orcid.org/0000-0002-4907-8576"
+    - family-names: "García-Díaz"
+      given-names: "Vicente"
+      orcid: "https://orcid.org/0000-0003-2037-8548"
+    - family-names: "Gómez"
+      given-names: "Alberto"
+      orcid: "https://orcid.org/0000-0003-3570-4043"
+  journal: "Computers & Security"
+  publisher:
+    name: "Elsevier"
+  volume: 136
+  start: 103546
+  year: 2024
+  month: 1
+  doi: "10.1016/j.cose.2023.103546"
+  url: "https://doi.org/10.1016/j.cose.2023.103546"
