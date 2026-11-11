@@ -55,6 +55,33 @@ pip install -r requirements.txt
    ```
 
 3. Open `mab.ipynb` to run the Apollon experiments on top of the trained models.
+   Run the notebooks from the repository root so that `MAB/` and `attacks/` are importable.
+
+## Implementation notes
+
+Apollon itself lives in `MAB/apollon_mab.py` (`ApollonMAB`); the notebooks import it.
+Each (cluster, classifier) pair keeps a Beta posterior over the probability of answering
+correctly, initialised on a held-out validation split and updated with `update()` when ground
+truth arrives; Thompson sampling picks the classifier for every request.
+
+`attacks/zoo.ipynb` and `attacks/hotskipjump.ipynb` report two settings:
+
+- **transfer**: adversarial examples crafted against a single classifier and replayed on
+  Apollon (the setting of the original evaluation);
+- **direct**: the attack queries Apollon itself through `attacks/attack_utils.apollon_classifier`,
+  so every query goes through clustering and Thompson-sampled selection.
+
+Functional features (those an attack cannot change without breaking) are restored after every
+attack.
+
+## Tests
+
+```bash
+pip install pytest
+python -m pytest tests/
+```
+
+The tests use synthetic data and do not need the datasets.
 
 ## Citation
 
