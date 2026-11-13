@@ -1,7 +1,7 @@
 gretel_synthetics==0.20.0
 keras==2.11.0
 matplotlib==3.6.2
-numpy==1.23.5
+numpy==2.2.6
 pandas==1.5.2
 plotly==5.11.0
 scikit_learn==1.2.2
