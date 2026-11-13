@@ -17,6 +17,15 @@ paper. Datasets are not redistributed: download them from their official pages.
 
 ## Preprocessing
 
+<figure class="ap-fig">
+<svg viewBox="0 0 720 120" role="img" aria-label="Preprocessing pipeline: CSV files, clean, labels, split, scale, npz.">
+<defs><marker id="ap-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8e95c9"/></marker><marker id="ap-arr-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f43f5e"/></marker></defs>
+<rect class="box-hi" x="10" y="30" width="100" height="64" rx="12"/><text class="t" x="60" y="58" text-anchor="middle">CSV files</text><text class="m" x="60" y="78" text-anchor="middle">raw CIC exports</text><path class="arrow flow" d="M112,62 H128"/><rect class="box" x="130" y="30" width="100" height="64" rx="12"/><text class="t" x="180" y="58" text-anchor="middle">Clean</text><text class="m" x="180" y="78" text-anchor="middle">ids, constants out</text><path class="arrow flow" d="M232,62 H248"/><rect class="box" x="250" y="30" width="100" height="64" rx="12"/><text class="t" x="300" y="58" text-anchor="middle">Labels</text><text class="m" x="300" y="78" text-anchor="middle">0 benign · 1 attack</text><path class="arrow flow" d="M352,62 H368"/><rect class="box" x="370" y="30" width="100" height="64" rx="12"/><text class="t" x="420" y="58" text-anchor="middle">Split</text><text class="m" x="420" y="78" text-anchor="middle">70/30 stratified</text><path class="arrow flow" d="M472,62 H488"/><rect class="box" x="490" y="30" width="100" height="64" rx="12"/><text class="t" x="540" y="58" text-anchor="middle">Scale</text><text class="m" x="540" y="78" text-anchor="middle">robust + unit norm</text><path class="arrow flow" d="M592,62 H608"/><rect class="box-hi" x="610" y="30" width="100" height="64" rx="12"/><text class="t" x="660" y="58" text-anchor="middle">.npz</text><text class="m" x="660" y="78" text-anchor="middle">portable split</text>
+</svg>
+<figcaption><code>apollon prepare</code>: from the raw CSV files of a dataset to a portable train/test split. Scalers are fitted on the training split only.</figcaption>
+</figure>
+
+
 `apollon prepare` (or [`apollon.data.prepare`](../reference/data.md)) runs the
 pipeline of the paper:
 

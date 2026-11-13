@@ -25,6 +25,10 @@
   <a href="#citation">Cite</a>
 </p>
 
+<p align="center">
+  <a href="https://antoniopaya22.github.io/apollon/"><img src="docs/assets/screenshot-home.png" alt="Apollon documentation site: every request is answered by the classifier with the highest Thompson draw" width="860"></a>
+</p>
+
 ---
 
 Official implementation of **[Apollon: A robust defense system against Adversarial

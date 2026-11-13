@@ -1,6 +1,9 @@
 ---
+template: home.html
+title: Apollon
 hide:
   - navigation
+  - toc
 ---
 
 # Apollon

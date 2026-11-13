@@ -1,0 +1,215 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+{{ super() }}
+<div class="ap-home">
+
+  <!-- ================================================================ HERO -->
+  <section class="ap-hero">
+    <div class="ap-hero__glow" aria-hidden="true"></div>
+    <div class="ap-wrap ap-hero__grid">
+      <div class="ap-hero__text">
+        <p class="ap-eyebrow">Computers &amp; Security · vol. 136 · 2024</p>
+        <h1 class="ap-hero__title">
+          An IDS that never<br>shows the <span class="ap-grad">same face</span> twice
+        </h1>
+        <p class="ap-hero__lead">
+          Apollon defends machine-learning intrusion detection against adversarial
+          attacks. Every request is answered by a classifier drawn from a diverse pool by a
+          <strong>Multi-Armed Bandit with Thompson sampling</strong>, so attackers cannot
+          learn a stable boundary to evade, and detection stays accurate.
+        </p>
+        <div class="ap-cta">
+          <a class="ap-btn ap-btn--primary" href="getting-started/quickstart/">Get started</a>
+          <a class="ap-btn" href="guide/how-it-works/">How it works</a>
+          <a class="ap-btn ap-btn--ghost" href="https://doi.org/10.1016/j.cose.2023.103546">Read the paper ↗</a>
+        </div>
+        <div class="ap-install">
+          <span class="ap-install__prompt">$</span>
+          <code id="ap-install-cmd">pip install "apollon-ids[attacks] @ git+https://github.com/antoniopaya22/apollon"</code>
+          <button class="ap-install__copy" type="button" aria-label="Copy install command">Copy</button>
+        </div>
+      </div>
+
+      <figure class="ap-hero__viz" aria-label="Animation: a request is clustered, every classifier draws a sample from its Beta posterior and the highest draw answers.">
+        <svg id="ap-bandit" viewBox="0 0 640 400" role="img">
+          <defs>
+            <linearGradient id="ap-g-line" x1="0" x2="1">
+              <stop offset="0" stop-color="#7c8cff"/><stop offset="1" stop-color="#c084fc"/>
+            </linearGradient>
+            <filter id="ap-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="4" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <!-- stage labels -->
+          <text class="ap-v-label" x="50" y="28">Request</text>
+          <text class="ap-v-label" x="200" y="28">Cluster</text>
+          <text class="ap-v-label" x="400" y="28">Thompson draw θ ~ Beta(α, β)</text>
+          <text class="ap-v-label" x="581" y="28">Verdict</text>
+          <!-- clusters -->
+          <g id="ap-c0" class="ap-v-cluster"><circle cx="200" cy="130" r="34"/><text x="200" y="135">c₀</text></g>
+          <g id="ap-c1" class="ap-v-cluster"><circle cx="200" cy="270" r="34"/><text x="200" y="275">c₁</text></g>
+          <!-- links (drawn per round) -->
+          <path id="ap-link-in" class="ap-v-link" d=""/>
+          <path id="ap-link-out" class="ap-v-link" d=""/>
+          <!-- arms -->
+          <g id="ap-arms"></g>
+          <!-- verdict -->
+          <g id="ap-verdict" class="ap-v-verdict">
+            <rect x="535" y="175" width="92" height="50" rx="12"/>
+            <text id="ap-verdict-text" x="581" y="206">·</text>
+          </g>
+          <!-- request packet -->
+          <g id="ap-packet" filter="url(#ap-glow)"><circle cx="50" cy="200" r="11"/></g>
+          <text id="ap-caption" class="ap-v-caption" x="320" y="388">request #1</text>
+        </svg>
+      </figure>
+    </div>
+    <div class="ap-scroll-hint" aria-hidden="true">↓</div>
+  </section>
+
+  <!-- ===================================================== THE PROBLEM -->
+  <section class="ap-section">
+    <div class="ap-wrap">
+      <p class="ap-eyebrow ap-reveal">The problem</p>
+      <h2 class="ap-h2 ap-reveal">Black-box attacks learn a fixed boundary.<br>Apollon keeps moving it.</h2>
+      <p class="ap-sub ap-reveal">
+        ZOO and HopSkipJump query the IDS, estimate where its decision boundary lies and push
+        an attack just across it. That works when the same model answers every query. With
+        Apollon, consecutive queries can be answered by different classifiers, so the
+        attacker's estimates never converge.
+      </p>
+      <div class="ap-duel">
+        <figure class="ap-duel__card ap-reveal">
+          <svg id="ap-duel-single" viewBox="0 0 300 220" role="img" aria-label="A single model: the attacker's probes converge and cross the fixed boundary.">
+            <rect class="ap-d-zone-benign" x="0" y="0" width="300" height="220"/>
+            <path class="ap-d-zone-attack" d="M0,0 L300,0 L300,95 C220,120 120,60 0,120 Z"/>
+            <path class="ap-d-boundary" d="M0,120 C120,60 220,120 300,95"/>
+            <g class="ap-d-probes"></g>
+            <circle class="ap-d-attacker" cx="150" cy="40" r="9"/>
+          </svg>
+          <figcaption><strong>Single model</strong><span class="ap-d-status" data-for="single">probing…</span></figcaption>
+        </figure>
+        <figure class="ap-duel__card ap-reveal">
+          <svg id="ap-duel-apollon" viewBox="0 0 300 220" role="img" aria-label="Apollon: the boundary changes with every query, so the probes never converge.">
+            <rect class="ap-d-zone-benign" x="0" y="0" width="300" height="220"/>
+            <path class="ap-d-zone-attack" d="M0,0 L300,0 L300,95 C220,120 120,60 0,120 Z"/>
+            <path class="ap-d-boundary" d="M0,120 C120,60 220,120 300,95"/>
+            <g class="ap-d-probes"></g>
+            <circle class="ap-d-attacker" cx="150" cy="40" r="9"/>
+            <text class="ap-d-arm" x="290" y="210" text-anchor="end">RF</text>
+          </svg>
+          <figcaption><strong>Apollon</strong><span class="ap-d-status" data-for="apollon">probing…</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== HOW IT WORKS -->
+  <section class="ap-section ap-section--alt">
+    <div class="ap-wrap">
+      <p class="ap-eyebrow ap-reveal">How it works</p>
+      <h2 class="ap-h2 ap-reveal">Three ideas, one draw per request</h2>
+      <div class="ap-steps">
+        <article class="ap-step ap-reveal">
+          <div class="ap-step__icon">
+            <svg viewBox="0 0 48 48"><circle cx="15" cy="17" r="3"/><circle cx="22" cy="12" r="3"/><circle cx="12" cy="25" r="3"/><circle cx="34" cy="31" r="3"/><circle cx="38" cy="38" r="3"/><circle cx="29" cy="37" r="3"/><circle cx="17" cy="18" r="13" class="o"/><circle cx="33" cy="35" r="11" class="o"/></svg>
+          </div>
+          <span class="ap-step__n">01</span>
+          <h3>Cluster the traffic</h3>
+          <p>K-Means groups requests, and every classifier is trained on every cluster: each
+          kind of traffic gets its own specialised pool.</p>
+        </article>
+        <article class="ap-step ap-reveal">
+          <div class="ap-step__icon">
+            <svg viewBox="0 0 48 48"><rect x="7" y="26" width="6" height="14" rx="2"/><rect x="17" y="14" width="6" height="26" rx="2" class="hi"/><rect x="27" y="20" width="6" height="20" rx="2"/><rect x="37" y="30" width="6" height="10" rx="2"/><path d="M4 42h42" class="o"/></svg>
+          </div>
+          <span class="ap-step__n">02</span>
+          <h3>Sample, don't choose</h3>
+          <p>Each (cluster, classifier) keeps a Beta posterior of its accuracy. For every
+          request one value is drawn per classifier and the highest draw answers.</p>
+        </article>
+        <article class="ap-step ap-reveal">
+          <div class="ap-step__icon">
+            <svg viewBox="0 0 48 48"><path d="M38 18a15 15 0 1 0 2 12" class="o"/><path d="M40 8v10H30" class="o"/><path d="M18 25l5 5 9-11" class="o hi"/></svg>
+          </div>
+          <span class="ap-step__n">03</span>
+          <h3>Keep learning</h3>
+          <p>Analyst feedback updates the posteriors online, so the classifiers that are
+          right on today's traffic answer more often tomorrow.</p>
+        </article>
+      </div>
+      <div class="ap-center ap-reveal"><a class="ap-btn" href="guide/how-it-works/">Try the interactive Thompson sampler →</a></div>
+    </div>
+  </section>
+
+  <!-- ========================================================= NUMBERS -->
+  <section class="ap-section">
+    <div class="ap-wrap">
+      <div class="ap-stats">
+        <div class="ap-stat ap-reveal"><b data-count="5">0</b><span>classifier families in the pool</span></div>
+        <div class="ap-stat ap-reveal"><b data-count="3">0</b><span>CIC datasets with loaders</span></div>
+        <div class="ap-stat ap-reveal"><b data-count="2">0</b><span>black-box attacks, direct and transfer</span></div>
+        <div class="ap-stat ap-reveal"><b data-count="1">0</b><span>model evaluation per request</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ CODE -->
+  <section class="ap-section ap-section--alt">
+    <div class="ap-wrap">
+      <p class="ap-eyebrow ap-reveal">Developer experience</p>
+      <h2 class="ap-h2 ap-reveal">A scikit-learn estimator and a CLI</h2>
+      <div class="ap-code">
+        <div class="ap-window ap-reveal">
+          <div class="ap-window__bar"><i></i><i></i><i></i><span>quickstart.py</span></div>
+<pre class="ap-window__body"><code><span class="k">from</span> apollon <span class="k">import</span> ApollonMAB
+<span class="k">from</span> apollon.data <span class="k">import</span> prepare
+
+data = prepare(<span class="s">"cic-ids2017"</span>, [<span class="s">"data/CIC-IDS2017/"</span>])
+model = ApollonMAB(random_state=<span class="n">0</span>).fit(data.X_train, data.y_train)
+
+<span class="c"># one Thompson draw per request</span>
+pred, arms = model.predict(data.X_test, return_arms=<span class="k">True</span>)
+
+<span class="c"># analyst feedback updates the posteriors</span>
+model.update(X_reviewed, y_reviewed)</code></pre>
+        </div>
+        <div class="ap-window ap-window--term ap-reveal">
+          <div class="ap-window__bar"><i></i><i></i><i></i><span>terminal</span></div>
+          <pre class="ap-window__body" id="ap-term" aria-label="Output of apollon demo"></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ CITE -->
+  <section class="ap-section">
+    <div class="ap-wrap">
+      <div class="ap-cite ap-reveal">
+        <div>
+          <p class="ap-eyebrow">Cite Apollon</p>
+          <h2 class="ap-h2">Apollon: A robust defense system against Adversarial Machine Learning attacks in Intrusion Detection Systems</h2>
+          <p class="ap-sub">A. Payá, S. Arroni, V. García-Díaz, A. Gómez. <em>Computers &amp; Security</em> 136, 103546 (2024).</p>
+          <div class="ap-cta">
+            <a class="ap-btn ap-btn--primary" href="https://doi.org/10.1016/j.cose.2023.103546">doi:10.1016/j.cose.2023.103546</a>
+            <a class="ap-btn" href="about/citation/">BibTeX, APA, IEEE</a>
+            <a class="ap-btn ap-btn--ghost" href="https://github.com/antoniopaya22/apollon">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+{% endblock %}
+
+{% block site_nav %}{% endblock %}
+{% block container %}{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="{{ 'javascripts/home.js' | url }}"></script>
+{% endblock %}

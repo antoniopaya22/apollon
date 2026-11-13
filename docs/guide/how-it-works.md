@@ -80,6 +80,27 @@ $$
 \beta_{ca} \leftarrow \beta_{ca} + \mathbb{1}[\hat y \neq y].
 $$
 
+## Try it
+
+Four classifiers of one cluster, with their Beta posteriors. **Draw a request** samples
+one value per classifier (the vertical lines) and the highest draw answers. Then tell
+Apollon whether that classifier was right: its posterior moves. **Run 200 requests**
+simulates traffic with analyst feedback, where each classifier is right with its true
+accuracy: the posteriors sharpen and the best classifiers answer most requests, while
+the others keep a chance.
+
+<div class="ap-ts" id="ap-ts">
+  <div class="ap-ts__plot"></div>
+  <div class="ap-ts__bar">
+    <button type="button" class="primary" data-act="draw">Draw a request</button>
+    <button type="button" data-act="ok">✓ It was right</button>
+    <button type="button" data-act="ko">✗ It was wrong</button>
+    <button type="button" data-act="run">Run 200 requests</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="ap-ts__msg">Draw a request to start.</span>
+  </div>
+</div>
+
 ## Exploration and the arm mix
 
 With many validation samples the posteriors become sharp and the selection concentrates
