@@ -8,3 +8,6 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    # research/requirements.txt pins the environment of the paper on purpose.
+    exclude-paths:
+      - "research/**"
