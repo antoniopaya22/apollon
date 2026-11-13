@@ -34,163 +34,186 @@
   window.apollonBeta = beta;
 
   // ------------------------------------------------------------------- hero
-  // One adversarial flow (crafted against LR) queried again and again. Every query is
-  // answered by a model drawn with Thompson sampling; its decision boundary is shown.
+  // An attacker sends the same disguised attack (crafted against logistic regression)
+  // again and again. Each attempt is answered by the model Thompson sampling draws.
   (function hero() {
-    const plot = document.getElementById("hv-plot");
-    if (!plot) return;
+    const svg = document.getElementById("hs-svg");
+    if (!svg) return;
     const M = [
-      { name: "RF", a: 8, b: 2, attack: true,
-        edge: "M0,200 L80,200 L80,170 L150,170 L150,120 L230,120 L230,100 L330,100 L330,70 L420,70 L420,60 L560,60",
-        region: "M0,300 L0,200 L80,200 L80,170 L150,170 L150,120 L230,120 L230,100 L330,100 L330,70 L420,70 L420,60 L560,60 L560,300 Z" },
-      { name: "DT", a: 7, b: 2, attack: true,
-        edge: "M0,180 L180,180 L180,90 L380,90 L380,30 L560,30",
-        region: "M0,300 L0,180 L180,180 L180,90 L380,90 L380,30 L560,30 L560,300 Z" },
-      { name: "NB", a: 6, b: 2.5, attack: true,
-        edge: "M160,170 a170,110 0 1,0 340,0 a170,110 0 1,0 -340,0",
-        region: "M160,170 a170,110 0 1,0 340,0 a170,110 0 1,0 -340,0 Z" },
-      { name: "LR", a: 6, b: 2.5, attack: false,
-        edge: "M0,40 L560,250",
-        region: "M0,40 L560,250 L560,300 L0,300 Z" },
-      { name: "MLP", a: 7, b: 2, attack: true,
-        edge: "M0,210 C120,60 220,220 330,90 C420,0 480,120 560,80",
-        region: "M0,300 L0,210 C120,60 220,220 330,90 C420,0 480,120 560,80 L560,300 Z" },
+      { name: "Random Forest", a: 8, b: 2 }, { name: "Decision Tree", a: 7, b: 2 },
+      { name: "Naive Bayes", a: 6, b: 2.5 }, { name: "Logistic Regression", a: 6, b: 2.5, fooled: true },
+      { name: "Multi-Layer Perceptron", a: 7, b: 2 },
     ];
-    const FULL = { RF: "Random Forest", DT: "Decision Tree", NB: "Naive Bayes", LR: "Logistic Regression", MLP: "Multi-Layer Perceptron" };
-    const chipsBox = document.getElementById("hv-chips");
-    const chips = M.map((m) => {
-      const c = document.createElement("div");
-      c.className = "hv-chip";
-      c.innerHTML = `<span>${m.name}</span><i><b></b></i>`;
-      chipsBox.appendChild(c);
-      return c;
+    const mg = document.getElementById("hs-models");
+    const rowY = (i) => 76 + i * 34;
+    const pills = M.map((m, i) => {
+      const g = el("g", { class: "hs-model" + (m.fooled ? " is-weak" : "") }, mg);
+      el("rect", { x: 162, y: rowY(i) - 13, width: 260, height: 26, rx: 13 }, g);
+      el("text", { x: 178, y: rowY(i) + 5 }, g).textContent = m.name;
+      if (m.fooled) el("text", { x: 410, y: rowY(i) + 5, "text-anchor": "end", class: "hs-weak" }, g).textContent = "fooled by x′";
+      return g;
     });
-    const region = document.getElementById("hv-region");
-    const edge = document.getElementById("hv-edge");
-    const ring = document.getElementById("hv-ring");
-    const label = document.getElementById("hv-model");
-    const log = document.getElementById("hv-log");
-    const score = document.getElementById("hv-score");
-    const wins = M.map(() => 0);
-    let q = 0, detected = 0;
+    const packet = document.getElementById("hs-packet");
+    const wireIn = document.getElementById("hs-wire-in");
+    const wireOut = document.getElementById("hs-wire-out");
+    const verdict = document.getElementById("hs-verdict");
+    const icon = document.getElementById("hs-icon");
+    const vtext = document.getElementById("hs-vtext");
+    const cellsA = document.getElementById("hs-a"), cellsS = document.getElementById("hs-s");
+    const nA = document.getElementById("hs-a-n"), nS = document.getElementById("hs-s-n");
+    const N = 10;
+    let n = 0, det = 0;
 
-    function show(k, animate) {
-      const m = M[k];
-      chips.forEach((c, i) => c.classList.toggle("is-on", i === k));
-      label.textContent = `boundary of ${FULL[m.name]}`;
-      region.setAttribute("d", m.region);
-      edge.setAttribute("d", m.edge);
-      ring.setAttribute("class", "hv-ring " + (m.attack ? "is-attack" : "is-benign"));
-      if (!animate) return;
-      const len = edge.getTotalLength();
-      gsap.fromTo(region, { opacity: 0 }, { opacity: 1, duration: 0.35 });
-      gsap.fromTo(edge, { strokeDasharray: len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: 0.6, ease: "power2.out" });
-      gsap.fromTo(ring, { attr: { r: 10 }, opacity: 1 }, { attr: { r: 30 }, opacity: 0, duration: 0.9, ease: "power2.out", delay: 0.35 });
-    }
+    const reset = () => {
+      n = 0; det = 0;
+      [cellsA, cellsS].forEach((c) => { c.innerHTML = ""; for (let i = 0; i < N; i++) c.appendChild(document.createElement("i")); });
+      nA.textContent = "0 / 0 detected"; nS.textContent = "0 / 0 detected";
+    };
+    const draw = (path, d) => {
+      path.setAttribute("d", d);
+      const len = path.getTotalLength();
+      gsap.set(path, { strokeDasharray: len, strokeDashoffset: len, opacity: 1 });
+      return gsap.to(path, { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" });
+    };
 
-    function step() {
-      q += 1;
+    function attempt() {
+      if (n === N) { reset(); }
       const th = M.map((m) => beta(m.a, m.b));
       const k = th.indexOf(Math.max(...th));
-      const m = M[k];
-      wins[k] += 1;
-      if (m.attack) detected += 1;
-      show(k, true);
-      const total = wins.reduce((s, w) => s + w, 0);
-      chips.forEach((c, i) => { c.querySelector("b").style.width = `${(100 * wins[i]) / total}%`; });
-      const li = document.createElement("li");
-      li.innerHTML = `<span>query ${q}</span><span>${m.name}</span><span class="${m.attack ? "atk" : "ben"}">${m.attack ? "attack ✓" : "benign ✗"}</span>`;
-      log.prepend(li);
-      while (log.children.length > 3) log.lastChild.remove();
-      gsap.from(li, { opacity: 0, y: -8, duration: 0.3 });
-      score.textContent = `${detected} / ${q}`;
+      const caught = !M[k].fooled;
+      const y = rowY(k);
+      const tl = gsap.timeline({ onComplete: () => gsap.delayedCall(n === N ? 2.6 : 0.5, attempt) });
+      tl.set(packet, { x: 52, y: 130, opacity: 0, scale: 0.6 })
+        .set([wireIn, wireOut], { opacity: 0 })
+        .call(() => { pills.forEach((p) => p.classList.remove("is-on")); verdict.setAttribute("class", "hs-verdict"); icon.textContent = "?"; vtext.textContent = ""; })
+        .to(packet, { opacity: 1, scale: 1, duration: 0.25 })
+        .to(packet, { x: 120, duration: 0.45, ease: "power2.in" })
+        .call(() => pills[k].classList.add("is-on"))
+        .add(draw(wireIn, `M144,130 C160,130 150,${y} 162,${y}`))
+        .to(packet, { x: 292, y, duration: 0.5, ease: "power2.inOut" }, "<")
+        .to({}, { duration: 0.35 })
+        .add(draw(wireOut, `M422,${y} C470,${y} 460,130 494,130`))
+        .to(packet, { x: 530, y: 130, duration: 0.45, ease: "power2.in" }, "<")
+        .to(packet, { opacity: 0, scale: 1.8, duration: 0.25 })
+        .call(() => {
+          n += 1; if (caught) det += 1;
+          verdict.setAttribute("class", "hs-verdict " + (caught ? "is-caught" : "is-missed"));
+          icon.textContent = caught ? "✓" : "✗";
+          vtext.textContent = caught ? "detected" : "missed";
+          cellsA.children[n - 1].className = caught ? "is-caught" : "is-missed";
+          cellsS.children[n - 1].className = "is-missed";
+          nA.textContent = `${det} / ${n} detected`;
+          nS.textContent = `0 / ${n} detected`;
+        }, null, "<")
+        .fromTo(verdict, { scale: 0.85, svgOrigin: "530 130" }, { scale: 1, svgOrigin: "530 130", duration: 0.35, ease: "back.out(3)" }, "<");
     }
 
-    if (reduce) {
-      show(0, false);
-      score.textContent = "—";
-      return;
-    }
-    step();
-    let timer = setInterval(step, 1700);
-    document.addEventListener("visibilitychange", () => {
-      clearInterval(timer);
-      if (!document.hidden) timer = setInterval(step, 1700);
-    });
+    reset();
+    if (reduce) { pills[0].classList.add("is-on"); gsap.set(packet, { opacity: 0 }); return; }
+    attempt();
   })();
 
-  // ------------------------------------------------------------- the duel
-  (function duel() {
-    const ARMS = ["RF", "DT", "NB", "LR", "MLP"];
-    const yMid = (s) => (s[0] + 3 * s[1] + 3 * s[2] + s[3]) / 8; // boundary height at x = 150
-    const pathB = (s) => `M0,${s[0]} C100,${s[1]} 200,${s[2]} 300,${s[3]}`;
-    const pathZ = (s) => `M0,0 L300,0 L300,${s[3]} C200,${s[2]} 100,${s[1]} 0,${s[0]} Z`;
-    const FIXED = [120, 60, 120, 95];
-    const rand = (a, b) => a + Math.random() * (b - a);
+  // ----------------------------------------------- the problem: binary search
+  // A decision-based attacker binary-searches the perturbation δ (0 = original attack,
+  // 1 = benign-looking) that flips the verdict, then replays the evasion ten times.
+  // Each query is one row: the remaining interval and the probe in its middle.
+  (function problem() {
+    const box = document.getElementById("ps");
+    if (!box) return;
+    const X0 = 130, X1 = 960, TOP = 34, ROW = 22, xs = (d) => X0 + d * (X1 - X0);
+    const MODELS = [
+      { name: "RF", d: 0.42, a: 8, b: 2 }, { name: "DT", d: 0.58, a: 7, b: 2 },
+      { name: "NB", d: 0.30, a: 6, b: 2.5 }, { name: "LR", d: 0.17, a: 6, b: 2.5 },
+      { name: "MLP", d: 0.66, a: 7, b: 2 },
+    ];
+    const PROBES = 7, REPLAYS = 10, BOTTOM = TOP + (PROBES + 1) * ROW;
 
-    function setup(id, moving) {
-      const svg = document.getElementById(id);
-      if (!svg) return null;
-      const boundary = svg.querySelector(".ap-d-boundary");
-      const zone = svg.querySelector(".ap-d-zone-attack");
-      const probes = svg.querySelector(".ap-d-probes");
-      const attacker = svg.querySelector(".ap-d-attacker");
-      const armText = svg.querySelector(".ap-d-arm");
-      const status = document.querySelector(`.ap-d-status[data-for="${moving ? "apollon" : "single"}"]`);
-      let shape = FIXED.slice();
-
-      function run() {
-        probes.innerHTML = "";
-        shape = FIXED.slice();
-        gsap.set(boundary, { attr: { d: pathB(shape) } });
-        gsap.set(zone, { attr: { d: pathZ(shape) } });
-        gsap.set(attacker, { attr: { cy: 34, class: "ap-d-attacker" } });
-        status.textContent = "probing…";
-        status.className = "ap-d-status";
-        let y = 34, detected = 0, queries = 0;
-        const tl = gsap.timeline({ onComplete: () => gsap.delayedCall(1.6, run) });
-        for (let q = 0; q < 10; q++) {
-          tl.add(() => {
-            if (moving) {
-              shape = [rand(80, 150), rand(40, 170), rand(40, 170), rand(70, 150)];
-              while (Math.abs(yMid(shape) - y) < 6) shape[1] += 12;
-              gsap.to(boundary, { attr: { d: pathB(shape) }, duration: 0.35, ease: "power2.inOut" });
-              gsap.to(zone, { attr: { d: pathZ(shape) }, duration: 0.35, ease: "power2.inOut" });
-              if (armText) armText.textContent = ARMS[Math.floor(Math.random() * ARMS.length)];
-            }
-          });
-          tl.to({}, { duration: moving ? 0.38 : 0.12 });
-          tl.add(() => {
-            queries += 1;
-            const isAttack = y < yMid(shape);
-            if (isAttack) detected += 1;
-            el("circle", { cx: 150 + rand(-26, 26), cy: y + rand(-8, 8), r: 3.2,
-              class: "ap-d-probe " + (isAttack ? "is-attack" : "is-benign") }, probes);
-            const evaded = !moving && !isAttack;
-            if (evaded) {
-              status.textContent = `evaded after ${queries} queries`;
-              status.className = "ap-d-status is-bad";
-              attacker.setAttribute("class", "ap-d-attacker is-evaded");
-              tl.progress(1);
-              return;
-            }
-            y = isAttack ? y + 13 : Math.max(30, y - 9);
-            gsap.to(attacker, { attr: { cy: y }, duration: 0.3, ease: "power1.out" });
-            status.textContent = `detected ${detected} of ${queries} queries`;
-            if (moving) status.className = "ap-d-status is-good";
-          });
-          tl.to({}, { duration: 0.32 });
-        }
-        return tl;
-      }
-      return run;
+    function setup(row) {
+      const apollon = row.dataset.mode === "apollon";
+      const svg = row.querySelector(".ps-track");
+      svg.setAttribute("viewBox", `0 0 1000 ${BOTTOM + 30}`);
+      svg.innerHTML = "";
+      el("line", { x1: X0, x2: X1, y1: TOP, y2: TOP, class: "ps-axis" }, svg);
+      el("text", { x: X0, y: TOP - 12, class: "ps-end" }, svg).textContent = "δ = 0 · original attack";
+      el("text", { x: X1, y: TOP - 12, class: "ps-end", "text-anchor": "end" }, svg).textContent = "δ = 1 · looks benign";
+      const models = apollon ? MODELS : [MODELS[0]];
+      const ticks = models.map((m) => {
+        const t = el("g", { class: "ps-bound" + (apollon ? "" : " is-on") }, svg);
+        el("line", { x1: xs(m.d), x2: xs(m.d), y1: TOP + 6, y2: BOTTOM }, t);
+        el("text", { x: xs(m.d), y: BOTTOM + 18, "text-anchor": "middle" }, t).textContent = apollon ? m.name : "RF boundary";
+        return t;
+      });
+      const rows = el("g", {}, svg);
+      return { apollon, ticks, rows, models,
+        phase: row.querySelector(".ps-phase"), cells: row.querySelector(".ps-cells"), result: row.querySelector(".ps-result") };
     }
 
-    const runs = [setup("ap-duel-single", false), setup("ap-duel-apollon", true)].filter(Boolean);
-    if (!runs.length || reduce) return;
+    const pick = (st) => {
+      if (!st.apollon) return 0;
+      const th = st.models.map((m) => beta(m.a, m.b));
+      return th.indexOf(Math.max(...th));
+    };
+
+    function run(row) {
+      const st = setup(row);
+      st.cells.innerHTML = "";
+      for (let i = 0; i < REPLAYS; i++) st.cells.appendChild(document.createElement("i"));
+      st.result.textContent = "–";
+      st.result.className = "ps-result";
+      let lo = 0, hi = 1;
+      const tl = gsap.timeline();
+      tl.call(() => { st.phase.textContent = "1 · binary search for the boundary"; });
+      for (let q = 1; q <= PROBES; q++) {
+        tl.call(() => {
+          const y = TOP + q * ROW;
+          const mid = (lo + hi) / 2;
+          const k = pick(st);
+          const m = st.models[k];
+          const benign = mid > m.d;
+          st.ticks.forEach((t, i) => t.classList.toggle("is-on", i === k));
+          const g = el("g", { class: "ps-probe " + (benign ? "is-ben" : "is-atk") }, st.rows);
+          const bar = el("rect", { class: "ps-int", x: xs(lo), y: y - 5, width: xs(hi) - xs(lo), height: 10, rx: 5 }, g);
+          el("circle", { cx: xs(mid), cy: y, r: 7 }, g);
+          el("text", { x: X0 - 14, y: y + 4, "text-anchor": "end" }, g).textContent = st.apollon ? `query ${q} · ${m.name}` : `query ${q}`;
+          gsap.from(bar, { attr: { width: 0 }, duration: 0.35, ease: "power2.out" });
+          gsap.from(g, { opacity: 0, duration: 0.25 });
+          if (benign) hi = mid; else lo = mid;
+        });
+        tl.to({}, { duration: 0.7 });
+      }
+      tl.call(() => {
+        st.ticks.forEach((t) => t.classList.toggle("is-on", !st.apollon));
+        st.phase.textContent = `2 · evasion found at δ = ${hi.toFixed(2)} · 3 · replaying it`;
+      });
+      let evaded = 0;
+      for (let r = 0; r < REPLAYS; r++) {
+        tl.to({}, { duration: 0.18 });
+        tl.call(() => {
+          const m = st.models[pick(st)];
+          const ok = hi > m.d;
+          if (ok) evaded += 1;
+          const c = st.cells.children[r];
+          c.className = ok ? "is-ben" : "is-atk";
+          c.title = `${m.name}: ${ok ? "evaded" : "detected"}`;
+        });
+      }
+      tl.call(() => {
+        st.result.textContent = `${evaded}/${REPLAYS} evade`;
+        st.result.className = "ps-result " + (evaded >= 8 ? "is-bad" : "is-good");
+        st.phase.textContent = st.apollon
+          ? "it learned a mix of boundaries: the evasion only works on some answers"
+          : "it learned the boundary every request meets: the evasion always works";
+      });
+      tl.to({}, { duration: 3.4 });
+      return tl;
+    }
+
+    const rows = Array.from(box.querySelectorAll(".ps-row"));
+    function loop() { const tls = rows.map(run); tls[0].eventCallback("onComplete", loop); }
+    if (reduce) { rows.forEach((r) => setup(r)); return; }
     if (window.ScrollTrigger) {
-      window.ScrollTrigger.create({ trigger: ".lp-duel", start: "top 80%", once: true, onEnter: () => runs.forEach((r) => r()) });
-    } else runs.forEach((r) => r());
+      window.ScrollTrigger.create({ trigger: box, start: "top 80%", once: true, onEnter: loop });
+    } else loop();
   })();
 
   // --------------------------------------------------------- scroll reveals
@@ -199,7 +222,7 @@
     gsap.from(".lp-hero__grid > div:first-child > *", { opacity: 0, y: 22, duration: 0.8, stagger: 0.08, ease: "power3.out" });
     gsap.from(".lp-hero__viz", { opacity: 0, y: 30, duration: 1, ease: "power3.out", delay: 0.25 });
     gsap.from(".lp-strip > div", { opacity: 0, y: 14, duration: 0.6, stagger: 0.08, delay: 0.6 });
-    const groups = [".lp-split", ".lp-cols > div", ".lp-duel > *", ".lp-ts", ".lp-code > *",
+    const groups = [".lp-split", ".lp-cols > div", ".ps", ".lp-ts", ".lp-code > *",
       ".lp-features > a", ".lp-table__row", ".lp-faq .lp-h2", ".lp-faq__list details"];
     groups.forEach((sel) => {
       gsap.set(sel, { opacity: 0, y: 26 });

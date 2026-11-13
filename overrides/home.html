@@ -63,27 +63,33 @@
         </div>
         <ul class="lp-facts">
           <li><b>Published</b> in Computers &amp; Security, vol. 136, 2024</li>
-          <li><b>Five classifiers</b> with five different boundaries, one drawn per request</li>
+          <li><b>Five classifiers</b> in the pool, one drawn per request</li>
           <li><b>Drop-in</b> scikit-learn estimator and command line</li>
         </ul>
       </div>
-      <figure class="lp-card lp-hero__viz hv" aria-label="Animation: one adversarial flow, crafted to evade logistic regression, is sent again and again. Each query is answered by a model drawn by Thompson sampling, shown with its decision boundary; only logistic regression is fooled.">
-        <div class="lp-card__head"><span class="lp-live"></span>What the attacker sees<span class="lp-card__tag">Simulation</span></div>
-        <div class="hv-chips" id="hv-chips"></div>
-        <svg class="hv-plot" id="hv-plot" viewBox="0 0 560 300" role="img">
-          <rect class="hv-benign" x="0" y="0" width="560" height="300"/>
-          <path class="hv-attack" id="hv-region" d=""/>
-          <path class="hv-edge" id="hv-edge" d=""/>
-          <text class="hv-zone" x="14" y="24">benign</text>
-          <text class="hv-zone hv-zone--atk" x="546" y="288" text-anchor="end">attack</text>
-          <circle class="hv-ring" id="hv-ring" cx="300" cy="140" r="12"/>
-          <path class="hv-point" d="M300,128 L312,140 L300,152 L288,140 Z"/>
-          <text class="hv-plabel" x="318" y="133">adversarial flow</text>
-          <text class="hv-model" id="hv-model" x="14" y="288"></text>
+      <figure class="lp-card lp-hero__viz hs" aria-label="Animation: an attacker sends the same disguised attack again and again. Each attempt is answered by one of five models; the attack fools only logistic regression, so Apollon detects most attempts while logistic regression alone detects none.">
+        <div class="lp-card__head"><span class="lp-live"></span>One disguised attack, sent again and again<span class="lp-card__tag">Simulation</span></div>
+        <svg class="hs-svg" id="hs-svg" viewBox="0 0 600 270" role="img">
+          <g class="hs-attacker">
+            <circle cx="52" cy="130" r="26"/>
+            <path d="M40,124 a12,12 0 0 1 24,0 v6 h-24 z M36,142 q16,-14 32,0" />
+            <text x="52" y="176" text-anchor="middle">attacker</text>
+          </g>
+          <rect class="hs-box" x="142" y="22" width="300" height="226" rx="16"/>
+          <text class="hs-boxlabel" x="162" y="48">Apollon picks one model per request</text>
+          <g id="hs-models"></g>
+          <path id="hs-wire-in" class="hs-wire" d=""/>
+          <path id="hs-wire-out" class="hs-wire" d=""/>
+          <g id="hs-verdict" class="hs-verdict">
+            <circle cx="530" cy="130" r="36"/>
+            <text id="hs-icon" x="530" y="142" text-anchor="middle">?</text>
+            <text id="hs-vtext" class="hs-vtext" x="530" y="194" text-anchor="middle"></text>
+          </g>
+          <g id="hs-packet"><rect x="-22" y="-14" width="44" height="28" rx="7"/><text x="0" y="5" text-anchor="middle">x′</text></g>
         </svg>
-        <div class="hv-foot">
-          <ol class="hv-log" id="hv-log"></ol>
-          <div class="hv-score"><b id="hv-score">0 / 0</b><span>queries detected</span></div>
+        <div class="hs-tally">
+          <div class="hs-tally__row"><b>Apollon</b><div class="hs-cells" id="hs-a"></div><span id="hs-a-n">0 / 0 detected</span></div>
+          <div class="hs-tally__row"><b>Logistic Regression alone</b><div class="hs-cells" id="hs-s"></div><span id="hs-s-n">0 / 0 detected</span></div>
         </div>
       </figure>
     </div>
@@ -113,30 +119,28 @@
         <div><h3>They map the boundary</h3><p>Every answer refines their estimate of where benign begins.</p></div>
         <div><h3>They step across</h3><p>The smallest change that flips the verdict becomes the evasion.</p></div>
       </div>
-      <div class="lp-duel">
-        <figure class="lp-card lp-card--light">
-          <div class="lp-card__head">Single model<span class="ap-d-status" data-for="single">probing…</span></div>
-          <svg id="ap-duel-single" viewBox="0 0 300 200" role="img" aria-label="Single model: probes converge and cross the fixed boundary.">
-            <rect class="ap-d-zone-benign" x="0" y="0" width="300" height="200"/>
-            <path class="ap-d-zone-attack" d="M0,0 L300,0 L300,95 C200,120 100,60 0,120 Z"/>
-            <path class="ap-d-boundary" d="M0,120 C100,60 200,120 300,95"/>
-            <g class="ap-d-probes"></g>
-            <circle class="ap-d-attacker" cx="150" cy="34" r="9"/>
-          </svg>
-        </figure>
-        <figure class="lp-card lp-card--light">
-          <div class="lp-card__head">Apollon<span class="ap-d-status" data-for="apollon">probing…</span></div>
-          <svg id="ap-duel-apollon" viewBox="0 0 300 200" role="img" aria-label="Apollon: the boundary changes with every query.">
-            <rect class="ap-d-zone-benign" x="0" y="0" width="300" height="200"/>
-            <path class="ap-d-zone-attack" d="M0,0 L300,0 L300,95 C200,120 100,60 0,120 Z"/>
-            <path class="ap-d-boundary" d="M0,120 C100,60 200,120 300,95"/>
-            <g class="ap-d-probes"></g>
-            <circle class="ap-d-attacker" cx="150" cy="34" r="9"/>
-            <text class="ap-d-arm" x="290" y="192" text-anchor="end">RF</text>
-          </svg>
-        </figure>
+      <div class="ps" id="ps">
+        <div class="ps__legend">
+          <span><i class="ps-dot ps-dot--atk"></i>answered “attack”</span>
+          <span><i class="ps-dot ps-dot--ben"></i>answered “benign”</span>
+          <span><i class="ps-brk"></i>interval where the attacker still looks for the boundary</span>
+        </div>
+        <div class="ps-row" data-mode="single">
+          <div class="ps-row__head"><b>Single model</b><span class="ps-phase">probing…</span></div>
+          <div class="ps-row__body">
+            <svg class="ps-track" viewBox="0 0 1000 130" role="img" aria-label="Binary search against one fixed boundary converges."></svg>
+            <div class="ps-replay"><span>Replay the evasion ×10</span><div class="ps-cells"></div><b class="ps-result">–</b></div>
+          </div>
+        </div>
+        <div class="ps-row" data-mode="apollon">
+          <div class="ps-row__head"><b>Apollon</b><span class="ps-phase">probing…</span></div>
+          <div class="ps-row__body">
+            <svg class="ps-track" viewBox="0 0 1000 130" role="img" aria-label="Each query is answered by a different model with its own boundary; the search contradicts itself."></svg>
+            <div class="ps-replay"><span>Replay the evasion ×10</span><div class="ps-cells"></div><b class="ps-result">–</b></div>
+          </div>
+        </div>
       </div>
-      <p class="lp-note">Illustration of the mechanism. Measured results are in the <a href="https://doi.org/10.1016/j.cose.2023.103546">paper</a>.</p>
+      <p class="lp-note">Same attack, same query budget: a decision-based attack (as HopSkipJump) binary-searches the perturbation δ that flips the verdict, then reuses it. Illustration of the mechanism; measured results are in the <a href="https://doi.org/10.1016/j.cose.2023.103546">paper</a>.</p>
     </div>
   </section>
 
