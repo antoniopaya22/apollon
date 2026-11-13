@@ -21,6 +21,26 @@ generative (GAN) attacks are also included in `research/attacks/`.
 
 ## Settings
 
+<figure class="ap-fig">
+<svg viewBox="0 0 720 270" role="img" aria-label="Direct setting: the attacker queries Apollon. Transfer setting: the attacker crafts examples on a surrogate and submits them to Apollon.">
+<defs><marker id="ap-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8e95c9"/></marker><marker id="ap-arr-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f43f5e"/></marker></defs>
+<text class="t" x="20" y="24">Direct</text>
+<rect class="box-atk" x="20" y="40" width="130" height="70" rx="12"/><text class="t" x="85" y="70" text-anchor="middle">Attacker</text><text class="m" x="85" y="90" text-anchor="middle">ZOO / HopSkipJump</text>
+<path class="arrow-q flow" d="M152,62 H418"/><text class="m" x="285" y="54" text-anchor="middle">queries x + δ (thousands)</text>
+<path class="arrow" d="M418,90 H152"/><text class="m" x="285" y="106" text-anchor="middle">answers from a different arm each time</text>
+<rect class="box-hi" x="420" y="34" width="280" height="82" rx="12"/><text class="t" x="560" y="58" text-anchor="middle">Apollon</text>
+<g><rect class="box" x="436" y="70" width="44" height="30" rx="7"/><text class="m" x="458" y="89" text-anchor="middle">RF</text><rect class="box" x="488" y="70" width="44" height="30" rx="7"/><text class="m" x="510" y="89" text-anchor="middle">DT</text><rect class="box" x="540" y="70" width="44" height="30" rx="7"/><text class="m" x="562" y="89" text-anchor="middle">NB</text><rect class="box" x="592" y="70" width="44" height="30" rx="7"/><text class="m" x="614" y="89" text-anchor="middle">LR</text><rect class="box" x="644" y="70" width="44" height="30" rx="7"/><text class="m" x="666" y="89" text-anchor="middle">MLP</text></g>
+<text class="t" x="20" y="164">Transfer</text>
+<rect class="box-atk" x="20" y="180" width="130" height="70" rx="12"/><text class="t" x="85" y="210" text-anchor="middle">Attacker</text><text class="m" x="85" y="230" text-anchor="middle">ZOO / HopSkipJump</text>
+<path class="arrow-q flow" d="M152,215 H228"/>
+<rect class="box" x="230" y="185" width="130" height="60" rx="12"/><text class="t" x="295" y="210" text-anchor="middle">Surrogate</text><text class="m" x="295" y="228" text-anchor="middle">single classifier</text>
+<path class="arrow" d="M362,215 H418"/><text class="m" x="390" y="205" text-anchor="middle">x_adv</text>
+<rect class="box-hi" x="420" y="180" width="280" height="70" rx="12"/><text class="t" x="560" y="210" text-anchor="middle">Apollon</text><text class="m" x="560" y="230" text-anchor="middle">evaluates the adversarial examples</text>
+</svg>
+<figcaption>The two settings of the adversarial evaluation. Functional features are restored after the attack in both.</figcaption>
+</figure>
+
+
 === "Direct"
 
     The attack queries Apollon itself. Every query goes through cluster assignment and
