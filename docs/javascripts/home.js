@@ -6,6 +6,28 @@
   if (window.ScrollTrigger) gsap.registerPlugin(window.ScrollTrigger);
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const NS = "http://www.w3.org/2000/svg";
+  const ES = (document.documentElement.lang || "").toLowerCase().startsWith("es");
+  const T = ES ? {
+    names: ["Bosque aleatorio", "Árbol de decisión", "Naive Bayes", "Regresión logística", "Perceptrón multicapa"],
+    fooled: "engañado por x′", det: "detectados", detected: "detectado", missed: "no detectado",
+    d0: "δ = 0 · ataque original", d1: "δ = 1 · parece benigno", rfb: "frontera de RF", query: "consulta",
+    phase1: "1 · búsqueda binaria de la frontera",
+    phase2: (d) => `2 · evasión encontrada en δ = ${d} · 3 · reutilizándola`,
+    evaded: "evadido", evade: "evaden",
+    endA: "aprendió una mezcla de fronteras: la evasión solo funciona en algunas respuestas",
+    endS: "aprendió la frontera que ven todas las peticiones: la evasión funciona siempre",
+    copied: "Copiado", copy: "Copiar", select: "Selecciona",
+  } : {
+    names: ["Random Forest", "Decision Tree", "Naive Bayes", "Logistic Regression", "Multi-Layer Perceptron"],
+    fooled: "fooled by x′", det: "detected", detected: "detected", missed: "missed",
+    d0: "δ = 0 · original attack", d1: "δ = 1 · looks benign", rfb: "RF boundary", query: "query",
+    phase1: "1 · binary search for the boundary",
+    phase2: (d) => `2 · evasion found at δ = ${d} · 3 · replaying it`,
+    evaded: "evaded", evade: "evade",
+    endA: "it learned a mix of boundaries: the evasion only works on some answers",
+    endS: "it learned the boundary every request meets: the evasion always works",
+    copied: "Copied", copy: "Copy", select: "Select",
+  };
   const el = (tag, attrs, parent) => {
     const n = document.createElementNS(NS, tag);
     for (const k in attrs) n.setAttribute(k, attrs[k]);
@@ -40,9 +62,9 @@
     const svg = document.getElementById("hs-svg");
     if (!svg) return;
     const M = [
-      { name: "Random Forest", a: 8, b: 2 }, { name: "Decision Tree", a: 7, b: 2 },
-      { name: "Naive Bayes", a: 6, b: 2.5 }, { name: "Logistic Regression", a: 6, b: 2.5, fooled: true },
-      { name: "Multi-Layer Perceptron", a: 7, b: 2 },
+      { name: T.names[0], a: 8, b: 2 }, { name: T.names[1], a: 7, b: 2 },
+      { name: T.names[2], a: 6, b: 2.5 }, { name: T.names[3], a: 6, b: 2.5, fooled: true },
+      { name: T.names[4], a: 7, b: 2 },
     ];
     const mg = document.getElementById("hs-models");
     const rowY = (i) => 76 + i * 34;
@@ -50,7 +72,7 @@
       const g = el("g", { class: "hs-model" + (m.fooled ? " is-weak" : "") }, mg);
       el("rect", { x: 162, y: rowY(i) - 13, width: 260, height: 26, rx: 13 }, g);
       el("text", { x: 178, y: rowY(i) + 5 }, g).textContent = m.name;
-      if (m.fooled) el("text", { x: 410, y: rowY(i) + 5, "text-anchor": "end", class: "hs-weak" }, g).textContent = "fooled by x′";
+      if (m.fooled) el("text", { x: 410, y: rowY(i) + 5, "text-anchor": "end", class: "hs-weak" }, g).textContent = T.fooled;
       return g;
     });
     const packet = document.getElementById("hs-packet");
@@ -67,7 +89,7 @@
     const reset = () => {
       n = 0; det = 0;
       [cellsA, cellsS].forEach((c) => { c.innerHTML = ""; for (let i = 0; i < N; i++) c.appendChild(document.createElement("i")); });
-      nA.textContent = "0 / 0 detected"; nS.textContent = "0 / 0 detected";
+      nA.textContent = `0 / 0 ${T.det}`; nS.textContent = `0 / 0 ${T.det}`;
     };
     const draw = (path, d) => {
       path.setAttribute("d", d);
@@ -99,11 +121,11 @@
           n += 1; if (caught) det += 1;
           verdict.setAttribute("class", "hs-verdict " + (caught ? "is-caught" : "is-missed"));
           icon.textContent = caught ? "✓" : "✗";
-          vtext.textContent = caught ? "detected" : "missed";
+          vtext.textContent = caught ? T.detected : T.missed;
           cellsA.children[n - 1].className = caught ? "is-caught" : "is-missed";
           cellsS.children[n - 1].className = "is-missed";
-          nA.textContent = `${det} / ${n} detected`;
-          nS.textContent = `0 / ${n} detected`;
+          nA.textContent = `${det} / ${n} ${T.det}`;
+          nS.textContent = `0 / ${n} ${T.det}`;
         }, null, "<")
         .fromTo(verdict, { scale: 0.85, svgOrigin: "530 130" }, { scale: 1, svgOrigin: "530 130", duration: 0.35, ease: "back.out(3)" }, "<");
     }
@@ -134,13 +156,13 @@
       svg.setAttribute("viewBox", `0 0 1000 ${BOTTOM + 30}`);
       svg.innerHTML = "";
       el("line", { x1: X0, x2: X1, y1: TOP, y2: TOP, class: "ps-axis" }, svg);
-      el("text", { x: X0, y: TOP - 12, class: "ps-end" }, svg).textContent = "δ = 0 · original attack";
-      el("text", { x: X1, y: TOP - 12, class: "ps-end", "text-anchor": "end" }, svg).textContent = "δ = 1 · looks benign";
+      el("text", { x: X0, y: TOP - 12, class: "ps-end" }, svg).textContent = T.d0;
+      el("text", { x: X1, y: TOP - 12, class: "ps-end", "text-anchor": "end" }, svg).textContent = T.d1;
       const models = apollon ? MODELS : [MODELS[0]];
       const ticks = models.map((m) => {
         const t = el("g", { class: "ps-bound" + (apollon ? "" : " is-on") }, svg);
         el("line", { x1: xs(m.d), x2: xs(m.d), y1: TOP + 6, y2: BOTTOM }, t);
-        el("text", { x: xs(m.d), y: BOTTOM + 18, "text-anchor": "middle" }, t).textContent = apollon ? m.name : "RF boundary";
+        el("text", { x: xs(m.d), y: BOTTOM + 18, "text-anchor": "middle" }, t).textContent = apollon ? m.name : T.rfb;
         return t;
       });
       const rows = el("g", {}, svg);
@@ -162,7 +184,7 @@
       st.result.className = "ps-result";
       let lo = 0, hi = 1;
       const tl = gsap.timeline();
-      tl.call(() => { st.phase.textContent = "1 · binary search for the boundary"; });
+      tl.call(() => { st.phase.textContent = T.phase1; });
       for (let q = 1; q <= PROBES; q++) {
         tl.call(() => {
           const y = TOP + q * ROW;
@@ -174,7 +196,7 @@
           const g = el("g", { class: "ps-probe " + (benign ? "is-ben" : "is-atk") }, st.rows);
           const bar = el("rect", { class: "ps-int", x: xs(lo), y: y - 5, width: xs(hi) - xs(lo), height: 10, rx: 5 }, g);
           el("circle", { cx: xs(mid), cy: y, r: 7 }, g);
-          el("text", { x: X0 - 14, y: y + 4, "text-anchor": "end" }, g).textContent = st.apollon ? `query ${q} · ${m.name}` : `query ${q}`;
+          el("text", { x: X0 - 14, y: y + 4, "text-anchor": "end" }, g).textContent = st.apollon ? `${T.query} ${q} · ${m.name}` : `${T.query} ${q}`;
           gsap.from(bar, { attr: { width: 0 }, duration: 0.35, ease: "power2.out" });
           gsap.from(g, { opacity: 0, duration: 0.25 });
           if (benign) hi = mid; else lo = mid;
@@ -183,7 +205,7 @@
       }
       tl.call(() => {
         st.ticks.forEach((t) => t.classList.toggle("is-on", !st.apollon));
-        st.phase.textContent = `2 · evasion found at δ = ${hi.toFixed(2)} · 3 · replaying it`;
+        st.phase.textContent = T.phase2(hi.toFixed(2));
       });
       let evaded = 0;
       for (let r = 0; r < REPLAYS; r++) {
@@ -194,15 +216,13 @@
           if (ok) evaded += 1;
           const c = st.cells.children[r];
           c.className = ok ? "is-ben" : "is-atk";
-          c.title = `${m.name}: ${ok ? "evaded" : "detected"}`;
+          c.title = `${m.name}: ${ok ? T.evaded : T.detected}`;
         });
       }
       tl.call(() => {
-        st.result.textContent = `${evaded}/${REPLAYS} evade`;
+        st.result.textContent = `${evaded}/${REPLAYS} ${T.evade}`;
         st.result.className = "ps-result " + (evaded >= 8 ? "is-bad" : "is-good");
-        st.phase.textContent = st.apollon
-          ? "it learned a mix of boundaries: the evasion only works on some answers"
-          : "it learned the boundary every request meets: the evasion always works";
+        st.phase.textContent = st.apollon ? T.endA : T.endS;
       });
       tl.to({}, { duration: 3.4 });
       return tl;
@@ -229,8 +249,6 @@
       ST.batch(sel, { start: "top 90%", once: true,
         onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 0.7, stagger: 0.08, ease: "power3.out", overwrite: true }) });
     });
-    gsap.from(".lp-watermark", { yPercent: 40, opacity: 0, duration: 1.2, ease: "power3.out",
-      scrollTrigger: { trigger: ".lp-cta", start: "top 70%", once: true } });
   }
 
   // ------------------------------------------------------ nav and side dots
@@ -238,16 +256,6 @@
   const onScroll = () => nav && nav.classList.toggle("is-solid", window.scrollY > 24);
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
-  const dots = document.querySelectorAll(".lp-dots a");
-  if ("IntersectionObserver" in window && dots.length) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (!e.isIntersecting) return;
-        dots.forEach((d) => d.classList.toggle("is-on", d.dataset.dot === e.target.id));
-      });
-    }, { rootMargin: "-45% 0px -50% 0px" });
-    document.querySelectorAll(".lp-sec[id]").forEach((sec) => io.observe(sec));
-  }
 
   // --------------------------------------------------------------- terminal
   (function terminal() {
@@ -286,7 +294,7 @@
   if (copy) copy.addEventListener("click", () => {
     const text = document.getElementById("ap-install-cmd").textContent;
     (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject()).then(
-      () => { copy.textContent = "Copied"; setTimeout(() => { copy.textContent = "Copy"; }, 1500); },
-      () => { copy.textContent = "Select"; });
+      () => { copy.textContent = T.copied; setTimeout(() => { copy.textContent = T.copy; }, 1500); },
+      () => { copy.textContent = T.select; });
   });
 })();

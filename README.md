@@ -22,7 +22,8 @@
   <a href="https://antoniopaya22.github.io/apollon/getting-started/quickstart/">Quickstart</a> ·
   <a href="https://antoniopaya22.github.io/apollon/experiments/">Experiments</a> ·
   <a href="https://doi.org/10.1016/j.cose.2023.103546">Paper</a> ·
-  <a href="#citation">Cite</a>
+  <a href="#citation">Cite</a> ·
+  <a href="README.es.md">Español</a>
 </p>
 
 <p align="center">

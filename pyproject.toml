@@ -40,7 +40,7 @@ dependencies = [
 
 [project.optional-dependencies]
 attacks = ["adversarial-robustness-toolbox>=1.15"]
-docs = ["mkdocs-material>=9.5", "mkdocstrings[python]>=0.25"]
+docs = ["mkdocs-material>=9.5", "mkdocstrings[python]>=0.25", "mkdocs-static-i18n>=1.2"]
 dev = ["pytest>=7", "pytest-cov>=4", "ruff>=0.5", "apollon-ids[attacks]"]
 
 [project.scripts]
