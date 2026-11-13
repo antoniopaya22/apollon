@@ -57,10 +57,10 @@
 
   // --- state
   const ARMS = [
-    { name: "RF", color: "#d0643f", truth: 0.93, a0: 9, b0: 2 },
-    { name: "NB", color: "#c99a3b", truth: 0.78, a0: 7, b0: 3 },
-    { name: "LR", color: "#8aa25c", truth: 0.88, a0: 6, b0: 2 },
-    { name: "MLP", color: "#5c9aa8", truth: 0.90, a0: 4, b0: 2 },
+    { name: "RF", color: "#244ded", truth: 0.93, a0: 9, b0: 2 },
+    { name: "NB", color: "#f5a524", truth: 0.78, a0: 7, b0: 3 },
+    { name: "LR", color: "#1f9d6b", truth: 0.88, a0: 6, b0: 2 },
+    { name: "MLP", color: "#0ea5b7", truth: 0.90, a0: 4, b0: 2 },
   ];
   let wins, last;
   const reset = () => { ARMS.forEach((a) => { a.a = a.a0; a.b = a.b0; }); wins = ARMS.map(() => 0); last = -1; };

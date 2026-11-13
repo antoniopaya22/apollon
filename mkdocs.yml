@@ -10,8 +10,8 @@ theme:
   name: material
   custom_dir: overrides
   font:
-    text: IBM Plex Sans
-    code: IBM Plex Mono
+    text: Archivo
+    code: JetBrains Mono
   logo: assets/logo-white.svg
   favicon: assets/favicon.svg
   icon:

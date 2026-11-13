@@ -2,7 +2,7 @@
 
 {% block extrahead %}
 {{ super() }}
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500;1,6..96,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ 'stylesheets/landing.css' | url }}">
 {% endblock %}
 
@@ -46,7 +46,7 @@
     <div class="lp-wrap lp-hero__grid">
       <div>
         <p class="lp-eyebrow">{{ t.hero_eyebrow }}</p>
-        <h1 class="lp-display">{{ t.hero_title }}</h1>
+        <h1 class="lp-display">{{ t.hero_title }}<i class="lp-sq"></i></h1>
         <p class="lp-lead">{{ t.hero_lead }}</p>
         <div class="lp-row">
           <a class="lp-btn lp-btn--primary lp-btn--lg" href="{{ (B ~ "getting-started/quickstart/") | url }}">{{ t.get_started }}</a>
@@ -90,15 +90,13 @@
       </div>
     </div>
   </section>
-
-  <div class="lp-meander" aria-hidden="true"></div>
   <!-- ======================================================== PROBLEM -->
   <section class="lp-sec lp-light" id="problem">
     <div class="lp-wrap">
       <div class="lp-split">
         <div>
-          <p class="lp-eyebrow"><span class="lp-greek">α</span>{{ t.p_eyebrow }}</p>
-          <h2 class="lp-h2">{{ t.p_title }}</h2>
+          <p class="lp-eyebrow">{{ t.p_eyebrow }}</p>
+          <h2 class="lp-h2">{{ t.p_title }}<i class="lp-sq"></i></h2>
         </div>
         <p class="lp-text">{{ t.p_text }}</p>
       </div>
@@ -135,13 +133,13 @@
     <div class="lp-wrap">
       <div class="lp-split">
         <div>
-          <p class="lp-eyebrow"><span class="lp-greek">β</span>{{ t.h_eyebrow }}</p>
-          <h2 class="lp-h2">{{ t.h_title }}</h2>
+          <p class="lp-eyebrow">{{ t.h_eyebrow }}</p>
+          <h2 class="lp-h2">{{ t.h_title }}<i class="lp-sq"></i></h2>
         </div>
         <p class="lp-text">{{ t.h_text }}</p>
       </div>
       <div class="lp-cols lp-cols--dark">
-        {% for h, p in t.h_cols %}<div><span class="lp-num">{{ ["I","II","III"][loop.index0] }}</span><h3>{{ h }}</h3><p>{{ p }}</p></div>{% endfor %}
+        {% for h, p in t.h_cols %}<div><h3>{{ h }}</h3><p>{{ p }}</p></div>{% endfor %}
       </div>
       <div class="ap-ts lp-ts" id="ap-ts">
         <div class="lp-card__head">{{ t.ts_title }}<span class="lp-card__tag">{{ t.interactive }}</span></div>
@@ -163,8 +161,8 @@
     <div class="lp-wrap">
       <div class="lp-split">
         <div>
-          <p class="lp-eyebrow"><span class="lp-greek">γ</span>{{ t.b_eyebrow }}</p>
-          <h2 class="lp-h2">{{ t.b_title }}</h2>
+          <p class="lp-eyebrow">{{ t.b_eyebrow }}</p>
+          <h2 class="lp-h2">{{ t.b_title }}<i class="lp-sq"></i></h2>
         </div>
         <p class="lp-text">{{ t.b_text }}</p>
       </div>
@@ -190,7 +188,7 @@ model.update(X_reviewed, y_reviewed)</code></pre>
         </div>
       </div>
       <div class="lp-features">
-        {% for path, h, p, link in t.features %}<a href="{{ (B ~ path) | url }}"><span class="lp-feat-n">{{ ["I","II","III","IV"][loop.index0] }}</span><h3>{{ h }}</h3><p>{{ p }}</p><span>{{ link }}</span></a>{% endfor %}
+        {% for path, h, p, link in t.features %}<a href="{{ (B ~ path) | url }}"><h3>{{ h }}</h3><p>{{ p }}</p><span>{{ link }}</span></a>{% endfor %}
       </div>
     </div>
   </section>
@@ -200,8 +198,8 @@ model.update(X_reviewed, y_reviewed)</code></pre>
     <div class="lp-wrap">
       <div class="lp-split">
         <div>
-          <p class="lp-eyebrow"><span class="lp-greek">δ</span>{{ t.e_eyebrow }}</p>
-          <h2 class="lp-h2">{{ t.e_title }}</h2>
+          <p class="lp-eyebrow">{{ t.e_eyebrow }}</p>
+          <h2 class="lp-h2">{{ t.e_title }}<i class="lp-sq"></i></h2>
         </div>
         <p class="lp-text">{{ t.e_text }}</p>
       </div>
@@ -219,22 +217,20 @@ model.update(X_reviewed, y_reviewed)</code></pre>
   <!-- ============================================================ FAQ -->
   <section class="lp-sec lp-light" id="faq">
     <div class="lp-wrap lp-faq">
-      <div><p class="lp-eyebrow"><span class="lp-greek">ε</span>FAQ</p><h2 class="lp-h2">{{ t.q_title }}</h2></div>
+      <h2 class="lp-h2">{{ t.q_title }}<i class="lp-sq"></i></h2>
       <div class="lp-faq__list">
         {% for q, ans in t.faq %}<details{% if loop.first %} open{% endif %}><summary>{{ q }}</summary><p>{{ ans | replace("{cite}", (B ~ "about/citation/") | url) }}</p></details>{% endfor %}
       </div>
     </div>
   </section>
-
-  <div class="lp-meander lp-meander--clay" aria-hidden="true"></div>
   <!-- ============================================================ CTA -->
   <section class="lp-sec lp-cta">
     <div class="lp-wrap">
-      <h2 class="lp-display lp-display--md">{{ t.cta_title }}</h2>
+      <h2 class="lp-display lp-display--md">{{ t.cta_title }}<i class="lp-sq"></i></h2>
       <p class="lp-lead">{{ t.cta_lead }}</p>
       <div class="lp-install">
         <span>$</span><code id="ap-install-cmd">pip install "apollon-ids[attacks] @ git+https://github.com/antoniopaya22/apollon"</code>
-        <button class="ap-install__copy" type="button" data-copied="{{ 'Copiado' if es else 'Copied' }}">{{ t.copy }}</button>
+        <button class="ap-install__copy" type="button" data-copied="{{ 'Copiado' if es else 'Copied' }}">{{ t["copy"] }}</button>
       </div>
       <div class="lp-row">
         <a class="lp-btn lp-btn--dark lp-btn--lg" href="{{ (B ~ "getting-started/quickstart/") | url }}">{{ t.read_quick }}</a>
