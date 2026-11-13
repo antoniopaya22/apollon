@@ -1,6 +1,6 @@
 gretel_synthetics==0.20.0
 keras==2.11.0
-matplotlib==3.6.2
+matplotlib==3.10.9
 numpy==1.23.5
 pandas==1.5.2
 plotly==5.11.0
