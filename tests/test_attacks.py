@@ -1,20 +1,23 @@
-"""Smoke tests for attacks/attack_utils.py on synthetic data (small budgets)."""
+"""Adversarial evaluation helpers on synthetic data (small budgets)."""
 
 import numpy as np
+import pytest
 from sklearn.datasets import make_classification
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.tree import DecisionTreeClassifier
 
-from attacks.attack_utils import (
+pytest.importorskip("art")
+
+from apollon import ApollonMAB
+from apollon.attacks import (
     FUNCTIONAL_FEATURES,
     apollon_classifier,
-    evaluate,
     functional_indexes,
     model_classifier,
     restore_functional,
     run_attack,
 )
-from MAB.apollon_mab import ApollonMAB
+from apollon.metrics import evaluate
 
 
 def test_functional_feature_list_is_complete():
@@ -34,8 +37,9 @@ def test_functional_indexes_and_restore():
 
 
 def _data():
-    X, y = make_classification(n_samples=1500, n_features=8, n_informative=5,
-                               weights=[0.6, 0.4], random_state=1)
+    X, y = make_classification(
+        n_samples=1500, n_features=8, n_informative=5, weights=[0.6, 0.4], random_state=1
+    )
     return MinMaxScaler().fit_transform(X), y
 
 
@@ -64,6 +68,13 @@ def test_transfer_attack_and_single_prediction_metrics():
     dt = DecisionTreeClassifier(random_state=0).fit(X[:1200], y[:1200])
     x_atk = X[1200:][y[1200:] == 1][:5]
     adv = run_attack("hsja", model_classifier(dt), x_atk, max_iter=2)
-    m = evaluate(np.ones(len(adv)).tolist() + [0] * 5,
-                 dt.predict(np.vstack([adv, X[1200:][y[1200:] == 0][:5]])))
-    assert set(m) == {"accuracy", "detection_rate", "f1", "roc_auc"}
+    m = evaluate(
+        np.ones(len(adv)).tolist() + [0] * 5,
+        dt.predict(np.vstack([adv, X[1200:][y[1200:] == 0][:5]])),
+    )
+    assert {"accuracy", "detection_rate", "f1", "roc_auc", "false_positive_rate"} <= set(m)
+
+
+def test_unknown_attack():
+    with pytest.raises(ValueError):
+        run_attack("fgsm", None, np.zeros((1, 2)))
