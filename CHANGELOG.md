@@ -10,6 +10,8 @@ All notable changes to this project are documented here. The format follows
 
 - Documentation site: animated landing page (GSAP), interactive Thompson sampler, figures
   of the preprocessing pipeline and of the attack settings.
+- English and Spanish versions of the website (`/es/`) and of the README.
+- Product-style header and theme for the documentation pages.
 
 ## 2.0.0 - 2026-11-13
 

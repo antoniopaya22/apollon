@@ -10,8 +10,8 @@ theme:
   name: material
   custom_dir: overrides
   font:
-    text: Inter
-    code: JetBrains Mono
+    text: IBM Plex Sans
+    code: IBM Plex Mono
   logo: assets/logo-white.svg
   favicon: assets/favicon.svg
   icon:
@@ -19,18 +19,18 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: amber
+      primary: custom
+      accent: custom
       toggle: { icon: material/weather-night, name: Dark mode }
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: amber
+      primary: custom
+      accent: custom
       toggle: { icon: material/weather-sunny, name: Light mode }
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.top
+    - navigation.tracking
     - navigation.footer
     - navigation.indexes
     - search.suggest
@@ -71,6 +71,44 @@ nav:
 
 plugins:
   - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: es
+          name: Español
+          build: true
+          site_description: Un sistema de defensa robusto frente a ataques de aprendizaje automático adversario en sistemas de detección de intrusiones
+          nav_translations:
+            Home: Inicio
+            Getting started: Primeros pasos
+            Installation: Instalación
+            Quickstart: Inicio rápido
+            User guide: Guía de uso
+            How Apollon works: Cómo funciona Apollon
+            Datasets: Conjuntos de datos
+            Training and evaluation: Entrenamiento y evaluación
+            Adversarial evaluation: Evaluación adversaria
+            Command line: Línea de comandos
+            Experiments: Experimentos
+            Reproducing the paper: Reproducir el artículo
+            Recorded outputs: Salidas registradas
+            API reference: Referencia de la API
+            Classifier pool: Conjunto de clasificadores
+            Data: Datos
+            Attacks: Ataques
+            Metrics: Métricas
+            About: Acerca de
+            Citing Apollon: Cómo citar Apollon
+            Changelog: Cambios
+            Contributing: Contribuir
+            License: Licencia
   - mkdocstrings:
       handlers:
         python:
@@ -121,6 +159,13 @@ extra_javascript:
   - javascripts/thompson.js
 
 extra:
+  header_nav:
+    - { title: Docs, title_es: Documentación, url: getting-started/, section: getting-started/ }
+    - { title: Guide, title_es: Guía, url: guide/how-it-works/, section: guide/ }
+    - { title: Experiments, title_es: Experimentos, url: experiments/, section: experiments/ }
+    - { title: API, title_es: API, url: reference/, section: reference/ }
+    - { title: About, title_es: Acerca de, url: about/citation/, section: about/ }
+  header_cta: { title: Get started, title_es: Empezar, url: getting-started/quickstart/ }
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/antoniopaya22/apollon

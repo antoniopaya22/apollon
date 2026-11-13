@@ -1,0 +1,63 @@
+{#- Product-style header for the documentation pages (the landing has its own).
+    Configure in mkdocs.yml:
+      extra:
+        header_nav: [{title, title_es, url}]   # section links, relative to the site
+        header_cta: {title, title_es, url}     # call-to-action button
+    On the Spanish build (config.theme.language == "es") titles use title_es and
+    relative urls are prefixed with es/. -#}
+{% set es = config.theme.language == "es" %}
+{% set prefix = "es/" if es else "" %}
+<header class="md-header md-header--shadow site-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
+    <a href="{{ (prefix or '.') | url }}" title="{{ config.site_name | e }}" class="md-header__button md-logo site-brand" aria-label="{{ config.site_name }}" data-md-component="logo">
+      {% include "partials/logo.html" %}
+      <span class="site-brand__name">{{ config.site_name }}</span>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="{{ lang.t('nav') }}">
+      {% include ".icons/material/menu.svg" %}
+    </label>
+
+    <ul class="site-nav" role="list">
+      {% for item in config.extra.header_nav | d([]) %}
+        {% set target = prefix ~ item.url %}
+        {% set section = item.section | d(item.url) %}
+        {% set active = page and page.url and page.url.startswith(prefix ~ section) %}
+        <li><a href="{{ target | url }}" class="site-nav__link{% if active %} is-active{% endif %}"{% if active %} aria-current="page"{% endif %}>{{ item.title_es if es and item.title_es else item.title }}</a></li>
+      {% endfor %}
+    </ul>
+
+    <div class="site-header__spacer"></div>
+
+    {% if "material/search" in config.plugins %}
+      {% set search = config.plugins["material/search"] | attr("config") %}
+      {% if search.enabled %}
+        <label class="md-header__button md-icon" for="__search" aria-label="{{ lang.t('search.placeholder') }}">
+          {% include ".icons/material/magnify.svg" %}
+        </label>
+        {% include "partials/search.html" %}
+      {% endif %}
+    {% endif %}
+
+    {% if config.extra.alternate %}
+      {% include "partials/alternate.html" %}
+    {% endif %}
+
+    {% if config.theme.palette and not config.theme.palette is mapping %}
+      {% include "partials/palette.html" %}
+    {% endif %}
+    {% if not config.theme.palette is mapping %}
+      {% include "partials/javascripts/palette.html" %}
+    {% endif %}
+
+    {% if config.repo_url %}
+      <a href="{{ config.repo_url }}" class="md-header__button md-icon site-header__repo" title="GitHub" aria-label="GitHub">
+        {% include ".icons/fontawesome/brands/github.svg" %}
+      </a>
+    {% endif %}
+
+    {% if config.extra.header_cta %}
+      {% set cta = config.extra.header_cta %}
+      <a href="{{ (prefix ~ cta.url) | url }}" class="site-header__cta">{{ cta.title_es if es and cta.title_es else cta.title }}</a>
+    {% endif %}
+  </nav>
+</header>

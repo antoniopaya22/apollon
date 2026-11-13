@@ -6,6 +6,18 @@
   const gsap = window.gsap;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const NS = "http://www.w3.org/2000/svg";
+  const ES = (document.documentElement.lang || "").toLowerCase().startsWith("es");
+  const TX = ES ? {
+    axis: "probabilidad de acertar →", share: "reparto de peticiones respondidas",
+    draws: (list, w) => `Sorteos: ${list}. Responde ${w}.`, first: "Sortea una petición primero.",
+    fb: (n, ok, a, b) => `${n} ${ok ? "acertó" : "falló"}: su posterior pasa a Beta(${a}, ${b}).`,
+    reset: "Posteriores reiniciadas.", run: (n, acc) => `${n} peticiones con realimentación (precisiones reales: ${acc}).`,
+  } : {
+    axis: "probability of answering correctly →", share: "share of requests answered",
+    draws: (list, w) => `Draws: ${list}. ${w} answers.`, first: "Draw a request first.",
+    fb: (n, ok, a, b) => `${n} was ${ok ? "right" : "wrong"}: its posterior becomes Beta(${a}, ${b}).`,
+    reset: "Posteriors reset.", run: (n, acc) => `${n} requests with analyst feedback (true accuracies: ${acc}).`,
+  };
   const el = (tag, attrs, parent) => {
     const n = document.createElementNS(NS, tag);
     for (const k in attrs) n.setAttribute(k, attrs[k]);
@@ -45,10 +57,10 @@
 
   // --- state
   const ARMS = [
-    { name: "RF", color: "#6366f1", truth: 0.93, a0: 9, b0: 2 },
-    { name: "NB", color: "#f59e0b", truth: 0.78, a0: 7, b0: 3 },
-    { name: "LR", color: "#10b981", truth: 0.88, a0: 6, b0: 2 },
-    { name: "MLP", color: "#ec4899", truth: 0.90, a0: 4, b0: 2 },
+    { name: "RF", color: "#d0643f", truth: 0.93, a0: 9, b0: 2 },
+    { name: "NB", color: "#c99a3b", truth: 0.78, a0: 7, b0: 3 },
+    { name: "LR", color: "#8aa25c", truth: 0.88, a0: 6, b0: 2 },
+    { name: "MLP", color: "#5c9aa8", truth: 0.90, a0: 4, b0: 2 },
   ];
   let wins, last;
   const reset = () => { ARMS.forEach((a) => { a.a = a.a0; a.b = a.b0; }); wins = ARMS.map(() => 0); last = -1; };
@@ -63,7 +75,7 @@
     el("line", { x1: x, x2: x, y1: B, y2: B + 4, class: "axis" }, svg);
     el("text", { x, y: B + 17, "text-anchor": "middle" }, svg).textContent = t.toFixed(2);
   });
-  el("text", { x: R, y: B + 34, "text-anchor": "end" }, svg).textContent = "probability of answering correctly →";
+  el("text", { x: R, y: B + 34, "text-anchor": "end" }, svg).textContent = TX.axis;
   const xs = Array.from({ length: N }, (_, i) => 0.002 + (0.996 * i) / (N - 1));
   const sx = (x) => L + x * (R - L);
   const shapes = ARMS.map((a) => ({
@@ -81,7 +93,7 @@
   });
   const mix = el("g", { class: "mix" }, svg);
   const mixBars = ARMS.map((a) => el("rect", { y: 276, height: 10, fill: a.color, x: L, width: 0 }, mix));
-  el("text", { x: L, y: 298 }, svg).textContent = "share of requests answered";
+  el("text", { x: L, y: 298 }, svg).textContent = TX.share;
 
   function paths() {
     const ys = ARMS.map((a) => xs.map((x) => pdf(x, a.a, a.b)));
@@ -126,15 +138,15 @@
           gsap.fromTo(s.dot, { opacity: 0, attr: { cy: B } }, { opacity: op, attr: { cy: T + 6 }, duration: 0.45, delay: i * 0.08, ease: "back.out(2)" });
         } else { s.draw.setAttribute("opacity", op); s.dot.setAttribute("opacity", op); }
       });
-      msg.textContent = `Draws: ${ARMS.map((a, i) => `${a.name} ${th[i].toFixed(2)}`).join(", ")}. ${ARMS[k].name} answers.`;
+      msg.textContent = TX.draws(ARMS.map((a, i) => `${a.name} ${th[i].toFixed(2)}`).join(", "), ARMS[k].name);
     }
     return k;
   }
   function feedback(correct) {
-    if (last < 0) { msg.textContent = "Draw a request first."; return; }
+    if (last < 0) { msg.textContent = TX.first; return; }
     const a = ARMS[last];
     if (correct) a.a += 1; else a.b += 1;
-    msg.textContent = `${a.name} was ${correct ? "right" : "wrong"}: its posterior becomes Beta(${a.a}, ${a.b}).`;
+    msg.textContent = TX.fb(a.name, correct, a.a, a.b);
     last = -1;
     render(true);
   }
@@ -144,7 +156,7 @@
   root.querySelector('[data-act="ko"]').addEventListener("click", () => feedback(false));
   root.querySelector('[data-act="reset"]').addEventListener("click", () => {
     reset(); shapes.forEach((s) => { s.draw.setAttribute("opacity", 0); s.dot.setAttribute("opacity", 0); });
-    msg.textContent = "Posteriors reset."; render(true);
+    msg.textContent = TX.reset; render(true);
   });
   root.querySelector('[data-act="run"]').addEventListener("click", (ev) => {
     const btn = ev.currentTarget; btn.disabled = true;
@@ -155,7 +167,7 @@
         if (Math.random() < ARMS[k].truth) ARMS[k].a += 1; else ARMS[k].b += 1;
       }
       n += 10; render(true);
-      msg.textContent = `${n} requests with analyst feedback (true accuracies: ${ARMS.map((a) => `${a.name} ${a.truth}`).join(", ")}).`;
+      msg.textContent = TX.run(n, ARMS.map((a) => `${a.name} ${a.truth}`).join(", "));
       if (n < 200) setTimeout(step, reduce ? 0 : 120); else btn.disabled = false;
     };
     step();
