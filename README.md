@@ -1,91 +1,121 @@
-# Apollon
+<p align="center">
+  <img src="docs/assets/logo.svg" width="96" alt="Apollon logo">
+</p>
 
-[![Paper](https://img.shields.io/badge/DOI-10.1016%2Fj.cose.2023.103546-0E7490)](https://doi.org/10.1016/j.cose.2023.103546)
-[![Journal](https://img.shields.io/badge/Computers%20%26%20Security-2024-4D7C0F)](https://doi.org/10.1016/j.cose.2023.103546)
-[![License](https://img.shields.io/github/license/antoniopaya22/apollon)](LICENSE)
-![Python](https://img.shields.io/badge/python-3.10-3776AB?logo=python&logoColor=white)
+<h1 align="center">Apollon</h1>
 
-Official implementation of **[Apollon: A robust defense system against Adversarial Machine Learning attacks in Intrusion Detection Systems](https://doi.org/10.1016/j.cose.2023.103546)**, published in *Computers & Security*, vol. 136, 103546 (2024).
+<p align="center">
+  <b>A robust defence system against adversarial machine learning attacks in intrusion detection systems</b>
+</p>
 
-## Abstract
+<p align="center">
+  <a href="https://doi.org/10.1016/j.cose.2023.103546"><img src="https://img.shields.io/badge/DOI-10.1016%2Fj.cose.2023.103546-0E7490" alt="DOI"></a>
+  <a href="https://doi.org/10.1016/j.cose.2023.103546"><img src="https://img.shields.io/badge/Computers%20%26%20Security-vol.%20136%20(2024)-4D7C0F" alt="Journal"></a>
+  <a href="https://github.com/antoniopaya22/apollon/actions/workflows/ci.yml"><img src="https://github.com/antoniopaya22/apollon/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://antoniopaya22.github.io/apollon/"><img src="https://img.shields.io/badge/docs-online-3F51B5" alt="Documentation"></a>
+  <img src="https://img.shields.io/badge/python-3.10%20|%203.11%20|%203.12%20|%203.13-3776AB?logo=python&logoColor=white" alt="Python">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-blue" alt="License"></a>
+</p>
 
-The rise of Adversarial Machine Learning (AML) attacks is presenting a significant
-challenge to Intrusion Detection Systems (IDS) and their ability to detect threats. To
-address this issue, we introduce Apollon, a novel defence system that can protect IDS
-against AML attacks. Apollon utilizes a diverse set of classifiers to identify intrusions
-and employs Multi-Armed Bandits (MAB) with Thompson sampling to dynamically
-select the optimal classifier or ensemble of classifiers for each input. This approach
-enables Apollon to prevent attackers from learning the IDS behaviour and generating
-adversarial examples that can evade the IDS detection. We evaluate Apollon on
-several of the most popular and recent datasets, and show that it can successfully
-detect attacks without compromising its performance on traditional network traffic. Our
-results suggest that Apollon is a robust defence system against AML attacks in IDS.
+<p align="center">
+  <a href="https://antoniopaya22.github.io/apollon/">Documentation</a> ·
+  <a href="https://antoniopaya22.github.io/apollon/getting-started/quickstart/">Quickstart</a> ·
+  <a href="https://antoniopaya22.github.io/apollon/experiments/">Experiments</a> ·
+  <a href="https://doi.org/10.1016/j.cose.2023.103546">Paper</a> ·
+  <a href="#citation">Cite</a>
+</p>
 
-## How it works
+---
 
-1. A pool of diverse classifiers (and ensembles) is trained to detect intrusions.
-2. For every input, a **Multi-Armed Bandit with Thompson sampling** selects which classifier or ensemble answers.
-3. Because the decision boundary keeps changing, an attacker cannot learn a stable model of the IDS to craft adversarial examples.
+Official implementation of **[Apollon: A robust defense system against Adversarial
+Machine Learning attacks in Intrusion Detection Systems](https://doi.org/10.1016/j.cose.2023.103546)**,
+*Computers & Security*, vol. 136, 103546 (2024).
 
-## Repository structure
+Machine-learning intrusion detection systems can be evaded by attackers who query them,
+learn their decision boundary and craft adversarial examples. **Apollon never gives the
+attacker a fixed model to learn**: every request is answered by a classifier drawn from a
+diverse pool by a per-cluster **Multi-Armed Bandit with Thompson sampling**. The
+decision boundary that the attacker probes keeps changing, while the bandit favours the
+classifiers that perform best on each kind of traffic, so detection of ordinary traffic
+is not compromised.
+
+```mermaid
+flowchart LR
+    R["Request"] --> K{"K-Means<br/>cluster"}
+    K --> TS["Thompson sampling<br/>over Beta posteriors"]
+    TS --> A["RF · DT · NB · LR · MLP<br/>trained per cluster"]
+    A --> P["benign / attack"]
+    P -. feedback .-> TS
+```
+
+## Installation
+
+```bash
+pip install "apollon-ids @ git+https://github.com/antoniopaya22/apollon"
+# with the adversarial attacks (ZOO, HopSkipJump)
+pip install "apollon-ids[attacks] @ git+https://github.com/antoniopaya22/apollon"
+```
+
+Python 3.10 or newer. See the [installation guide](https://antoniopaya22.github.io/apollon/getting-started/installation/)
+for development installs.
+
+## Quickstart
+
+```python
+from apollon import ApollonMAB
+from apollon.data import prepare
+from apollon.metrics import evaluate, format_metrics
+
+data = prepare("cic-ids2017", ["data/CIC-IDS2017/"])     # raw CSVs -> scaled split
+model = ApollonMAB(random_state=0).fit(data.X_train, data.y_train)
+
+pred, arms = model.predict(data.X_test, return_arms=True)  # one Thompson draw per request
+print(format_metrics(evaluate(data.y_test, pred)))
+model.update(data.X_test[:100], data.y_test[:100])         # learn from analyst feedback
+```
+
+Or from the command line:
+
+```bash
+apollon demo                                                       # synthetic data, no download
+apollon prepare  --dataset cic-ids2017 --raw data/CIC-IDS2017 --out data/cic17.npz
+apollon train    --data data/cic17.npz --out models/cic17.joblib
+apollon evaluate --data data/cic17.npz --model models/cic17.joblib
+apollon attack   --data data/cic17.npz --model models/cic17.joblib --attack hsja --setting direct
+```
+
+## Features
+
+- **Moving-target defence**: Thompson sampling over a diverse classifier pool, trained
+  per K-Means cluster of traffic.
+- **Online learning**: analyst feedback updates the Beta posteriors (`update`).
+- **Scikit-learn API**: `fit`, `predict`, `predict_proba`, `get_params`; any
+  scikit-learn classifier can join the pool.
+- **Dataset loaders** for CIC-IDS2017, CSE-CIC-IDS2018 and CIC-DDoS2019 with the
+  preprocessing of the paper.
+- **Adversarial evaluation** with ZOO and HopSkipJump (ART), in direct and transfer
+  settings, keeping functional features fixed.
+- **Command line interface**, fixed seeds, tests and continuous integration.
+
+## Repository layout
 
 ```text
-attacks/                       # adversarial example generation
-datasets/                      # dataset preprocessing (see datasets/README.md)
-intrusion_detection_systems/   # IDS models, training and metrics
-MAB/                           # Multi-Armed Bandit selection strategies
-results/                       # experiment outputs
-shared/                        # utilities, models and data folder
-main.py                        # preprocessing + IDS training pipeline
-mab.ipynb                      # Apollon (MAB) experiments
+src/apollon/        the package: ApollonMAB, classifier pool, data, attacks, metrics, CLI
+tests/              unit and end-to-end tests on synthetic data
+docs/               documentation site (MkDocs Material)
+examples/           runnable examples
+research/           original notebooks, scripts and recorded outputs of the paper
 ```
 
-## Getting started
+## Documentation
 
-```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-1. Download the datasets used in the paper ([CIC-IDS2017](https://www.unb.ca/cic/datasets/ids-2017.html), [CSE-CIC-IDS2018](https://www.unb.ca/cic/datasets/ids-2018.html), [CIC-DDoS2019](https://www.unb.ca/cic/datasets/ddos-2019.html), [UNSW-NB15](https://research.unsw.edu.au/projects/unsw-nb15-dataset)). For CIC-IDS2017, place the CSV files under `shared/data/CIC_2017/`.
-2. The first time, set `load_dataset = False` in `main.py` so the raw CSVs are preprocessed and saved, then run:
-
-   ```bash
-   python main.py
-   ```
-
-3. Open `mab.ipynb` to run the Apollon experiments on top of the trained models.
-   Run the notebooks from the repository root so that `MAB/` and `attacks/` are importable.
-
-## Implementation notes
-
-Apollon itself lives in `MAB/apollon_mab.py` (`ApollonMAB`); the notebooks import it.
-Each (cluster, classifier) pair keeps a Beta posterior over the probability of answering
-correctly, initialised on a held-out validation split and updated with `update()` when ground
-truth arrives; Thompson sampling picks the classifier for every request.
-
-`attacks/zoo.ipynb` and `attacks/hotskipjump.ipynb` report two settings:
-
-- **transfer**: adversarial examples crafted against a single classifier and replayed on
-  Apollon (the setting of the original evaluation);
-- **direct**: the attack queries Apollon itself through `attacks/attack_utils.apollon_classifier`,
-  so every query goes through clustering and Thompson-sampled selection.
-
-Functional features (those an attack cannot change without breaking) are restored after every
-attack.
-
-## Tests
-
-```bash
-pip install pytest
-python -m pytest tests/
-```
-
-The tests use synthetic data and do not need the datasets.
+Full documentation at **https://antoniopaya22.github.io/apollon/**: how Apollon works,
+datasets, training, adversarial evaluation, experiments, command line and API reference.
+To build it locally: `pip install -e ".[docs]" && mkdocs serve`.
 
 ## Citation
 
-If you use this code, please cite the paper:
+If you use Apollon in your research, please cite:
 
 ```bibtex
 @article{paya2024apollon,
@@ -99,6 +129,10 @@ If you use this code, please cite the paper:
 }
 ```
 
+## Contributing
+
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## License
 
-[Apache 2.0](LICENSE)
+[Apache License 2.0](LICENSE).

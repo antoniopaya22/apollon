@@ -131,3 +131,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Apollon
+/data/
+/models/
+*.joblib
+*.npz
+research/shared/data/
+research/shared/data_prep/

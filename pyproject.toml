@@ -1,0 +1,83 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "apollon-ids"
+dynamic = ["version"]
+description = "Apollon: a robust defence system against adversarial machine learning attacks in intrusion detection systems"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [
+  { name = "Antonio Payá González" },
+  { name = "Sergio Arroni del Riego" },
+  { name = "Vicente García-Díaz" },
+  { name = "Alberto Gómez" },
+]
+keywords = ["intrusion detection", "adversarial machine learning", "multi-armed bandit",
+            "thompson sampling", "network security", "moving target defence"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Security",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Typing :: Typed",
+]
+dependencies = [
+  "numpy>=1.23",
+  "pandas>=1.5",
+  "scikit-learn>=1.2",
+  "joblib>=1.2",
+]
+
+[project.optional-dependencies]
+attacks = ["adversarial-robustness-toolbox>=1.15"]
+docs = ["mkdocs-material>=9.5", "mkdocstrings[python]>=0.25"]
+dev = ["pytest>=7", "pytest-cov>=4", "ruff>=0.5", "apollon-ids[attacks]"]
+
+[project.scripts]
+apollon = "apollon.cli:main"
+
+[project.urls]
+Homepage = "https://antoniopaya22.github.io/apollon/"
+Documentation = "https://antoniopaya22.github.io/apollon/"
+Repository = "https://github.com/antoniopaya22/apollon"
+Issues = "https://github.com/antoniopaya22/apollon/issues"
+Paper = "https://doi.org/10.1016/j.cose.2023.103546"
+
+[tool.hatch.version]
+path = "src/apollon/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/apollon"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/apollon", "tests", "README.md", "LICENSE", "CITATION.cff"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::UserWarning:art", "ignore::sklearn.exceptions.ConvergenceWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["research"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B018"]
+
+[tool.coverage.run]
+source = ["apollon"]

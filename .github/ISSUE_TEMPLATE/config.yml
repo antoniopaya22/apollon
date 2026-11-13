@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Documentation
+    url: https://antoniopaya22.github.io/apollon/
+    about: Installation, usage, experiments and API reference.
+  - name: Paper
+    url: https://doi.org/10.1016/j.cose.2023.103546
+    about: Apollon in Computers & Security (2024).

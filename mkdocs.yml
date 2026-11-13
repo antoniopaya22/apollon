@@ -1,0 +1,119 @@
+site_name: Apollon
+site_description: A robust defence system against adversarial machine learning attacks in intrusion detection systems
+site_url: https://antoniopaya22.github.io/apollon/
+repo_url: https://github.com/antoniopaya22/apollon
+repo_name: antoniopaya22/apollon
+edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2023–2026 Antonio Payá González, Sergio Arroni del Riego, Vicente García-Díaz, Alberto Gómez · Apache 2.0
+
+theme:
+  name: material
+  logo: assets/logo-white.svg
+  favicon: assets/favicon.svg
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: amber
+      toggle: { icon: material/weather-night, name: Dark mode }
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: amber
+      toggle: { icon: material/weather-sunny, name: Light mode }
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - getting-started/index.md
+      - Installation: getting-started/installation.md
+      - Quickstart: getting-started/quickstart.md
+  - User guide:
+      - How Apollon works: guide/how-it-works.md
+      - Datasets: guide/datasets.md
+      - Training and evaluation: guide/training.md
+      - Adversarial evaluation: guide/attacks.md
+      - Command line: guide/cli.md
+  - Experiments:
+      - experiments/index.md
+      - Reproducing the paper: experiments/reproduce.md
+      - Recorded outputs: experiments/results.md
+  - API reference:
+      - reference/index.md
+      - ApollonMAB: reference/mab.md
+      - Classifier pool: reference/pool.md
+      - Data: reference/data.md
+      - Attacks: reference/attacks.md
+      - Metrics: reference/metrics.md
+  - About:
+      - Citing Apollon: about/citation.md
+      - Changelog: about/changelog.md
+      - Contributing: about/contributing.md
+      - License: about/license.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: numpy
+            show_source: true
+            show_root_heading: true
+            show_root_full_path: false
+            members_order: source
+            separate_signature: true
+            show_signature_annotations: true
+            merge_init_into_class: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: [".", "docs"]
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/antoniopaya22/apollon
+    - icon: fontawesome/solid/book
+      link: https://doi.org/10.1016/j.cose.2023.103546

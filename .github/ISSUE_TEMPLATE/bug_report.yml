@@ -1,0 +1,24 @@
+name: Bug report
+description: Something does not work as documented
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you ran, what you expected and what you got (with the full error).
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal example
+      description: Ideally on synthetic data (`sklearn.datasets.make_classification`).
+      render: python
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Output of `apollon --version`, Python and scikit-learn versions, OS.
+    validations:
+      required: true
