@@ -1,174 +1,200 @@
 {% extends "main.html" %}
 
-{% block tabs %}
+{% block extrahead %}
 {{ super() }}
-<div class="ap-home">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ 'stylesheets/landing.css' | url }}">
+{% endblock %}
 
-  <!-- ================================================================ HERO -->
-  <section class="ap-hero">
-    <div class="ap-hero__glow" aria-hidden="true"></div>
-    <div class="ap-wrap ap-hero__grid">
-      <div class="ap-hero__text">
-        <p class="ap-eyebrow">Computers &amp; Security · vol. 136 · 2024</p>
-        <h1 class="ap-hero__title">
-          An IDS that never<br>shows the <span class="ap-grad">same face</span> twice
-        </h1>
-        <p class="ap-hero__lead">
-          Apollon defends machine-learning intrusion detection against adversarial
-          attacks. Every request is answered by a classifier drawn from a diverse pool by a
-          <strong>Multi-Armed Bandit with Thompson sampling</strong>, so attackers cannot
-          learn a stable boundary to evade, and detection stays accurate.
-        </p>
-        <div class="ap-cta">
-          <a class="ap-btn ap-btn--primary" href="getting-started/quickstart/">Get started</a>
-          <a class="ap-btn" href="guide/how-it-works/">How it works</a>
-          <a class="ap-btn ap-btn--ghost" href="https://doi.org/10.1016/j.cose.2023.103546">Read the paper ↗</a>
+{% block header %}
+<header class="lp-nav" id="lp-nav">
+  <div class="lp-wrap lp-nav__in">
+    <a class="lp-brand" href="{{ '.' | url }}">
+      <img src="{{ 'assets/logo-white.svg' | url }}" alt="" width="26" height="26">
+      <span>Apollon</span>
+    </a>
+    <nav class="lp-nav__links" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="{{ 'getting-started/' | url }}">Docs</a>
+      <a href="{{ 'experiments/' | url }}">Experiments</a>
+      <a href="{{ 'reference/' | url }}">API</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="lp-nav__cta">
+      <a class="lp-btn lp-btn--line lp-hide-sm" href="https://github.com/antoniopaya22/apollon">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.67.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.66 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0Z"/></svg>
+        GitHub
+      </a>
+      <a class="lp-btn lp-btn--primary" href="{{ 'getting-started/quickstart/' | url }}">Get started</a>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block site_nav %}{% endblock %}
+{% block container %}{% endblock %}
+
+{% block tabs %}
+<div class="lp" id="lp">
+
+  <nav class="lp-dots" aria-label="Sections">
+    <a href="#top" data-dot="top" aria-label="Top"></a>
+    <a href="#problem" data-dot="problem" aria-label="The problem"></a>
+    <a href="#how" data-dot="how" aria-label="How it works"></a>
+    <a href="#build" data-dot="build" aria-label="Use it"></a>
+    <a href="#eval" data-dot="eval" aria-label="Evaluation"></a>
+    <a href="#faq" data-dot="faq" aria-label="FAQ"></a>
+  </nav>
+
+  <!-- =========================================================== HERO -->
+  <section class="lp-sec lp-dark lp-hero" id="top">
+    <div class="lp-wrap lp-hero__grid">
+      <div>
+        <p class="lp-eyebrow">Adversarial defence for ML-based IDS</p>
+        <h1 class="lp-display">Never the same <br>model twice<i>.</i></h1>
+        <p class="lp-lead">Apollon answers every request with a classifier drawn by Thompson
+        sampling. Attackers cannot learn a boundary that keeps moving. Detection stays
+        accurate.</p>
+        <div class="lp-row">
+          <a class="lp-btn lp-btn--primary lp-btn--lg" href="{{ 'getting-started/quickstart/' | url }}">Get started</a>
+          <a class="lp-btn lp-btn--line lp-btn--lg" href="https://doi.org/10.1016/j.cose.2023.103546">Read the paper ↗</a>
         </div>
-        <div class="ap-install">
-          <span class="ap-install__prompt">$</span>
-          <code id="ap-install-cmd">pip install "apollon-ids[attacks] @ git+https://github.com/antoniopaya22/apollon"</code>
-          <button class="ap-install__copy" type="button" aria-label="Copy install command">Copy</button>
-        </div>
+        <ul class="lp-facts">
+          <li><b>Published</b> in Computers &amp; Security, vol. 136, 2024</li>
+          <li><b>Five classifiers</b> per cluster, one drawn per request</li>
+          <li><b>Drop-in</b> scikit-learn estimator and command line</li>
+        </ul>
       </div>
-
-      <figure class="ap-hero__viz" aria-label="Animation: a request is clustered, every classifier draws a sample from its Beta posterior and the highest draw answers.">
+      <figure class="lp-card lp-hero__viz" aria-label="Animation: a request is clustered, every classifier draws a value from its Beta posterior and the highest draw answers.">
+        <div class="lp-card__head"><span class="lp-live"></span>Live selection<span class="lp-card__tag">Simulation</span></div>
         <svg id="ap-bandit" viewBox="0 0 640 400" role="img">
           <defs>
-            <linearGradient id="ap-g-line" x1="0" x2="1">
-              <stop offset="0" stop-color="#7c8cff"/><stop offset="1" stop-color="#c084fc"/>
-            </linearGradient>
-            <filter id="ap-glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="4" result="b"/>
-              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
+            <linearGradient id="ap-g-line" x1="0" x2="1"><stop offset="0" stop-color="#7c8cff"/><stop offset="1" stop-color="#c084fc"/></linearGradient>
+            <filter id="ap-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
           </defs>
-          <!-- stage labels -->
           <text class="ap-v-label" x="50" y="28">Request</text>
           <text class="ap-v-label" x="200" y="28">Cluster</text>
           <text class="ap-v-label" x="400" y="28">Thompson draw θ ~ Beta(α, β)</text>
           <text class="ap-v-label" x="581" y="28">Verdict</text>
-          <!-- clusters -->
           <g id="ap-c0" class="ap-v-cluster"><circle cx="200" cy="130" r="34"/><text x="200" y="135">c₀</text></g>
           <g id="ap-c1" class="ap-v-cluster"><circle cx="200" cy="270" r="34"/><text x="200" y="275">c₁</text></g>
-          <!-- links (drawn per round) -->
           <path id="ap-link-in" class="ap-v-link" d=""/>
           <path id="ap-link-out" class="ap-v-link" d=""/>
-          <!-- arms -->
           <g id="ap-arms"></g>
-          <!-- verdict -->
-          <g id="ap-verdict" class="ap-v-verdict">
-            <rect x="535" y="175" width="92" height="50" rx="12"/>
-            <text id="ap-verdict-text" x="581" y="206">·</text>
-          </g>
-          <!-- request packet -->
+          <g id="ap-verdict" class="ap-v-verdict"><rect x="535" y="175" width="92" height="50" rx="12"/><text id="ap-verdict-text" x="581" y="206">·</text></g>
           <g id="ap-packet" filter="url(#ap-glow)"><circle cx="50" cy="200" r="11"/></g>
           <text id="ap-caption" class="ap-v-caption" x="320" y="388">request #1</text>
         </svg>
       </figure>
     </div>
-    <div class="ap-scroll-hint" aria-hidden="true">↓</div>
+    <div class="lp-wrap">
+      <div class="lp-strip">
+        <div><span>Where</span><b>Behind any flow-based IDS</b></div>
+        <div><span>What it stops</span><b>Black-box evasion</b></div>
+        <div><span>Cost</span><b>One model per request</b></div>
+      </div>
+    </div>
   </section>
 
-  <!-- ===================================================== THE PROBLEM -->
-  <section class="ap-section">
-    <div class="ap-wrap">
-      <p class="ap-eyebrow ap-reveal">The problem</p>
-      <h2 class="ap-h2 ap-reveal">Black-box attacks learn a fixed boundary.<br>Apollon keeps moving it.</h2>
-      <p class="ap-sub ap-reveal">
-        ZOO and HopSkipJump query the IDS, estimate where its decision boundary lies and push
-        an attack just across it. That works when the same model answers every query. With
-        Apollon, consecutive queries can be answered by different classifiers, so the
-        attacker's estimates never converge.
-      </p>
-      <div class="ap-duel">
-        <figure class="ap-duel__card ap-reveal">
-          <svg id="ap-duel-single" viewBox="0 0 300 220" role="img" aria-label="A single model: the attacker's probes converge and cross the fixed boundary.">
-            <rect class="ap-d-zone-benign" x="0" y="0" width="300" height="220"/>
-            <path class="ap-d-zone-attack" d="M0,0 L300,0 L300,95 C220,120 120,60 0,120 Z"/>
-            <path class="ap-d-boundary" d="M0,120 C120,60 220,120 300,95"/>
+  <!-- ======================================================== PROBLEM -->
+  <section class="lp-sec lp-light" id="problem">
+    <div class="lp-wrap">
+      <div class="lp-split">
+        <div>
+          <p class="lp-eyebrow">The problem</p>
+          <h2 class="lp-h2">A fixed model is a target<i>.</i></h2>
+        </div>
+        <p class="lp-text">ZOO and HopSkipJump query an IDS, estimate where its decision
+        boundary lies and push an attack just across it. That only works if the same model
+        answers every query.</p>
+      </div>
+      <div class="lp-cols">
+        <div><h3>Attackers probe</h3><p>Thousands of queries, each a slightly modified attack flow.</p></div>
+        <div><h3>They map the boundary</h3><p>Every answer refines their estimate of where benign begins.</p></div>
+        <div><h3>They step across</h3><p>The smallest change that flips the verdict becomes the evasion.</p></div>
+      </div>
+      <div class="lp-duel">
+        <figure class="lp-card lp-card--light">
+          <div class="lp-card__head">Single model<span class="ap-d-status" data-for="single">probing…</span></div>
+          <svg id="ap-duel-single" viewBox="0 0 300 200" role="img" aria-label="Single model: probes converge and cross the fixed boundary.">
+            <rect class="ap-d-zone-benign" x="0" y="0" width="300" height="200"/>
+            <path class="ap-d-zone-attack" d="M0,0 L300,0 L300,95 C200,120 100,60 0,120 Z"/>
+            <path class="ap-d-boundary" d="M0,120 C100,60 200,120 300,95"/>
             <g class="ap-d-probes"></g>
-            <circle class="ap-d-attacker" cx="150" cy="40" r="9"/>
+            <circle class="ap-d-attacker" cx="150" cy="34" r="9"/>
           </svg>
-          <figcaption><strong>Single model</strong><span class="ap-d-status" data-for="single">probing…</span></figcaption>
         </figure>
-        <figure class="ap-duel__card ap-reveal">
-          <svg id="ap-duel-apollon" viewBox="0 0 300 220" role="img" aria-label="Apollon: the boundary changes with every query, so the probes never converge.">
-            <rect class="ap-d-zone-benign" x="0" y="0" width="300" height="220"/>
-            <path class="ap-d-zone-attack" d="M0,0 L300,0 L300,95 C220,120 120,60 0,120 Z"/>
-            <path class="ap-d-boundary" d="M0,120 C120,60 220,120 300,95"/>
+        <figure class="lp-card lp-card--light">
+          <div class="lp-card__head">Apollon<span class="ap-d-status" data-for="apollon">probing…</span></div>
+          <svg id="ap-duel-apollon" viewBox="0 0 300 200" role="img" aria-label="Apollon: the boundary changes with every query.">
+            <rect class="ap-d-zone-benign" x="0" y="0" width="300" height="200"/>
+            <path class="ap-d-zone-attack" d="M0,0 L300,0 L300,95 C200,120 100,60 0,120 Z"/>
+            <path class="ap-d-boundary" d="M0,120 C100,60 200,120 300,95"/>
             <g class="ap-d-probes"></g>
-            <circle class="ap-d-attacker" cx="150" cy="40" r="9"/>
-            <text class="ap-d-arm" x="290" y="210" text-anchor="end">RF</text>
+            <circle class="ap-d-attacker" cx="150" cy="34" r="9"/>
+            <text class="ap-d-arm" x="290" y="192" text-anchor="end">RF</text>
           </svg>
-          <figcaption><strong>Apollon</strong><span class="ap-d-status" data-for="apollon">probing…</span></figcaption>
         </figure>
       </div>
+      <p class="lp-note">Illustration of the mechanism. Measured results are in the <a href="https://doi.org/10.1016/j.cose.2023.103546">paper</a>.</p>
     </div>
   </section>
 
-  <!-- ==================================================== HOW IT WORKS -->
-  <section class="ap-section ap-section--alt">
-    <div class="ap-wrap">
-      <p class="ap-eyebrow ap-reveal">How it works</p>
-      <h2 class="ap-h2 ap-reveal">Three ideas, one draw per request</h2>
-      <div class="ap-steps">
-        <article class="ap-step ap-reveal">
-          <div class="ap-step__icon">
-            <svg viewBox="0 0 48 48"><circle cx="15" cy="17" r="3"/><circle cx="22" cy="12" r="3"/><circle cx="12" cy="25" r="3"/><circle cx="34" cy="31" r="3"/><circle cx="38" cy="38" r="3"/><circle cx="29" cy="37" r="3"/><circle cx="17" cy="18" r="13" class="o"/><circle cx="33" cy="35" r="11" class="o"/></svg>
-          </div>
-          <span class="ap-step__n">01</span>
-          <h3>Cluster the traffic</h3>
-          <p>K-Means groups requests, and every classifier is trained on every cluster: each
-          kind of traffic gets its own specialised pool.</p>
-        </article>
-        <article class="ap-step ap-reveal">
-          <div class="ap-step__icon">
-            <svg viewBox="0 0 48 48"><rect x="7" y="26" width="6" height="14" rx="2"/><rect x="17" y="14" width="6" height="26" rx="2" class="hi"/><rect x="27" y="20" width="6" height="20" rx="2"/><rect x="37" y="30" width="6" height="10" rx="2"/><path d="M4 42h42" class="o"/></svg>
-          </div>
-          <span class="ap-step__n">02</span>
-          <h3>Sample, don't choose</h3>
-          <p>Each (cluster, classifier) keeps a Beta posterior of its accuracy. For every
-          request one value is drawn per classifier and the highest draw answers.</p>
-        </article>
-        <article class="ap-step ap-reveal">
-          <div class="ap-step__icon">
-            <svg viewBox="0 0 48 48"><path d="M38 18a15 15 0 1 0 2 12" class="o"/><path d="M40 8v10H30" class="o"/><path d="M18 25l5 5 9-11" class="o hi"/></svg>
-          </div>
-          <span class="ap-step__n">03</span>
-          <h3>Keep learning</h3>
-          <p>Analyst feedback updates the posteriors online, so the classifiers that are
-          right on today's traffic answer more often tomorrow.</p>
-        </article>
+  <!-- ============================================================ HOW -->
+  <section class="lp-sec lp-dark" id="how">
+    <div class="lp-wrap">
+      <div class="lp-split">
+        <div>
+          <p class="lp-eyebrow">How it works</p>
+          <h2 class="lp-h2">Sample, don't choose<i>.</i></h2>
+        </div>
+        <p class="lp-text">Every classifier keeps a Beta posterior of how often it is right.
+        Each request draws one value per classifier; the highest draw answers. Good
+        classifiers answer most requests, but no answer is predictable.</p>
       </div>
-      <div class="ap-center ap-reveal"><a class="ap-btn" href="guide/how-it-works/">Try the interactive Thompson sampler →</a></div>
-    </div>
-  </section>
-
-  <!-- ========================================================= NUMBERS -->
-  <section class="ap-section">
-    <div class="ap-wrap">
-      <div class="ap-stats">
-        <div class="ap-stat ap-reveal"><b data-count="5">0</b><span>classifier families in the pool</span></div>
-        <div class="ap-stat ap-reveal"><b data-count="3">0</b><span>CIC datasets with loaders</span></div>
-        <div class="ap-stat ap-reveal"><b data-count="2">0</b><span>black-box attacks, direct and transfer</span></div>
-        <div class="ap-stat ap-reveal"><b data-count="1">0</b><span>model evaluation per request</span></div>
+      <div class="lp-cols lp-cols--dark">
+        <div><span class="lp-num">01</span><h3>Cluster</h3><p>K-Means splits traffic; every classifier is trained per cluster.</p></div>
+        <div><span class="lp-num">02</span><h3>Draw</h3><p>One Beta draw per classifier; the highest answers this request.</p></div>
+        <div><span class="lp-num">03</span><h3>Learn</h3><p>Analyst feedback updates the posteriors online.</p></div>
+      </div>
+      <div class="ap-ts lp-ts" id="ap-ts">
+        <div class="lp-card__head"><span class="lp-live"></span>Thompson sampler<span class="lp-card__tag">Interactive</span></div>
+        <div class="ap-ts__plot"></div>
+        <div class="ap-ts__bar">
+          <button type="button" class="primary" data-act="draw">Draw a request</button>
+          <button type="button" data-act="ok">✓ Right</button>
+          <button type="button" data-act="ko">✗ Wrong</button>
+          <button type="button" data-act="run">Run 200 requests</button>
+          <button type="button" data-act="reset">Reset</button>
+          <span class="ap-ts__msg">Draw a request to start.</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================ CODE -->
-  <section class="ap-section ap-section--alt">
-    <div class="ap-wrap">
-      <p class="ap-eyebrow ap-reveal">Developer experience</p>
-      <h2 class="ap-h2 ap-reveal">A scikit-learn estimator and a CLI</h2>
-      <div class="ap-code">
-        <div class="ap-window ap-reveal">
-          <div class="ap-window__bar"><i></i><i></i><i></i><span>quickstart.py</span></div>
-<pre class="ap-window__body"><code><span class="k">from</span> apollon <span class="k">import</span> ApollonMAB
+  <!-- ========================================================== BUILD -->
+  <section class="lp-sec lp-light" id="build">
+    <div class="lp-wrap">
+      <div class="lp-split">
+        <div>
+          <p class="lp-eyebrow">Use it</p>
+          <h2 class="lp-h2">From CSV to verdict<i>.</i></h2>
+        </div>
+        <p class="lp-text">A scikit-learn estimator for your pipelines and a command line for
+        experiments. Four commands take a CIC dataset from raw CSV files to an adversarial
+        evaluation.</p>
+      </div>
+      <div class="lp-code">
+        <div class="lp-win">
+          <div class="lp-win__bar"><i></i><i></i><i></i><span>quickstart.py</span></div>
+<pre class="lp-win__body"><code><span class="k">from</span> apollon <span class="k">import</span> ApollonMAB
 <span class="k">from</span> apollon.data <span class="k">import</span> prepare
 
 data = prepare(<span class="s">"cic-ids2017"</span>, [<span class="s">"data/CIC-IDS2017/"</span>])
-model = ApollonMAB(random_state=<span class="n">0</span>).fit(data.X_train, data.y_train)
+model = ApollonMAB(random_state=<span class="n">0</span>)
+model.fit(data.X_train, data.y_train)
 
 <span class="c"># one Thompson draw per request</span>
 pred, arms = model.predict(data.X_test, return_arms=<span class="k">True</span>)
@@ -176,37 +202,120 @@ pred, arms = model.predict(data.X_test, return_arms=<span class="k">True</span>)
 <span class="c"># analyst feedback updates the posteriors</span>
 model.update(X_reviewed, y_reviewed)</code></pre>
         </div>
-        <div class="ap-window ap-window--term ap-reveal">
-          <div class="ap-window__bar"><i></i><i></i><i></i><span>terminal</span></div>
-          <pre class="ap-window__body" id="ap-term" aria-label="Output of apollon demo"></pre>
+        <div class="lp-win">
+          <div class="lp-win__bar"><i></i><i></i><i></i><span>terminal</span></div>
+          <pre class="lp-win__body" id="ap-term" aria-label="Output of apollon demo"></pre>
         </div>
+      </div>
+      <div class="lp-features">
+        <a href="{{ 'reference/mab/' | url }}"><h3>scikit-learn API</h3><p>fit, predict, predict_proba, get_params. Any classifier can join the pool.</p><span>API reference →</span></a>
+        <a href="{{ 'guide/cli/' | url }}"><h3>Command line</h3><p>prepare, train, evaluate, attack, demo. JSON output for pipelines.</p><span>CLI guide →</span></a>
+        <a href="{{ 'guide/datasets/' | url }}"><h3>Dataset loaders</h3><p>CIC-IDS2017, CSE-CIC-IDS2018 and CIC-DDoS2019 with the paper's preprocessing.</p><span>Datasets →</span></a>
+        <a href="{{ 'guide/attacks/' | url }}"><h3>Attack harness</h3><p>ZOO and HopSkipJump through ART, direct and transfer, functional features fixed.</p><span>Adversarial evaluation →</span></a>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================ CITE -->
-  <section class="ap-section">
-    <div class="ap-wrap">
-      <div class="ap-cite ap-reveal">
+  <!-- =========================================================== EVAL -->
+  <section class="lp-sec lp-dark" id="eval">
+    <div class="lp-wrap">
+      <div class="lp-split">
         <div>
-          <p class="ap-eyebrow">Cite Apollon</p>
-          <h2 class="ap-h2">Apollon: A robust defense system against Adversarial Machine Learning attacks in Intrusion Detection Systems</h2>
-          <p class="ap-sub">A. Payá, S. Arroni, V. García-Díaz, A. Gómez. <em>Computers &amp; Security</em> 136, 103546 (2024).</p>
-          <div class="ap-cta">
-            <a class="ap-btn ap-btn--primary" href="https://doi.org/10.1016/j.cose.2023.103546">doi:10.1016/j.cose.2023.103546</a>
-            <a class="ap-btn" href="about/citation/">BibTeX, APA, IEEE</a>
-            <a class="ap-btn ap-btn--ghost" href="https://github.com/antoniopaya22/apollon">GitHub ↗</a>
-          </div>
+          <p class="lp-eyebrow">Evaluation</p>
+          <h2 class="lp-h2">Tested on real traffic<i>.</i></h2>
         </div>
+        <p class="lp-text">The paper evaluates Apollon on three public datasets of the Canadian
+        Institute for Cybersecurity, against black-box attacks, and compares it with each
+        classifier of its pool used alone.</p>
+      </div>
+      <div class="lp-table">
+        <div class="lp-table__row lp-table__head"><span>Dataset</span><span>Traffic</span><span>Attacks</span></div>
+        <div class="lp-table__row"><b>CIC-IDS2017</b><span>Five days, enterprise network</span><span>DoS, DDoS, brute force, web, botnet, scans</span></div>
+        <div class="lp-table__row"><b>CSE-CIC-IDS2018</b><span>Ten days, large network on AWS</span><span>Same families, more hosts</span></div>
+        <div class="lp-table__row"><b>CIC-DDoS2019</b><span>Reflection and exploitation</span><span>DNS, LDAP, NTP, SNMP, SYN, UDP and more</span></div>
+      </div>
+      <div class="lp-cols lp-cols--dark">
+        <div><h3>ZOO</h3><p>Score-based, zeroth-order optimisation of the attack towards benign.</p></div>
+        <div><h3>HopSkipJump</h3><p>Decision-based: needs only the predicted label.</p></div>
+        <div><h3>Two settings</h3><p>Direct queries to Apollon, and transfer from a surrogate model.</p></div>
+      </div>
+      <div class="lp-row"><a class="lp-btn lp-btn--line" href="{{ 'experiments/reproduce/' | url }}">Reproduce the experiments →</a></div>
+    </div>
+  </section>
+
+  <!-- ============================================================ FAQ -->
+  <section class="lp-sec lp-light" id="faq">
+    <div class="lp-wrap lp-faq">
+      <h2 class="lp-h2">Questions<i>.</i></h2>
+      <div class="lp-faq__list">
+        <details open><summary>Does Apollon slow detection down?</summary>
+          <p>No more than a single model: each request costs one cluster assignment, one Beta
+          draw per classifier and one classifier evaluation. Training fits every classifier
+          on every cluster.</p></details>
+        <details><summary>Can I use my own classifiers?</summary>
+          <p>Yes. Any scikit-learn classifier with <code>predict_proba</code> can be passed in
+          <code>ApollonMAB(arms=[...])</code>; the paper's pool is RF, DT, NB, LR and MLP.</p></details>
+        <details><summary>Does it need labels at run time?</summary>
+          <p>No. Labels are needed to train. Afterwards, analyst feedback is optional: when it
+          arrives, <code>update</code> moves the posteriors of the classifiers that answered.</p></details>
+        <details><summary>Which attacks were evaluated?</summary>
+          <p>ZOO and HopSkipJump, targeted towards the benign class, with functional features
+          kept fixed, both querying Apollon directly and transferring from a surrogate.</p></details>
+        <details><summary>Can analysts audit a randomised answer?</summary>
+          <p>Predictions are reproducible with a seed, and every answer reports which
+          classifier produced it (<code>return_arms=True</code>), so alerts stay auditable.</p></details>
+        <details><summary>How do I cite Apollon?</summary>
+          <p>Cite the article in Computers &amp; Security 136, 103546 (2024). BibTeX, APA and
+          IEEE formats are on the <a href="{{ 'about/citation/' | url }}">citation page</a>.</p></details>
       </div>
     </div>
   </section>
 
+  <!-- ============================================================ CTA -->
+  <section class="lp-sec lp-cta">
+    <div class="lp-wrap">
+      <h2 class="lp-display lp-display--md">Put your IDS <br>on the move<i>.</i></h2>
+      <p class="lp-lead">Install the package, run the demo, then point it at your traffic.</p>
+      <div class="lp-install">
+        <span>$</span><code id="ap-install-cmd">pip install "apollon-ids[attacks] @ git+https://github.com/antoniopaya22/apollon"</code>
+        <button class="ap-install__copy" type="button">Copy</button>
+      </div>
+      <div class="lp-row">
+        <a class="lp-btn lp-btn--dark lp-btn--lg" href="{{ 'getting-started/quickstart/' | url }}">Read the quickstart</a>
+        <a class="lp-btn lp-btn--onblue lp-btn--lg" href="https://github.com/antoniopaya22/apollon">Star on GitHub ↗</a>
+      </div>
+      <div class="lp-watermark" aria-hidden="true">apollon</div>
+    </div>
+  </section>
 </div>
 {% endblock %}
 
-{% block site_nav %}{% endblock %}
-{% block container %}{% endblock %}
+{% block footer %}
+<footer class="lp-foot">
+  <div class="lp-wrap lp-foot__grid">
+    <div>
+      <a class="lp-brand" href="{{ '.' | url }}"><img src="{{ 'assets/logo-white.svg' | url }}" alt="" width="22" height="22"><span>Apollon</span></a>
+      <p>A robust defence system against adversarial machine learning attacks in intrusion detection systems.</p>
+    </div>
+    <div><h4>Documentation</h4>
+      <a href="{{ 'getting-started/installation/' | url }}">Installation</a>
+      <a href="{{ 'getting-started/quickstart/' | url }}">Quickstart</a>
+      <a href="{{ 'guide/how-it-works/' | url }}">How it works</a>
+      <a href="{{ 'reference/' | url }}">API reference</a></div>
+    <div><h4>Research</h4>
+      <a href="https://doi.org/10.1016/j.cose.2023.103546">Paper</a>
+      <a href="{{ 'experiments/' | url }}">Experiments</a>
+      <a href="{{ 'about/citation/' | url }}">Cite</a>
+      <a href="{{ 'about/changelog/' | url }}">Changelog</a></div>
+    <div><h4>Project</h4>
+      <a href="https://github.com/antoniopaya22/apollon">GitHub</a>
+      <a href="https://github.com/antoniopaya22/apollon/releases">Releases</a>
+      <a href="{{ 'about/contributing/' | url }}">Contributing</a>
+      <a href="{{ 'about/license/' | url }}">Apache 2.0</a></div>
+  </div>
+  <div class="lp-wrap lp-foot__base">© 2023–2026 A. Payá, S. Arroni, V. García-Díaz, A. Gómez</div>
+</footer>
+{% endblock %}
 
 {% block scripts %}
 {{ super() }}
