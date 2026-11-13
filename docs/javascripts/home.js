@@ -34,94 +34,89 @@
   window.apollonBeta = beta;
 
   // ------------------------------------------------------------------- hero
+  // One adversarial flow (crafted against LR) queried again and again. Every query is
+  // answered by a model drawn with Thompson sampling; its decision boundary is shown.
   (function hero() {
-    const svg = document.getElementById("ap-bandit");
-    if (!svg) return;
-    const ARMS = ["RF", "DT", "NB", "LR", "MLP"];
-    // Posterior (alpha, beta) per cluster: different arms lead on different traffic.
-    const POST = [
-      [[46, 3], [40, 6], [30, 10], [41, 5], [38, 6]],
-      [[36, 6], [41, 5], [26, 12], [44, 3], [40, 5]],
+    const plot = document.getElementById("hv-plot");
+    if (!plot) return;
+    const M = [
+      { name: "RF", a: 8, b: 2, attack: true,
+        edge: "M0,200 L80,200 L80,170 L150,170 L150,120 L230,120 L230,100 L330,100 L330,70 L420,70 L420,60 L560,60",
+        region: "M0,300 L0,200 L80,200 L80,170 L150,170 L150,120 L230,120 L230,100 L330,100 L330,70 L420,70 L420,60 L560,60 L560,300 Z" },
+      { name: "DT", a: 7, b: 2, attack: true,
+        edge: "M0,180 L180,180 L180,90 L380,90 L380,30 L560,30",
+        region: "M0,300 L0,180 L180,180 L180,90 L380,90 L380,30 L560,30 L560,300 Z" },
+      { name: "NB", a: 6, b: 2.5, attack: true,
+        edge: "M160,170 a170,110 0 1,0 340,0 a170,110 0 1,0 -340,0",
+        region: "M160,170 a170,110 0 1,0 340,0 a170,110 0 1,0 -340,0 Z" },
+      { name: "LR", a: 6, b: 2.5, attack: false,
+        edge: "M0,40 L560,250",
+        region: "M0,40 L560,250 L560,300 L0,300 Z" },
+      { name: "MLP", a: 7, b: 2, attack: true,
+        edge: "M0,210 C120,60 220,220 330,90 C420,0 480,120 560,80",
+        region: "M0,300 L0,210 C120,60 220,220 330,90 C420,0 480,120 560,80 L560,300 Z" },
     ];
-    const CL = [{ x: 200, y: 130 }, { x: 200, y: 270 }];
-    const X0 = 318, W = 168, rowY = (i) => 78 + i * 62;
-    const g = document.getElementById("ap-arms");
-    const rows = ARMS.map((name, i) => {
-      const y = rowY(i);
-      const grp = el("g", { class: "ap-v-arm" }, g);
-      el("text", { x: 300, y: y + 5, class: "ap-v-arm-name", "text-anchor": "end" }, grp).textContent = name;
-      el("rect", { x: X0, y: y - 9, width: W, height: 18, rx: 9, class: "ap-v-track" }, grp);
-      const bar = el("rect", { x: X0, y: y - 9, width: 0, height: 18, rx: 9, class: "ap-v-bar" }, grp);
-      const val = el("text", { x: X0 + W + 8, y: y + 5, class: "ap-v-val" }, grp);
-      const wins = el("text", { x: 300, y: y + 21, class: "ap-v-wins", "text-anchor": "end" }, grp);
-      return { grp, bar, val, wins, n: 0, y };
+    const FULL = { RF: "Random Forest", DT: "Decision Tree", NB: "Naive Bayes", LR: "Logistic Regression", MLP: "Multi-Layer Perceptron" };
+    const chipsBox = document.getElementById("hv-chips");
+    const chips = M.map((m) => {
+      const c = document.createElement("div");
+      c.className = "hv-chip";
+      c.innerHTML = `<span>${m.name}</span><i><b></b></i>`;
+      chipsBox.appendChild(c);
+      return c;
     });
-    const packet = svg.querySelector("#ap-packet circle");
-    const linkIn = document.getElementById("ap-link-in");
-    const linkOut = document.getElementById("ap-link-out");
-    const verdict = document.getElementById("ap-verdict");
-    const vtext = document.getElementById("ap-verdict-text");
-    const caption = document.getElementById("ap-caption");
-    const clusters = [document.getElementById("ap-c0"), document.getElementById("ap-c1")];
-    let round = 0;
+    const region = document.getElementById("hv-region");
+    const edge = document.getElementById("hv-edge");
+    const ring = document.getElementById("hv-ring");
+    const label = document.getElementById("hv-model");
+    const log = document.getElementById("hv-log");
+    const score = document.getElementById("hv-score");
+    const wins = M.map(() => 0);
+    let q = 0, detected = 0;
 
-    const draw = (path, d) => {
-      path.setAttribute("d", d);
-      const len = path.getTotalLength();
-      gsap.set(path, { strokeDasharray: len, strokeDashoffset: len, opacity: 1 });
-      return gsap.to(path, { strokeDashoffset: 0, duration: 0.45, ease: "power2.out" });
-    };
+    function show(k, animate) {
+      const m = M[k];
+      chips.forEach((c, i) => c.classList.toggle("is-on", i === k));
+      label.textContent = `boundary of ${FULL[m.name]}`;
+      region.setAttribute("d", m.region);
+      edge.setAttribute("d", m.edge);
+      ring.setAttribute("class", "hv-ring " + (m.attack ? "is-attack" : "is-benign"));
+      if (!animate) return;
+      const len = edge.getTotalLength();
+      gsap.fromTo(region, { opacity: 0 }, { opacity: 1, duration: 0.35 });
+      gsap.fromTo(edge, { strokeDasharray: len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: 0.6, ease: "power2.out" });
+      gsap.fromTo(ring, { attr: { r: 10 }, opacity: 1 }, { attr: { r: 30 }, opacity: 0, duration: 0.9, ease: "power2.out", delay: 0.35 });
+    }
 
-    function play() {
-      round += 1;
-      const c = Math.random() < 0.5 ? 0 : 1;
-      const theta = POST[c].map(([a, b]) => beta(a, b));
-      const win = theta.indexOf(Math.max(...theta));
-      const attack = Math.random() < 0.45;
-      const r = rows[win];
-      const tl = gsap.timeline({ onComplete: play });
-      tl.set(packet, { attr: { cx: 50, cy: 200 }, opacity: 0, scale: 0.4, transformOrigin: "50% 50%" })
-        .set([linkIn, linkOut], { opacity: 0 })
-        .set(verdict, { attr: { class: "ap-v-verdict" } })
-        .call(() => { vtext.textContent = "·"; caption.textContent = `request #${round}`; })
-        .to(packet, { opacity: 1, scale: 1, duration: 0.3 })
-        .to(packet, { attr: { cx: CL[c].x, cy: CL[c].y }, duration: 0.6, ease: "power2.inOut" })
-        .fromTo(clusters[c], { scale: 1 }, { scale: 1.12, duration: 0.18, yoyo: true, repeat: 1, transformOrigin: "200px " + CL[c].y + "px" }, "<0.45")
-        .call(() => { caption.textContent = `request #${round} → cluster c${c === 0 ? "₀" : "₁"}: every arm draws θ`; });
-      rows.forEach((row, i) => {
-        tl.to(row.bar, { attr: { width: W * theta[i] }, duration: 0.55, ease: "power3.out" }, i === 0 ? ">" : "<0.06");
-        tl.call(() => { row.val.textContent = theta[i].toFixed(2); }, null, "<");
-      });
-      tl.call(() => {
-        rows.forEach((row, i) => row.grp.classList.toggle("is-win", i === win));
-        r.n += 1;
-        rows.forEach((row) => { row.wins.textContent = row.n ? `answered ×${row.n}` : ""; });
-        caption.textContent = `highest draw: ${ARMS[win]} answers request #${round}`;
-      }, null, "+=0.15")
-        .add(draw(linkIn, `M${CL[c].x + 34},${CL[c].y} C255,${CL[c].y} 250,${r.y} 300,${r.y}`))
-        .to(packet, { attr: { cx: X0 + W * theta[win], cy: r.y }, duration: 0.55, ease: "power2.inOut" }, "<")
-        .add(draw(linkOut, `M${X0 + W + 30},${r.y} C540,${r.y} 520,200 535,200`))
-        .to(packet, { attr: { cx: 581, cy: 200 }, duration: 0.5, ease: "power2.inOut" }, "<")
-        .call(() => {
-          verdict.setAttribute("class", "ap-v-verdict " + (attack ? "is-attack" : "is-benign"));
-          vtext.textContent = attack ? "attack" : "benign";
-        })
-        .to(packet, { opacity: 0, scale: 2.2, duration: 0.4 }, "<")
-        .to({}, { duration: 1.1 })
-        .call(() => rows.forEach((row) => row.grp.classList.remove("is-win")))
-        .to([linkIn, linkOut], { opacity: 0, duration: 0.3 });
-      return tl;
+    function step() {
+      q += 1;
+      const th = M.map((m) => beta(m.a, m.b));
+      const k = th.indexOf(Math.max(...th));
+      const m = M[k];
+      wins[k] += 1;
+      if (m.attack) detected += 1;
+      show(k, true);
+      const total = wins.reduce((s, w) => s + w, 0);
+      chips.forEach((c, i) => { c.querySelector("b").style.width = `${(100 * wins[i]) / total}%`; });
+      const li = document.createElement("li");
+      li.innerHTML = `<span>query ${q}</span><span>${m.name}</span><span class="${m.attack ? "atk" : "ben"}">${m.attack ? "attack ✓" : "benign ✗"}</span>`;
+      log.prepend(li);
+      while (log.children.length > 3) log.lastChild.remove();
+      gsap.from(li, { opacity: 0, y: -8, duration: 0.3 });
+      score.textContent = `${detected} / ${q}`;
     }
 
     if (reduce) {
-      const theta = POST[0].map(([a, b]) => a / (a + b));
-      rows.forEach((row, i) => { row.bar.setAttribute("width", W * theta[i]); row.val.textContent = theta[i].toFixed(2); });
-      rows[0].grp.classList.add("is-win");
-      gsap.set(packet, { opacity: 0 });
-      caption.textContent = "the highest draw answers each request";
+      show(0, false);
+      score.textContent = "—";
       return;
     }
-    play();
+    step();
+    let timer = setInterval(step, 1700);
+    document.addEventListener("visibilitychange", () => {
+      clearInterval(timer);
+      if (!document.hidden) timer = setInterval(step, 1700);
+    });
   })();
 
   // ------------------------------------------------------------- the duel
