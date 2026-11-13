@@ -1,7 +1,7 @@
 /* Apollon landing page animations (GSAP + ScrollTrigger). */
 (function () {
   "use strict";
-  if (!window.gsap || !document.querySelector(".ap-home")) return;
+  if (!window.gsap || !document.getElementById("lp")) return;
   const gsap = window.gsap;
   if (window.ScrollTrigger) gsap.registerPlugin(window.ScrollTrigger);
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -194,29 +194,42 @@
     const runs = [setup("ap-duel-single", false), setup("ap-duel-apollon", true)].filter(Boolean);
     if (!runs.length || reduce) return;
     if (window.ScrollTrigger) {
-      window.ScrollTrigger.create({ trigger: ".ap-duel", start: "top 80%", once: true, onEnter: () => runs.forEach((r) => r()) });
+      window.ScrollTrigger.create({ trigger: ".lp-duel", start: "top 80%", once: true, onEnter: () => runs.forEach((r) => r()) });
     } else runs.forEach((r) => r());
   })();
 
   // --------------------------------------------------------- scroll reveals
   if (!reduce && window.ScrollTrigger) {
-    gsap.utils.toArray(".ap-reveal").forEach((n) => {
-      gsap.from(n, { opacity: 0, y: 28, duration: 0.7, ease: "power2.out",
-        scrollTrigger: { trigger: n, start: "top 88%", once: true } });
+    const ST = window.ScrollTrigger;
+    gsap.from(".lp-hero__grid > div:first-child > *", { opacity: 0, y: 22, duration: 0.8, stagger: 0.08, ease: "power3.out" });
+    gsap.from(".lp-hero__viz", { opacity: 0, y: 30, duration: 1, ease: "power3.out", delay: 0.25 });
+    gsap.from(".lp-strip > div", { opacity: 0, y: 14, duration: 0.6, stagger: 0.08, delay: 0.6 });
+    const groups = [".lp-split", ".lp-cols > div", ".lp-duel > *", ".lp-ts", ".lp-code > *",
+      ".lp-features > a", ".lp-table__row", ".lp-faq .lp-h2", ".lp-faq__list details"];
+    groups.forEach((sel) => {
+      gsap.set(sel, { opacity: 0, y: 26 });
+      ST.batch(sel, { start: "top 90%", once: true,
+        onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 0.7, stagger: 0.08, ease: "power3.out", overwrite: true }) });
     });
-    gsap.from(".ap-hero__text > *", { opacity: 0, y: 18, duration: 0.7, stagger: 0.09, ease: "power2.out" });
-    gsap.from(".ap-hero__viz", { opacity: 0, scale: 0.96, duration: 0.9, ease: "power2.out", delay: 0.2 });
-    gsap.to(".ap-hero__glow", { rotate: 360, duration: 60, repeat: -1, ease: "none" });
+    gsap.from(".lp-watermark", { yPercent: 40, opacity: 0, duration: 1.2, ease: "power3.out",
+      scrollTrigger: { trigger: ".lp-cta", start: "top 70%", once: true } });
   }
 
-  // --------------------------------------------------------------- counters
-  document.querySelectorAll(".ap-stat b[data-count]").forEach((b) => {
-    const target = +b.dataset.count;
-    if (reduce || !window.ScrollTrigger) { b.textContent = target; return; }
-    const o = { v: 0 };
-    gsap.to(o, { v: target, duration: 1.2, ease: "power1.out", onUpdate: () => { b.textContent = Math.round(o.v); },
-      scrollTrigger: { trigger: b, start: "top 90%", once: true } });
-  });
+  // ------------------------------------------------------ nav and side dots
+  const nav = document.getElementById("lp-nav");
+  const onScroll = () => nav && nav.classList.toggle("is-solid", window.scrollY > 24);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+  const dots = document.querySelectorAll(".lp-dots a");
+  if ("IntersectionObserver" in window && dots.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        dots.forEach((d) => d.classList.toggle("is-on", d.dataset.dot === e.target.id));
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    document.querySelectorAll(".lp-sec[id]").forEach((sec) => io.observe(sec));
+  }
 
   // --------------------------------------------------------------- terminal
   (function terminal() {
