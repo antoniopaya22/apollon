@@ -3,6 +3,9 @@ message: "If you use this software, please cite the article below."
 title: "Apollon: A robust defense system against Adversarial Machine Learning attacks in Intrusion Detection Systems"
 type: software
 license: Apache-2.0
+version: 2.0.0
+date-released: "2026-11-13"
+url: "https://antoniopaya22.github.io/apollon/"
 repository-code: "https://github.com/antoniopaya22/apollon"
 authors:
   - family-names: "Payá"
