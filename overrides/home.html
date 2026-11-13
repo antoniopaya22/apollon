@@ -63,30 +63,28 @@
         </div>
         <ul class="lp-facts">
           <li><b>Published</b> in Computers &amp; Security, vol. 136, 2024</li>
-          <li><b>Five classifiers</b> per cluster, one drawn per request</li>
+          <li><b>Five classifiers</b> with five different boundaries, one drawn per request</li>
           <li><b>Drop-in</b> scikit-learn estimator and command line</li>
         </ul>
       </div>
-      <figure class="lp-card lp-hero__viz" aria-label="Animation: a request is clustered, every classifier draws a value from its Beta posterior and the highest draw answers.">
-        <div class="lp-card__head"><span class="lp-live"></span>Live selection<span class="lp-card__tag">Simulation</span></div>
-        <svg id="ap-bandit" viewBox="0 0 640 400" role="img">
-          <defs>
-            <linearGradient id="ap-g-line" x1="0" x2="1"><stop offset="0" stop-color="#7c8cff"/><stop offset="1" stop-color="#c084fc"/></linearGradient>
-            <filter id="ap-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          </defs>
-          <text class="ap-v-label" x="50" y="28">Request</text>
-          <text class="ap-v-label" x="200" y="28">Cluster</text>
-          <text class="ap-v-label" x="400" y="28">Thompson draw θ ~ Beta(α, β)</text>
-          <text class="ap-v-label" x="581" y="28">Verdict</text>
-          <g id="ap-c0" class="ap-v-cluster"><circle cx="200" cy="130" r="34"/><text x="200" y="135">c₀</text></g>
-          <g id="ap-c1" class="ap-v-cluster"><circle cx="200" cy="270" r="34"/><text x="200" y="275">c₁</text></g>
-          <path id="ap-link-in" class="ap-v-link" d=""/>
-          <path id="ap-link-out" class="ap-v-link" d=""/>
-          <g id="ap-arms"></g>
-          <g id="ap-verdict" class="ap-v-verdict"><rect x="535" y="175" width="92" height="50" rx="12"/><text id="ap-verdict-text" x="581" y="206">·</text></g>
-          <g id="ap-packet" filter="url(#ap-glow)"><circle cx="50" cy="200" r="11"/></g>
-          <text id="ap-caption" class="ap-v-caption" x="320" y="388">request #1</text>
+      <figure class="lp-card lp-hero__viz hv" aria-label="Animation: one adversarial flow, crafted to evade logistic regression, is sent again and again. Each query is answered by a model drawn by Thompson sampling, shown with its decision boundary; only logistic regression is fooled.">
+        <div class="lp-card__head"><span class="lp-live"></span>What the attacker sees<span class="lp-card__tag">Simulation</span></div>
+        <div class="hv-chips" id="hv-chips"></div>
+        <svg class="hv-plot" id="hv-plot" viewBox="0 0 560 300" role="img">
+          <rect class="hv-benign" x="0" y="0" width="560" height="300"/>
+          <path class="hv-attack" id="hv-region" d=""/>
+          <path class="hv-edge" id="hv-edge" d=""/>
+          <text class="hv-zone" x="14" y="24">benign</text>
+          <text class="hv-zone hv-zone--atk" x="546" y="288" text-anchor="end">attack</text>
+          <circle class="hv-ring" id="hv-ring" cx="300" cy="140" r="12"/>
+          <path class="hv-point" d="M300,128 L312,140 L300,152 L288,140 Z"/>
+          <text class="hv-plabel" x="318" y="133">adversarial flow</text>
+          <text class="hv-model" id="hv-model" x="14" y="288"></text>
         </svg>
+        <div class="hv-foot">
+          <ol class="hv-log" id="hv-log"></ol>
+          <div class="hv-score"><b id="hv-score">0 / 0</b><span>queries detected</span></div>
+        </div>
       </figure>
     </div>
     <div class="lp-wrap">

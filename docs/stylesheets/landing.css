@@ -206,3 +206,33 @@ body { background: var(--lp-dark); }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .lp-live, #ap-term .cur { animation: none; } }
 .lp-ts { max-width: 880px; margin-left: auto !important; margin-right: auto !important; }
+
+/* ------------------------------------------------- hero: what the attacker sees */
+.hv-chips { display: grid; grid-template-columns: repeat(5, 1fr); gap: .5rem; padding: .9rem 1.1rem .2rem; }
+.hv-chip { padding: .5rem .55rem .45rem; border-radius: 10px; border: 1px solid var(--lp-line-d); background: rgba(255, 255, 255, .02);
+  font: 600 .78rem var(--md-code-font-family); color: #a3a8c3; transition: background .25s, border-color .25s, color .25s; }
+.hv-chip i { display: block; height: 3px; margin-top: .4rem; border-radius: 2px; background: rgba(255, 255, 255, .08); overflow: hidden; }
+.hv-chip i b { display: block; height: 100%; width: 0; background: #7c8cff; transition: width .5s; }
+.hv-chip.is-on { background: rgba(91, 108, 255, .2); border-color: #7c8cff; color: #fff; }
+.lp-card svg.hv-plot { display: block; width: calc(100% - 2.2rem); height: auto; margin: .8rem 1.1rem 0; padding: 0; border-radius: 12px; }
+.hv-benign { fill: rgba(52, 211, 153, .13); }
+.hv-attack { fill: rgba(244, 63, 94, .38); }
+.hv-edge { fill: none; stroke: #e8eaf4; stroke-width: 2.2; stroke-linejoin: round; }
+.hv-zone { font: 600 11px var(--md-text-font-family); letter-spacing: .12em; text-transform: uppercase; fill: rgba(110, 231, 183, .8); }
+.hv-zone--atk { fill: rgba(253, 164, 175, .9); }
+.hv-point { fill: var(--lp-amber); stroke: #0a0d17; stroke-width: 2; }
+.hv-plabel { font: 600 12px var(--md-text-font-family); fill: #fde68a; }
+.hv-model { font: 600 12px var(--md-code-font-family); fill: #e8eaf4; }
+.hv-ring { fill: none; stroke-width: 3; opacity: 0; }
+.hv-ring.is-attack { stroke: #f43f5e; }
+.hv-ring.is-benign { stroke: #34d399; }
+.hv-foot { display: flex; align-items: flex-end; gap: 1rem; padding: .8rem 1.1rem 1rem; }
+.hv-log { flex: 1; list-style: none; margin: 0 !important; padding: 0 !important; font: .76rem/1.9 var(--md-code-font-family); color: #a3a8c3; min-height: 4.4rem; }
+.hv-log li { display: grid; grid-template-columns: 6.5rem 3rem 1fr; margin: 0 !important; }
+.hv-log li:first-child { color: #fff; }
+.hv-log .atk { color: #fb7185; }
+.hv-log .ben { color: #6ee7b7; }
+.hv-score { text-align: right; }
+.hv-score b { display: block; font: 700 1.9rem/1 var(--lp-head); color: #fff; letter-spacing: -0.02em; }
+.hv-score span { font-size: .72rem; color: #8e95c9; }
+@media (max-width: 680px) { .hv-chips { gap: .3rem; padding: .7rem .7rem .1rem; } .hv-chip { font-size: .68rem; padding: .4rem; } .lp-card svg.hv-plot { width: calc(100% - 1.4rem); margin: .6rem .7rem 0; } .hv-log li { grid-template-columns: 5.2rem 2.6rem 1fr; } }
